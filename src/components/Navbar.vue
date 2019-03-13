@@ -3,7 +3,8 @@
         <v-toolbar flat dark app>
             <v-toolbar-side-icon class="teal--text" @click="drawer = !drawer"></v-toolbar-side-icon>
             <v-toolbar-title>
-                <v-icon class="teal--text">face</v-icon>
+                <v-icon class="teal--text" left>face</v-icon>
+                <span>Tyler Berkshire</span>
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn flat outline color="teal">
