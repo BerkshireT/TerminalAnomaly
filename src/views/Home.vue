@@ -10,64 +10,42 @@
                 </v-list-tile>
         </v-list>
         <v-container grid-list-md>
-            <v-layout column>
-                <v-flex>
-                    <v-card>
-                        <v-parallax :src="require('../assets/pic.png')" height="400"></v-parallax>
-                        <v-card-title primary-title class="grey darken-4">
-                            <v-flex grow>
-                                <span class="white--text display-1 font-weight-thin mb-3 justify-center">Tyler Berkshire</span>
-                            </v-flex>
-                            <v-flex shrink>
-                                <v-btn flat outline color="teal" right route :to="'/about'">
-                                    <h3 class="subhedaing">About Me</h3>
-                                </v-btn>
-                            </v-flex>
-                        </v-card-title>
-                    </v-card>
-                </v-flex>
-            </v-layout>
-            <v-layout row>
-                <v-flex v-for="parallax in parallaxes" :key="parallax.title">
-                    <v-card>
-                        <v-parallax :src="require('../assets/' + parallax.image)" height="400"></v-parallax>
-                        <v-card-title primary-title class="grey darken-4">
-                            <v-flex grow>
-                                <span class="white--text display-1 font-weight-thin mb-3 justify-center">
-                                    {{ parallax.title }}
-                                </span>
-                            </v-flex>
-                            <v-flex shrink>
-                                <v-btn flat outline color="teal" right route :to="'/' + parallax.route">
-                                    <h3 class="subhedaing">{{ parallax.button }}</h3>
-                                </v-btn>
-                            </v-flex>
-                        </v-card-title>
-                    </v-card>
-                </v-flex>
-            </v-layout>
+            <ParaCards :parallaxProp="parallaxes1" :layoutProp="'column'" />
+
+            <ParaCards :parallaxProp="parallaxes2" :layoutProp="'row'" :visibilityProp="'hidden-xs-only'" />
+            <ParaCards :parallaxProp="parallaxes2" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" />
+
+            <ParaCards :parallaxProp="parallaxes3" :layoutProp="'column'" />
         </v-container>
     </div>
 </template>
 
 <script>
 import Navbar from '../components/Navbar'
+import ParaCards from '../components/ParaCards'
 
 export default {
     title: 'Home - TerminalAnomaly',
-    components: { Navbar },
+    components: { Navbar, ParaCards },
     data () {
         return {
             theme:
                 { color: 'teal--text', image: 'ta-nav-te.png'},
             todos: [
-                { text: 'optimize layouts for mobile' },
                 { text: 'create about page' },
-                { text: 'create gallery page' }
+                { text: 'create library page' },
+                { text: 'create gallery page (carousel)' },
+                { text: 'decide what projects to post' }
             ],
-            parallaxes: [
-                { image: 'comingsoon.jpg', title: 'Art Gallery', button: 'View Gallery', route: 'gallery'},
-                { image: 'comingsoon.jpg', title: 'Project 2', button: 'View Project 2', route: 'project2'}
+            parallaxes1: [
+                { image: 'pic.png', title: 'Tyler Berkshire', button: 'About', route: 'about' }
+            ],
+            parallaxes2: [
+                { image: 'comingsoon.jpg', title: 'Art Gallery', button: 'View Gallery', route: 'gallery' },
+                { image: 'comingsoon.jpg', title: 'Library', button: 'View Library', route: 'library' }
+            ],
+            parallaxes3: [
+                { image: 'comingsoon.jpg', title: 'Project 1', button: 'View Project', route: '' }
             ]
         }
     }
