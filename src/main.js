@@ -2,15 +2,18 @@ import Vue from 'vue'
 import './plugins/vuetify'
 import App from './App.vue'
 import router from './router'
+import titleMixin from './components/mixins/titleMixin'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faDumpster } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-library.add(faDumpster)
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+library.add(fas, fab)
 
 Vue.config.productionTip = false
+
+Vue.mixin(titleMixin)
 
 new Vue({
   router,

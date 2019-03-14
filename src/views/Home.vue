@@ -1,5 +1,6 @@
 <template>
-    <div class="home">
+    <div class="home teal lighten-4">
+    <Navbar :colorProp="theme.color" :imageProp="theme.image"/>
         <h1>TODO:</h1>
         <v-list>
                 <v-list-tile v-for="todo in todos" :key="todo.text">
@@ -18,7 +19,7 @@
                                 <span class="white--text display-1 font-weight-thin mb-3 justify-center">Tyler Berkshire</span>
                             </v-flex>
                             <v-flex shrink>
-                                <v-btn flat outline color="teal" right>
+                                <v-btn flat outline color="teal" right route :to="'/about'">
                                     <h3 class="subhedaing">About Me</h3>
                                 </v-btn>
                             </v-flex>
@@ -37,7 +38,7 @@
                                 </span>
                             </v-flex>
                             <v-flex shrink>
-                                <v-btn flat outline color="teal" right>
+                                <v-btn flat outline color="teal" right route :to="'/' + parallax.route">
                                     <h3 class="subhedaing">{{ parallax.button }}</h3>
                                 </v-btn>
                             </v-flex>
@@ -50,17 +51,23 @@
 </template>
 
 <script>
+import Navbar from '../components/Navbar'
+
 export default {
+    title: 'Home - TerminalAnomaly',
+    components: { Navbar },
     data () {
         return {
+            theme:
+                { color: 'teal--text', image: 'ta-nav-te.png'},
             todos: [
-                { text: 'make logo' },
-                { text: 'setup buttons on navbar' },
-                { text: 'finish homepage routes' }
+                { text: 'optimize layouts for mobile' },
+                { text: 'create about page' },
+                { text: 'create gallery page' }
             ],
             parallaxes: [
-                { image: 'comingsoon.jpg', title: 'Project 1', button: 'View Project 1'},
-                { image: 'comingsoon.jpg', title: 'Project 2', button: 'View Project 2'}
+                { image: 'comingsoon.jpg', title: 'Art Gallery', button: 'View Gallery', route: 'gallery'},
+                { image: 'comingsoon.jpg', title: 'Project 2', button: 'View Project 2', route: 'project2'}
             ]
         }
     }
