@@ -10,23 +10,26 @@
                 </v-list-tile>
         </v-list>
         <v-container grid-list-md>
-            <ParaCards :parallaxProp="parallaxes1" :layoutProp="'column'" />
+            <ParaCards :parallaxProp="parallaxes1" :layoutProp="'column'" :visibilityProp="'hidden-xs-only'" />
+            <ImgCards :imgProp="parallaxes1" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" />
 
-            <ParaCards :parallaxProp="parallaxes2" :layoutProp="'row'" :visibilityProp="'hidden-xs-only'" />
-            <ParaCards :parallaxProp="parallaxes2" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" />
+            <ImgCards :imgProp="images1" :layoutProp="'row'" :visibilityProp="'hidden-xs-only'" />
+            <ImgCards :imgProp="images1" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" />
 
-            <ParaCards :parallaxProp="parallaxes3" :layoutProp="'column'" />
+            <ParaCards :parallaxProp="parallaxes2" :layoutProp="'column'" :visibilityProp="'hidden-xs-only'" />
+            <ImgCards :imgProp="parallaxes2" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" />
         </v-container>
     </div>
 </template>
 
 <script>
-import Navbar from '../components/Navbar'
-import ParaCards from '../components/ParaCards'
+import Navbar from '@/components/Navbar'
+import ParaCards from '@/components/ParaCards'
+import ImgCards from '@/components/ImgCards'
 
 export default {
     title: 'Home - TerminalAnomaly',
-    components: { Navbar, ParaCards },
+    components: { Navbar, ParaCards, ImgCards },
     data () {
         return {
             theme:
@@ -38,13 +41,13 @@ export default {
                 { text: 'decide what projects to post' }
             ],
             parallaxes1: [
-                { image: 'pic.png', title: 'Tyler Berkshire', button: 'About', route: 'about' }
+                { image: 'pic.png', title: 'Tyler Berkshire', button: 'About Me', route: 'about' }
             ],
-            parallaxes2: [
+            images1: [
                 { image: 'comingsoon.jpg', title: 'Art Gallery', button: 'View Gallery', route: 'gallery' },
                 { image: 'comingsoon.jpg', title: 'Library', button: 'View Library', route: 'library' }
             ],
-            parallaxes3: [
+            parallaxes2: [
                 { image: 'comingsoon.jpg', title: 'Project 1', button: 'View Project', route: '' }
             ]
         }
