@@ -2,7 +2,7 @@
     <v-layout :class="layoutProp + ' ' + visibilityProp">
         <v-flex v-for="parallax in parallaxProp" :key="parallax.title">
             <v-card>
-                <v-parallax :src="require('../assets/' + parallax.image)" height="400"></v-parallax>
+                <v-parallax :src="require('@/assets/' + parallax.image)" height="400" />
                 <v-card-title primary-title class="grey darken-4">
                     <v-flex grow>
                         <span class="white--text display-1 font-weight-thin mb-3 justify-center">

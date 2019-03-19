@@ -2,7 +2,7 @@
     <v-layout :class="layoutProp + ' ' + visibilityProp">
         <v-flex v-for="pic in imgProp" :key="pic.title">
             <v-card>
-                <v-img :src="require('../assets/' + pic.image)" height="400"></v-img>
+                <v-img :src="require('@/assets/' + pic.image)" height="400" />
                 <v-card-title primary-title class="grey darken-4">
                     <v-flex grow>
                         <span class="white--text display-1 font-weight-thin mb-3 justify-center">
