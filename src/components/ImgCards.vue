@@ -10,7 +10,7 @@
                         </span>
                     </v-flex>
                     <v-flex shrink>
-                        <v-btn flat outline color="teal" right route :to="'/' + pic.route">
+                        <v-btn flat outline :color="themeProp + ' lighten-3'" right route :to="'/' + pic.route">
                             <h3 class="subhedaing">{{ pic.button }}</h3>
                         </v-btn>
                     </v-flex>
@@ -36,6 +36,10 @@ export default {
         visibilityProp: {
             required: false,
             default: '',
+        },
+        themeProp: {
+            required: true,
+            default: 'teal--text text--lighten-3'
         }
     }
 }

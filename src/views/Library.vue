@@ -14,7 +14,7 @@ export default {
     data () {
         return {
             theme:
-                { color: 'deep-orange--text', image: 'ta-nav-dor.png'}
+                { theme: 'deep-orange', color: 'deep-orange--text text--lighten-3', image: 'ta-nav-dor.png'}
         }
     }
 }

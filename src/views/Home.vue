@@ -10,14 +10,14 @@
                 </v-list-tile>
         </v-list>
         <v-container grid-list-md>
-            <ParaCards :parallaxProp="parallaxes1" :layoutProp="'column'" :visibilityProp="'hidden-xs-only'" />
-            <ImgCards :imgProp="parallaxes1" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" />
+            <ParaCards :parallaxProp="parallaxes1" :layoutProp="'column'" :visibilityProp="'hidden-xs-only'" :themeProp="theme.theme" />
+            <ImgCards :imgProp="parallaxes1" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" :themeProp="theme.theme" />
 
-            <ImgCards :imgProp="images1" :layoutProp="'row'" :visibilityProp="'hidden-xs-only'" />
-            <ImgCards :imgProp="images1" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" />
+            <ImgCards :imgProp="images1" :layoutProp="'row'" :visibilityProp="'hidden-xs-only'" :themeProp="theme.theme" />
+            <ImgCards :imgProp="images1" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" :themeProp="theme.theme" />
 
-            <ParaCards :parallaxProp="parallaxes2" :layoutProp="'column'" :visibilityProp="'hidden-xs-only'" />
-            <ImgCards :imgProp="parallaxes2" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" />
+            <ParaCards :parallaxProp="parallaxes2" :layoutProp="'column'" :visibilityProp="'hidden-xs-only'" :themeProp="theme.theme" />
+            <ImgCards :imgProp="parallaxes2" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" :themeProp="theme.theme" />
         </v-container>
     </div>
 </template>
@@ -33,7 +33,7 @@ export default {
     data () {
         return {
             theme:
-                { color: 'teal--text', image: 'ta-nav-te.png'},
+                { theme: 'teal', color: 'teal--text text--lighten-3', image: 'ta-nav-te.png' },
             todos: [
                 { text: 'create about page' },
                 { text: 'create library page' },

@@ -14,7 +14,7 @@ export default {
     data () {
         return {
             theme:
-                { color: 'amber--text', image: 'ta-nav-am.png'}
+                { theme: 'amber', color: 'amber--text text--lighten-3', image: 'ta-nav-am.png'}
         }
     }
 }

@@ -31,7 +31,7 @@ export default {
     data () {
         return {
             theme:
-                { color: 'indigo--text', image: 'ta-nav-in.png'}
+                { theme: 'indigo', color: 'indigo--text text--lighten-3', image: 'ta-nav-in.png'}
         }
     }
 }
