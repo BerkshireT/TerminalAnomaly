@@ -1,14 +1,6 @@
 <template>
-    <div class="home teal lighten-4">
+    <v-container fluid fill-height class="home teal lighten-3">
     <Navbar :colorProp="theme.color" :imageProp="theme.image"/>
-        <h1>TODO:</h1>
-        <v-list>
-                <v-list-tile v-for="todo in todos" :key="todo.text">
-                    <v-list-tile-content class="teal--text">
-                        <v-list-tile-title>{{ todo.text }}</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-        </v-list>
         <v-container grid-list-md>
             <ParaCards :parallaxProp="parallaxes1" :layoutProp="'column'" :visibilityProp="'hidden-xs-only'" :themeProp="theme.theme" />
             <ImgCards :imgProp="parallaxes1" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" :themeProp="theme.theme" />
@@ -19,7 +11,7 @@
             <ParaCards :parallaxProp="parallaxes2" :layoutProp="'column'" :visibilityProp="'hidden-xs-only'" :themeProp="theme.theme" />
             <ImgCards :imgProp="parallaxes2" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" :themeProp="theme.theme" />
         </v-container>
-    </div>
+    </v-container>
 </template>
 
 <script>
