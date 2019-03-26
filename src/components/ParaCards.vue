@@ -2,7 +2,7 @@
     <v-layout :class="layoutProp + ' ' + visibilityProp">
         <v-flex v-for="parallax in parallaxProp" :key="parallax.title">
             <v-card>
-                <v-parallax :src="require('../assets/' + parallax.image)" height="400"></v-parallax>
+                <v-parallax :src="require('@/assets/' + parallax.image)" height="400" />
                 <v-card-title primary-title class="grey darken-4">
                     <v-flex grow>
                         <span class="white--text display-1 font-weight-thin mb-3 justify-center">
@@ -10,7 +10,7 @@
                         </span>
                     </v-flex>
                     <v-flex shrink>
-                        <v-btn flat outline color="teal" right route :to="'/' + parallax.route">
+                        <v-btn flat outline :color="themeProp + ' lighten-3'" right route :to="'/' + parallax.route">
                             <h3 class="subhedaing">{{ parallax.button }}</h3>
                         </v-btn>
                     </v-flex>
@@ -36,6 +36,10 @@ export default {
         visibilityProp: {
             required: false,
             default: '',
+        },
+        themeProp: {
+            required: true,
+            default: 'teal'
         }
     }
 }

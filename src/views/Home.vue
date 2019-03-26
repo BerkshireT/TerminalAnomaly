@@ -1,25 +1,17 @@
 <template>
-    <div class="home teal lighten-4">
+    <v-container fluid fill-height class="home teal lighten-3">
     <Navbar :colorProp="theme.color" :imageProp="theme.image"/>
-        <h1>TODO:</h1>
-        <v-list>
-                <v-list-tile v-for="todo in todos" :key="todo.text">
-                    <v-list-tile-content class="teal--text">
-                        <v-list-tile-title>{{ todo.text }}</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-        </v-list>
         <v-container grid-list-md>
-            <ParaCards :parallaxProp="parallaxes1" :layoutProp="'column'" :visibilityProp="'hidden-xs-only'" />
-            <ImgCards :imgProp="parallaxes1" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" />
+            <ParaCards :parallaxProp="parallaxes1" :layoutProp="'column'" :visibilityProp="'hidden-xs-only'" :themeProp="theme.theme" />
+            <ImgCards :imgProp="parallaxes1" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" :themeProp="theme.theme" />
 
-            <ImgCards :imgProp="images1" :layoutProp="'row'" :visibilityProp="'hidden-xs-only'" />
-            <ImgCards :imgProp="images1" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" />
+            <ImgCards :imgProp="images1" :layoutProp="'row'" :visibilityProp="'hidden-xs-only'" :themeProp="theme.theme" />
+            <ImgCards :imgProp="images1" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" :themeProp="theme.theme" />
 
-            <ParaCards :parallaxProp="parallaxes2" :layoutProp="'column'" :visibilityProp="'hidden-xs-only'" />
-            <ImgCards :imgProp="parallaxes2" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" />
+            <ParaCards :parallaxProp="parallaxes2" :layoutProp="'column'" :visibilityProp="'hidden-xs-only'" :themeProp="theme.theme" />
+            <ImgCards :imgProp="parallaxes2" :layoutProp="'column'" :visibilityProp="'hidden-sm-and-up'" :themeProp="theme.theme" />
         </v-container>
-    </div>
+    </v-container>
 </template>
 
 <script>
@@ -33,7 +25,7 @@ export default {
     data () {
         return {
             theme:
-                { color: 'teal--text', image: 'ta-nav-te.png'},
+                { theme: 'teal', color: 'teal--text text--lighten-3', image: 'ta-nav-te.png' },
             todos: [
                 { text: 'create about page' },
                 { text: 'create library page' },
@@ -41,14 +33,14 @@ export default {
                 { text: 'decide what projects to post' }
             ],
             parallaxes1: [
-                { image: 'pic.png', title: 'Tyler Berkshire', button: 'About Me', route: 'about' }
+                { image: 'pic.jpg', title: 'Tyler Berkshire', button: 'About Me', route: 'about' }
             ],
             images1: [
-                { image: 'comingsoon.jpg', title: 'Art Gallery', button: 'View Gallery', route: 'gallery' },
-                { image: 'comingsoon.jpg', title: 'Library', button: 'View Library', route: 'library' }
+                { image: 'comingsoon.jpg', title: 'Art Gallery (Coming Soon)', button: 'View Gallery', route: 'gallery' },
+                { image: 'comingsoon.jpg', title: 'Library (Coming Soon)', button: 'View Library', route: 'library' }
             ],
             parallaxes2: [
-                { image: 'comingsoon.jpg', title: 'Project 1', button: 'View Project', route: '' }
+                { image: 'comingsoon.jpg', title: 'Project 1 (Coming Soon)', button: 'View Project', route: '' }
             ]
         }
     }

@@ -1,8 +1,8 @@
 <template>
-    <div class="library deep-orange lighten-4">
+    <v-container fluid fill-height class="library deep-orange lighten-3">
         <Navbar :colorProp="theme.color" :imageProp="theme.image"/>    
         <h1>LIBRARY</h1>
-    </div>
+    </v-container>
 </template>
 
 <script>
@@ -14,7 +14,7 @@ export default {
     data () {
         return {
             theme:
-                { color: 'deep-orange--text', image: 'ta-nav-dor.png'}
+                { theme: 'deep-orange', color: 'deep-orange--text text--lighten-3', image: 'ta-nav-dor.png'}
         }
     }
 }
