@@ -24,6 +24,7 @@
                     <v-divider dark class="py-1" />
                     <v-flex v-for="tile in cards" :key="tile.title">
                         <AboutTile :titleProp="tile.title" :alignProp="tile.align" :textProp="tile.text" />
+                        <v-divider dark class="py-1" />
                     </v-flex>
                 </v-flex>
             </v-layout>
@@ -47,7 +48,8 @@ export default {
             },
             cards: [
                 { title: 'history', align: 'center', text: 'history section' },
-                { title: 'programming', align: 'left', text: 'programming section' }
+                { title: 'programming', align: 'left', text: 'programming section' },
+                { title: 'hobbies', align: 'right', text: 'hobbies section'}
             ]
         }
     }
