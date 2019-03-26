@@ -14,8 +14,8 @@
                                     <div>
                                         <div class="display-3 font-weight-thin">Tyler Berkshire</div>
                                         <v-divider dark />
-                                        <div class="display-2 font-weight-thin">Computer Programmer</div>
-                                        <div class="display-2 font-weight-thin">University of Dayton CPS '19</div>
+                                        <div class="display-2 font-weight-thin white--text">Computer Programmer</div>
+                                        <div class="display-2 font-weight-thin white--text">University of Dayton CPS '19</div>
                                     </div>
                                 </v-card-title>
                             </v-flex>

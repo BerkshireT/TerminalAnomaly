@@ -33,14 +33,14 @@ export default {
                 { text: 'decide what projects to post' }
             ],
             parallaxes1: [
-                { image: 'pic.png', title: 'Tyler Berkshire', button: 'About Me', route: 'about' }
+                { image: 'pic.jpg', title: 'Tyler Berkshire', button: 'About Me', route: 'about' }
             ],
             images1: [
-                { image: 'comingsoon.jpg', title: 'Art Gallery', button: 'View Gallery', route: 'gallery' },
-                { image: 'comingsoon.jpg', title: 'Library', button: 'View Library', route: 'library' }
+                { image: 'comingsoon.jpg', title: 'Art Gallery (Coming Soon)', button: 'View Gallery', route: 'gallery' },
+                { image: 'comingsoon.jpg', title: 'Library (Coming Soon)', button: 'View Library', route: 'library' }
             ],
             parallaxes2: [
-                { image: 'comingsoon.jpg', title: 'Project 1', button: 'View Project', route: '' }
+                { image: 'comingsoon.jpg', title: 'Project 1 (Coming Soon)', button: 'View Project', route: '' }
             ]
         }
     }
