@@ -1,5 +1,5 @@
 <template>
-    <v-card class="py-2 grey darken-4">
+    <v-card class="py-2 grey darken-4 AboutTile">
         <v-layout>
             <v-flex xs12>
                 <div v-if="alignProp === 'center'" class="hidden-sm-and-down">
@@ -12,7 +12,7 @@
                         </v-flex>
                         <v-flex xs1 />
                         <v-flex xs12 v-for="paragraph in textProp" :key="paragraph">
-                            <div class="pa-2 mx-3 text-xs-center subheading white--text">{{ paragraph }}</div>
+                            <div class="pa-2 mx-3 subheading white--text">&emsp;{{ paragraph }}</div>
                         </v-flex>
                     </v-layout>
                 </div>
@@ -23,7 +23,7 @@
                         <v-flex xs6>
                             <v-layout column wrap>
                                 <v-flex xs6 v-for="paragraph in textProp" :key="paragraph">
-                                    <div class="pa-2 mx-3 text-xs-center subheading white--text">{{ paragraph }}</div>
+                                    <div class="pa-2 mx-3 subheading white--text">&emsp;{{ paragraph }}</div>
                                 </v-flex>
                             </v-layout>
                         </v-flex>
@@ -42,7 +42,7 @@
                         <v-flex xs6>
                             <v-layout column wrap>
                                 <v-flex xs6 v-for="paragraph in textProp" :key="paragraph">
-                                    <div class="pa-2 mx-3 text-xs-center subheading white--text">{{ paragraph }}</div>
+                                    <div class="pa-2 mx-3 subheading white--text">&emsp;{{ paragraph }}</div>
                                 </v-flex>
                             </v-layout>
                         </v-flex>
@@ -87,6 +87,10 @@ export default {
         picProp: {
             required: true,
             default: 'comingsoon.jpg'
+        },
+        buttonProp: {
+            required: false,
+            default: 'TODO'
         }
     }
 }
