@@ -76,7 +76,7 @@ export default {
                         + 'and served as president of the Super Smash Brothers Club which has become one of the '
                         + 'fastest growing student organizations at the university since its creation in 2017.',
 
-                        'During the summer of 2017, I had the wonderful opportunity of working for the United '
+                        'During the summer of 2017, I had the wonderful opportunity of working as an intern for the United '
                         + 'States Air Force Institute of Technology under the supervision of Capt. Robet Loibl '
                         + 'and Dr. Kenneth Hopkinson. I worked with Capt. Loibl and three other interns to help '
                         + 'develop tools to automatically collect and mark satellite data for use with Google\'s '
@@ -88,9 +88,23 @@ export default {
                         + '"relevant" and "irrelevant data. With these methods, we were able to create a training '
                         + 'data set of about 10,000 images for the neural network.',
 
-                        'Hyland',
+                        'I also had the delightful opportunity of working as an intern for Hyland Software in Cleveland, Ohio '
+                        + 'during the summer of 2018. I worked on a few projects during my time as a development '
+                        + 'intern at Hyland. The first, and largest, was a command-line utility which helped '
+                        + 'properly transition machines from using Microsoft\'s Team Foundation Server to ' 
+                        + 'a different form of Git version control. This utility analyzed a given directory '
+                        + 'for any unused or missing resource files and deleted or added them accordingly. '
+                        + 'During this time, I also learned to write my own unit tests and implemented these '
+                        + 'tests into my utility. Next, I worked with three other interns to develop an application '
+                        + 'as part of Hyland\'s Intern Hackathon. Our application utilized Hyland\'s cloud storage '
+                        + 'platform, ShareBase, to hold audio recordings for playback triggered by Google Actions. The '
+                        + 'goal was to enable parents to record bedtime stories for their children and have them play '
+                        + 'those stories by saying, "Hey Google, tell me a bedtime story." Our application won first place '
+                        + 'in the contest! Finally, I used Microsoft\'s SourceLink to create NuGet packages and developed '
+                        + 'Microsoft Roslyn code analyzers to help other developers enforce Hyland\'s coding style guidelines.',
 
-                        'Full Project List'
+                        'If you would like to see all of the projects I have completed and am currently working on, '
+                        + 'including some of the ones mentioned above, be sure to find them on the Home Page!'
                     ]},
                 { title: 'Programming Experience', align: 'left', pic: 'comingsoon.jpg',
                     text: [
