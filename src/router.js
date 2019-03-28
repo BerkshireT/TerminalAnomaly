@@ -31,5 +31,8 @@ export default new Router({
             name: 'library',
             component: Library
         }
-    ]
+    ],
+    scrollBehavior () {
+        return { x: 0, y: 0 }
+      }
 })
