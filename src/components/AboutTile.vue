@@ -23,13 +23,20 @@
                     <v-layout row wrap>
                         <v-flex xs1 />
                         <v-flex xs10>
-                            <v-img :src="require('@/assets/' + picProp)" height="400" class="ma-3 pb-1" contain/>
+                            <v-img :src="require('@/assets/' + picProp)" class="ma-3 pb-1" contain/>
                         </v-flex>
                         <v-flex xs1 />
-                        <v-flex xs12 v-for="paragraph in textProp" :key="paragraph">
-                            <div class="pa-1 mx-3 text-xs-center subheading white--text">{{ paragraph }}</div>
-                            <br />
-                        </v-flex>
+                        <v-expansion-panel dark inset>
+                            <v-expansion-panel-content class="grey darken-4 indigo--text text--lighten-3">
+                                <template v-slot:header>
+                                    <div>About Me</div>
+                                </template>
+                                <v-flex xs12 v-for="paragraph in textProp" :key="paragraph">
+                                    <div class="pa-1 mx-3 text-xs-center body-1 white--text">{{ paragraph }}</div>
+                                    <br />
+                                </v-flex>
+                            </v-expansion-panel-content>
+                        </v-expansion-panel>
                     </v-layout>
                 </div>
             </v-flex>
