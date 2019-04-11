@@ -36,9 +36,10 @@
                         </v-layout>
                     </v-card>
                     <v-divider dark class="py-1" />
-                    <v-flex v-for="tile in cards" :key="tile.title">
-                        <AboutTile :titleProp="tile.title" :alignProp="tile.align" :textProp="tile.text" :picProp="tile.pic" />
+                    <v-flex>
+                        <AboutTile :titleProp="cards[0].title" :textProp="cards[0].text" :picProp="cards[0].pic" />
                         <v-divider dark class="py-1" />
+                        <ProgramTile :titleProp="cards[1].title" :textProp="cards[1].text" :iconsProp="cards[1].icons" />
                     </v-flex>
                 </v-flex>
             </v-layout>
@@ -49,10 +50,11 @@
 <script>
 import Navbar from '@/components/Navbar'
 import AboutTile from '@/components/AboutTile'
+import ProgramTile from '@/components/ProgramTile'
 
 export default {
     title: 'About - TerminalAnomaly',
-    components: { Navbar, AboutTile },
+    components: { Navbar, AboutTile, ProgramTile },
     data () {
         return {
             theme: { 
@@ -61,7 +63,7 @@ export default {
                 image: 'ta-nav-in.png' 
             },
             cards: [
-                { title: 'Background', align: 'center', pic: 'gal1.jpg', 
+                { title: 'Background', pic: 'gal1.jpg', 
                     text: [
                         'My name is Tyler Berkshire and I was born and raised in the greater Dayton, '
                         + 'Ohio area. I attended Bethel Local Schools for my primary and secondary '
@@ -106,14 +108,26 @@ export default {
                         'If you would like to see all of the projects I have completed and am currently working on, '
                         + 'including some of the ones mentioned above, be sure to find them on the Home Page!'
                     ]},
-                { title: 'Programming Experience', align: 'left', pic: 'comingsoon.jpg',
-                    text: [
-                        'Hey',
-                        'Testing'
+                { title: 'Programming Experience', text: 'Sample Text',
+                    icons: [
+                        { icon: 'java', fa: true, type: 'fab', lang: 'Java', route: '', stars: 5 },
+                        { icon: 'vuejs', fa: true, type: 'fab', lang: 'VueJS', route: '', stars: 4 },
+                        { icon: 'CSharp.png', fa: false, lang: 'C#', route: '', stars: 5 },
+                        { icon: 'GoLang.png', fa: false, lang: 'GoLang', route: '', stars: 2 },
+                        { icon: 'C.png', fa: false, lang: 'C', route: '', stars: 3 },
+                        { icon: 'CPP.png', fa: false, lang: 'C++', route: '', stars: 2 },
+                        { icon: 'Elixir.png', fa: false, lang: 'Elixir', route: '', stars: 2 },
+                        { icon: 'python', fa: true, type: 'fab', lang: 'Python', route: '', stars: 2 },
+                        { icon: 'terminal', fa: true, type: 'fas', lang: 'Assembly', route: '', stars: 1 },
+                        { icon: 'Kotlin.png', fa: false, lang: 'Kotlin', route: '', stars: 2 },
+                        { icon: 'Racket.png', fa: false, lang: "Racket", route: '', stars: 2 },
+                        { icon: 'MongoDB.png', fa: false, lang: "MongoDB", route: '', stars: 1 },
+                        { icon: 'windows', fa: true, type: 'fab', lang: "Windows", route: '', stars: 5 },
+                        { icon: 'linux', fa: true, type: 'fab', lang: 'Linux', route: '', stars: 4},
+                        { icon: 'aws', fa: true, type: 'fab', lang: 'AWS', route: '', stars: 1 }
                     ]},
                 { title: 'Hobbies', align: 'right', pic: 'comingsoon.jpg',
                     text: [
-                        'Hey',
                         'Testing'
                     ]}
             ]

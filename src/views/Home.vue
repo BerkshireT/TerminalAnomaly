@@ -40,7 +40,7 @@ export default {
                 { image: 'comingsoon.jpg', title: 'Library (Coming Soon)', button: 'View Library', route: 'library' }
             ],
             parallaxes2: [
-                { image: 'comingsoon.jpg', title: 'Project 1 (Coming Soon)', button: 'View Project', route: '' }
+                { image: 'comingsoon.jpg', title: 'Headway (Coming Soon)', button: 'View Headway', route: '' }
             ]
         }
     }
