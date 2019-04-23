@@ -125,10 +125,6 @@ export default {
                         { icon: 'windows', fa: true, type: 'fab', lang: "Windows", route: '', stars: 5 },
                         { icon: 'linux', fa: true, type: 'fab', lang: 'Linux', route: '', stars: 4},
                         { icon: 'aws', fa: true, type: 'fab', lang: 'AWS', route: '', stars: 1 }
-                    ]},
-                { title: 'Hobbies', align: 'right', pic: 'comingsoon.jpg',
-                    text: [
-                        'Testing'
                     ]}
             ]
         }
