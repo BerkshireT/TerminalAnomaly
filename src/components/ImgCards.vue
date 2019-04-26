@@ -1,6 +1,6 @@
 <template>
     <v-layout :class="layoutProp + ' ' + visibilityProp">
-        <v-flex v-for="pic in imgProp" :key="pic.title">
+        <v-flex xs6 v-for="pic in imgProp" :key="pic.title">
             <v-card>
                 <v-img :src="require('@/assets/' + pic.image)" height="400" />
                 <v-card-title primary-title class="grey darken-4">

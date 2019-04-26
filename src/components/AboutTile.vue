@@ -3,7 +3,9 @@
         <v-layout>
             <v-flex xs12>
                 <div class="hidden-sm-and-down">
-                    <div class="pa-3 text-xs-center display-2 font-weight-thin indigo--text text--lighten-3">{{ titleProp }}</div>
+                    <div class="pa-3 text-xs-center display-2 font-weight-thin indigo--text text--lighten-3">
+                        {{ titleProp }}
+                    </div>
                     <v-divider dark class="py-1" />
                     <v-layout row wrap>
                         <v-flex xs1 />
@@ -18,7 +20,9 @@
                 </div>
                 <!-- Mobile -->
                 <div class="hidden-md-and-up">
-                    <div class="pa-3 text-xs-center display-2 font-weight-thin indigo--text text--lighten-3">{{ titleProp }}</div>
+                    <div class="pa-3 text-xs-center display-2 font-weight-thin indigo--text text--lighten-3">
+                        {{ titleProp }}
+                    </div>
                     <v-divider dark class="py-1" />
                     <v-layout row wrap>
                         <v-flex xs1 />

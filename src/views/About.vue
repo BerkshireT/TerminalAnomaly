@@ -14,8 +14,12 @@
                                     <div>
                                         <div class="display-3 font-weight-thin">Tyler Berkshire</div>
                                         <v-divider dark />
-                                        <div class="display-2 font-weight-thin white--text">Computer Programmer</div>
-                                        <div class="display-2 font-weight-thin white--text">University of Dayton CPS '19</div>
+                                        <div class="display-2 font-weight-thin white--text">
+                                            Computer Programmer
+                                        </div>
+                                        <div class="display-2 font-weight-thin white--text">
+                                            University of Dayton CPS '19
+                                        </div>
                                     </div>
                                 </v-card-title>
                             </v-flex>
@@ -29,17 +33,29 @@
                                 <div>
                                     <div class="display-2 text-xs-center font-weight-thin">Tyler Berkshire</div>
                                     <v-divider dark />
-                                    <div class="display-1 text-xs-center font-weight-thin white--text">Computer Programmer</div>
-                                    <div class="display-1 text-xs-center font-weight-thin white--text">University of Dayton CPS '19</div>
+                                    <div class="display-1 text-xs-center font-weight-thin white--text">
+                                        Computer Programmer
+                                    </div>
+                                    <div class="display-1 text-xs-center font-weight-thin white--text">
+                                        University of Dayton CPS '19
+                                    </div>
                                 </div>
                             </v-flex>
                         </v-layout>
                     </v-card>
                     <v-divider dark class="py-1" />
                     <v-flex>
-                        <AboutTile :titleProp="cards[0].title" :textProp="cards[0].text" :picProp="cards[0].pic" />
+                        <AboutTile
+                        :titleProp="cards[0].title"
+                        :textProp="cards[0].text"
+                        :picProp="cards[0].pic"
+                        />
                         <v-divider dark class="py-1" />
-                        <ProgramTile :titleProp="cards[1].title" :textProp="cards[1].text" :iconsProp="cards[1].icons" />
+                        <ProgramTile
+                        :titleProp="cards[1].title"
+                        :textProp="cards[1].text"
+                        :iconsProp="cards[1].icons"
+                        />
                     </v-flex>
                 </v-flex>
             </v-layout>

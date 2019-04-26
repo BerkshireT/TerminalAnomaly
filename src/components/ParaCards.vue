@@ -10,7 +10,12 @@
                         </span>
                     </v-flex>
                     <v-flex shrink>
-                        <v-btn flat outline :color="themeProp + ' lighten-3'" right route :to="'/' + parallax.route">
+                        <v-btn
+                        flat
+                        outline
+                        :color="themeProp + ' lighten-3'" right route
+                        :to="'/' + parallax.route"
+                        >
                             <h3 class="subhedaing">{{ parallax.button }}</h3>
                         </v-btn>
                     </v-flex>

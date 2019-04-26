@@ -4,6 +4,10 @@ import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Gallery from './views/Gallery.vue'
 import Library from './views/Library.vue'
+import Headway from './views/Headway.vue'
+import Quote from './views/Quote.vue'
+import Game from './views/Game.vue'
+import Melee from './views/Melee.vue'
 
 Vue.use(Router)
 
@@ -30,6 +34,26 @@ export default new Router({
             path: '/library',
             name: 'library',
             component: Library
+        },
+        {
+            path: '/headway',
+            name: 'headway',
+            component: Headway
+        },
+        {
+            path: '/quote',
+            name: 'quote',
+            component: Quote
+        },
+        {
+            path: '/game',
+            name: 'game',
+            component: Game
+        },
+        {
+            path: '/melee',
+            name: 'Melee',
+            component: Melee
         }
     ],
     scrollBehavior () {

@@ -1,7 +1,7 @@
 <template>
-    <v-container fluid fill-height class="gallery amber lighten-3">
+    <v-container fluid fill-height class="melee amber lighten-3">
         <Navbar :colorProp="theme.color" :imageProp="theme.image"/>
-        <h1>GALLERY</h1>
+        <h1>MELEE</h1>
     </v-container>
 </template>
 
@@ -9,7 +9,7 @@
 import Navbar from '../components/Navbar'
 
 export default {
-    title: 'Gallery - TerminalAnomaly',
+    title: 'Melee - TerminalAnomaly',
     components: { Navbar },
     data () {
         return {
