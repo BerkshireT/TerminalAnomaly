@@ -1,6 +1,7 @@
 <!-- 
 TODO:
 New about/background layout
+Add hover effects and maybe collapsing stuff
 redo home page layout
 Add Headway info
 Add Super Smash Search info

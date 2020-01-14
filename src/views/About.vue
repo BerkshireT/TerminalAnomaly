@@ -4,6 +4,7 @@
         <v-container justify-center > 
             <v-layout row wrap>
                 <v-flex xs12>
+                    <!-- Title -->
                     <v-card :class="'grey darken-4 ' + theme.color">
                         <v-layout hidden-sm-and-down>
                             <v-flex xs5>
@@ -11,10 +12,11 @@
                             </v-flex>
                             <v-flex xs7>
                                 <v-card-title primary-title>
-                                    <div>
+                                    <v-flex xs7>
                                         <div class="display-3 font-weight-thin">Tyler Berkshire</div>
                                         <v-divider dark />
-                                    </div>
+                                        <div class="subheading white--text py-3">{{ aboutText }}</div>
+                                    </v-flex>
                                 </v-card-title>
                             </v-flex>
                         </v-layout>
@@ -23,6 +25,8 @@
                             <v-flex xs12>
                                 <div>
                                     <div class="display-2 text-xs-center font-weight-thin py-2">Tyler Berkshire</div>
+                                    <v-divider dark />
+                                    <div class="body-2 white--text text-xs-center py-3 px-3">{{ aboutText }}</div>
                                 </div>
                             </v-flex>
                             <v-flex xs5>
@@ -33,80 +37,76 @@
                     </v-card>
                     <v-divider dark class="py-1" />
                     <!-- Programming -->
-                    <v-flex>
-                        <v-card class="py-2 grey darken-4 ProgramTile">
-                            <v-layout>
-                                <v-flex xs12 class="hidden-xs-only indigo--text text--lighten-3">
-                                    <div class="pa-3 text-xs-center display-2 font-weight-thin">Programming Experience</div>
-                                    <v-divider dark class="py-1" />
-                                    <v-layout row wrap class="text-xs-center">
-                                        <v-flex
-                                        xs4
-                                        v-for="icon in programmingIcons"
-                                        :key="icon.lang"
-                                        >
-                                            <a v-bind:href="icon.route" target="blank">
-                                                <font-awesome-icon
-                                                v-if="icon.fa == true"
-                                                :icon="[icon.type, icon.icon ]"
-                                                class="display-4 pa-2"
-                                                />
-                                                <v-img
-                                                v-else
-                                                :src="require('@/assets/' + icon.icon)"
-                                                contain max-height="112px"
-                                                class="pa-2"
-                                                />
-                                            </a>
-                                            <div class="pa-2 display-2 font-weight-thin white--text">{{ icon.lang }}</div>
-                                            <v-layout row wrap justify-center class="py-2">
-                                                <v-rating
-                                                background-color="indigo lighten-3"
-                                                color="indigo lighten-3"
-                                                :value="icon.stars"
-                                                x-large 
-                                                readonly
-                                                />
-                                            </v-layout>
-                                            <v-divider dark class="py-2" />
-                                        </v-flex>
-                                    </v-layout>
-                                </v-flex>
-                                <!-- Programming Mobile-->
-                                <v-flex xs12 class="hidden-sm-and-up indigo--text text--lighten-3">
-                                    <div class="pa-3 text-xs-center display-2 font-weight-thin">Programming Experience</div>
-                                    <v-divider dark class="py-1" />
-                                    <v-layout row wrap class="text-xs-center">
-                                        <v-flex
-                                        xs6
-                                        v-for="icon in programmingIcons"
-                                        :key="icon.lang"
-                                        >
-                                            <a v-bind:href="icon.route" target="blank">
-                                                <font-awesome-icon
-                                                v-if="icon.fa == true"
-                                                :icon="[icon.type, icon.icon ]"
-                                                class="display-4 pa-2"
-                                                />
-                                                <v-img
-                                                v-else
-                                                :src="require('@/assets/' + icon.icon)"
-                                                contain max-height="112px"
-                                                class="pa-2"
-                                                />
-                                            </a>
-                                            <div class="pa-2 display-2 font-weight-thin white--text">{{ icon.lang }}</div>
-                                            <div class="pa-2 headline">{{ icon.level }}</div>
-                                            <v-divider dark class="py-2" />
-                                        </v-flex>
-                                    </v-layout>
-                                </v-flex>
-                                <!-- End Programming Mobile -->
-                            </v-layout>
-                        </v-card>
-                    </v-flex>
+                    <v-card>
+                        <v-layout>
+                            <v-flex xs12>
+                                <v-expansion-panel>
+                                    <v-expansion-panel-content :class="'grey darken-4 ' + theme.color">
+                                        <template v-slot:header>
+                                        <div class="pa-3 text-xs-center display-2 font-weight-thin">Programming Experience</div>
+                                        </template>
+                                        <template v-slot:actions>
+                                            <v-icon color="indigo lighten-3">$vuetify.icons.expand</v-icon>
+                                        </template>
+                                        <v-layout row wrap class="text-xs-center hidden-xs-only">
+                                            <v-flex xs4 v-for="icon in programmingIcons" :key="icon.lang">
+                                                <a v-bind:href="icon.route" target="blank">
+                                                    <font-awesome-icon v-if="icon.fa == true" :icon="[icon.type, icon.icon ]" class="display-4 pa-2" />
+                                                    <v-img v-else :src="require('@/assets/' + icon.icon)" contain max-height="112px" class="pa-2" />
+                                                </a>
+                                                <div class="pa-2 display-2 font-weight-thin white--text">{{ icon.lang }}</div>
+                                                <v-layout row wrap justify-center class="py-2">
+                                                    <v-rating background-color="indigo lighten-3" color="indigo lighten-3" :value="icon.stars" x-large readonly />
+                                                </v-layout>
+                                                <v-divider dark class="py-2" />
+                                            </v-flex>
+                                        </v-layout>
+                                        <!-- Programming Mobile-->
+                                        <v-layout row wrap class="text-xs-center hidden-sm-and-up">
+                                            <v-flex xs6 v-for="icon in programmingIcons" :key="icon.lang">
+                                                <a v-bind:href="icon.route" target="blank">
+                                                    <font-awesome-icon v-if="icon.fa == true" :icon="[icon.type, icon.icon ]" class="display-3 pa-2" />
+                                                    <v-img v-else :src="require('@/assets/' + icon.icon)" contain max-height="56px" class="pa-2" />
+                                                </a>
+                                                <div class="pa-2 headline font-weight-thin white--text">{{ icon.lang }}</div>
+                                                <div class="pa-2 subheading">{{ icon.level }}</div>
+                                                <v-divider dark class="py-2" />
+                                            </v-flex>
+                                        </v-layout>
+                                    <!-- End Programming Mobile-->
+                                    </v-expansion-panel-content>
+                                </v-expansion-panel>
+                            </v-flex>
+                        </v-layout>
+                    </v-card>
+                    <v-divider dark class="py-1" />
                     <!-- Education -->
+                    <v-card>
+                        <v-layout>
+                            <v-flex xs12>
+                                <v-expansion-panel>
+                                    <v-expansion-panel-content :class="'grey darken-4 ' + theme.color">
+                                        <template v-slot:header>
+                                        <div class="pa-3 text-xs-center display-2 font-weight-thin">Education</div>
+                                        </template>
+                                        <template v-slot:actions>
+                                            <v-icon color="indigo lighten-3">$vuetify.icons.expand</v-icon>
+                                        </template>
+                                        <v-layout row wrap class="text-xs-center hidden-xs-only">
+                                    
+                                        </v-layout>
+                                        <!-- Education Mobile-->
+                                        <v-layout row wrap class="text-xs-center hidden-sm-and-up">
+                                        </v-layout>
+                                        <!-- End Education Mobile -->
+                                    </v-expansion-panel-content>
+                                </v-expansion-panel>
+                            </v-flex>
+                        </v-layout>
+                    </v-card>
+                    <v-divider dark class="py-1" />
                     <!-- Work -->
+                    <v-divider dark class="py-1" />
                     <!-- Interests -->
                 </v-flex>
             </v-layout>
@@ -127,6 +127,8 @@ export default {
                 color: 'indigo--text text--lighten-3', 
                 image: 'ta-nav-in.png' 
             },
+            aboutText: 'Hi! I am a software developer, music addict, and Super Smash Brothers Melee competitor. My goals are to produce unique and ingenuitive applications, ' + 
+                       'widen my personal discography, and become a nationally ranked SSBM player!',
             programmingIcons: [
                 { icon: 'terminal', fa: true, type: 'fas', lang: 'Assembly', route: 'https://en.wikipedia.org/wiki/Assembly_language', stars: 1, level: 'Beginner' },
                 { icon: 'aws', fa: true, type: 'fab', lang: 'AWS', route: 'https://aws.amazon.com/', stars: 1, level: 'Beginner' },

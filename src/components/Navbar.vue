@@ -10,8 +10,8 @@
             <v-divider dark class="mx-3 py-1 hidden-xs-only" inset vertical />
             <v-spacer></v-spacer>
             <v-toolbar-side-icon :class="colorProp + ' hidden-xs-only'" 
-            v-for="icon in icons" :key="icon.brand" :href="'https://' + icon.route" target="blank">
-                <font-awesome-icon :icon="['fab', icon.brand ]" class="display-1" />
+            v-for="icon in icons" :key="icon.brand" :href="icon.route" target="blank">
+                <font-awesome-icon :icon="[ icon.style, icon.brand ]" class="display-1" />
             </v-toolbar-side-icon>
                 <v-menu bottom left offset-x>
                     <template v-slot:activator="{ on }">
@@ -21,8 +21,8 @@
                     </template>
                 <v-list dark>
                     <v-list-tile :class="colorProp" v-for="icon in icons" :key="icon.brand"
-                    :href="'https://' + icon.route" target="blank">
-                        <font-awesome-icon :icon="['fab', icon.brand ]" class="display-1" />
+                    :href="icon.route" target="blank">
+                        <font-awesome-icon :icon="[ icon.style, icon.brand ]" class="display-1" />
                     </v-list-tile>
                 </v-list>
                 </v-menu>
@@ -45,9 +45,9 @@ export default {
     data() {
         return {
             icons: [
-                { brand: 'twitter-square', route: 'twitter.com/TerminalAnomaly' },
-                { brand: 'linkedin', route: 'linkedin.com/in/TylerBerkshire' },
-                { brand: 'github-square', route: 'github.com/BerkshireT' }
+                { brand: 'envelope-square', style: 'fas', route: 'mailto:berkshiret122@gmail.com' },
+                { brand: 'linkedin', style: 'fab', route: 'https://linkedin.com/in/TylerBerkshire' },
+                { brand: 'github-square', style: 'fab', route: 'https://github.com/BerkshireT' }
             ]
         }
     }
