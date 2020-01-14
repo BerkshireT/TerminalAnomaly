@@ -1,8 +1,7 @@
 <!-- 
 TODO:
-Vuetify update
-New background styling
-Add additions to the programming experiences
+New about/background layout
+redo home page layout
 Add Headway info
 Add Super Smash Search info
 Add vaporwave page
