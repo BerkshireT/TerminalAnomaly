@@ -1,3 +1,12 @@
+<!-- 
+TODO:
+Vuetify update
+New background styling
+Add additions to the programming experiences
+Add Headway info
+Add Super Smash Search info
+Add vaporwave page
+-->
 <template>
     <v-container fluid fill-height class="home teal lighten-3">
     <Navbar :colorProp="theme.color" :imageProp="theme.image"/>
