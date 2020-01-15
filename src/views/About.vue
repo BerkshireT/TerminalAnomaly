@@ -15,7 +15,7 @@
                                     <v-flex xs7>
                                         <div class="display-3 font-weight-thin">Tyler Berkshire</div>
                                         <v-divider dark />
-                                        <div class="subheading white--text py-3">{{ aboutText }}</div>
+                                        <div class="subheading white--text py-3 font-weight-light">{{ aboutText }}</div>
                                     </v-flex>
                                 </v-card-title>
                             </v-flex>
@@ -26,7 +26,7 @@
                                 <div>
                                     <div class="display-2 text-xs-center font-weight-thin py-2">Tyler Berkshire</div>
                                     <v-divider dark />
-                                    <div class="body-2 white--text text-xs-center py-3 px-3">{{ aboutText }}</div>
+                                    <div class="body-2 white--text text-xs-center py-3 px-3 font-weight-light">{{ aboutText }}</div>
                                 </div>
                             </v-flex>
                             <v-flex xs5>
@@ -92,11 +92,20 @@
                                         <template v-slot:actions>
                                             <v-icon color="indigo lighten-3">$vuetify.icons.expand</v-icon>
                                         </template>
-                                        <v-layout row wrap class="text-xs-center hidden-xs-only">
-                                    
+                                        <v-layout row wrap v-for="school in educationText" :key="school.place" class="text-xs-left hidden-xs-only">
+                                            <v-flex xs1 />
+                                            <v-flex xs3 class="pl-5 pb-1 mr-5 headline font-weight-light">{{ school.place }}</v-flex>
+                                            <v-flex xs7 class="pb-1 headline font-weight-light">{{ school.status }}</v-flex>
+                                            <v-flex xs1 />
+                                            <v-flex xs3 class="pl-5 pb-3 mr-5 subheading font-weight-light white--text">{{ school.date }}</v-flex>
+                                            <v-flex xs7 class="pb-3 subheading font-weight-light white--text">{{ school.info }}</v-flex>
+                                            <v-flex xs1 />
                                         </v-layout>
                                         <!-- Education Mobile-->
-                                        <v-layout row wrap class="text-xs-center hidden-sm-and-up">
+                                        <v-layout row wrap v-for="(school, index) in educationText" :key="index" class="text-xs-left hidden-sm-and-up">
+                                            <v-flex xs12 class="pl-2 pb-1 headline font-weight-light">{{ school.place }}</v-flex>
+                                            <v-flex xs12 class="pl-2 pb-1 body-2 font-weight-light white--text">{{ school.date }}</v-flex>
+                                            <v-flex xs12 class="pl-2 pb-3 subheading font-weight-light">{{ school.status }}</v-flex>
                                         </v-layout>
                                         <!-- End Education Mobile -->
                                     </v-expansion-panel-content>
@@ -127,7 +136,7 @@ export default {
                 color: 'indigo--text text--lighten-3', 
                 image: 'ta-nav-in.png' 
             },
-            aboutText: 'Hi! I am a software developer, music addict, and Super Smash Brothers Melee competitor. My goals are to produce unique and ingenuitive applications, ' + 
+            aboutText: 'Hi! I am a software developer, music addict, and Super Smash Brothers Melee competitor. My goals are to create unique and ingenuitive applications, ' + 
                        'widen my personal discography, and become a nationally ranked SSBM player!',
             programmingIcons: [
                 { icon: 'terminal', fa: true, type: 'fas', lang: 'Assembly', route: 'https://en.wikipedia.org/wiki/Assembly_language', stars: 1, level: 'Beginner' },
@@ -150,6 +159,17 @@ export default {
                 { icon: 'TypeScript.png', fa: false, lang: 'Type Script', route: 'https://www.typescriptlang.org/', stars: 3, level: 'Intermediate' },
                 { icon: 'vuejs', fa: true, type: 'fab', lang: 'VueJS', route: 'https://vuejs.org/', stars: 4, level: 'Advanced' },
                 { icon: 'windows', fa: true, type: 'fab', lang: "Windows", route: 'https://www.microsoft.com/en-us/windows', stars: 5, level: 'Advanced' },
+            ],
+            educationText: [
+                { place: 'University of Dayton', status: 'BS in Computer Science (Minor in Psychology)', date: 'August 2016 - December 2019', info: 'I graduated magna cum laude ' +
+                         'and with Honors. I thoroughly enjoyed my time at UD and some of my favorite classes were Emerging Programming Languages, Linux Programming, Decriptive Astronomy, ' +
+                         'Biopsychology, and Abnormal Psychology. My capstone project involved building a full-stack web application using Vue.JS, Kotlin, Spring, and MongoDB. This project ' +
+                         'taught me how much I enjoy all sides software development and showed me the scope of knowledge I had gained in three years. I also had the chance to co-found the ' +
+                         'University of Dayton Super Smash Brothers Club, which became one of the fastest growing clubs at the university!' },
+                { place: 'Bethel High School', status: 'Highschool Diploma (Honors)', date: 'August 2012 - May 2016', info: 'I graduated highschool with a 4.10 GPA ' + 
+                         'and enjoyed being a part of the Varsity Men\'s Soccer Team for all four years of my education. I was also a member of the National Honors Society ' + 
+                         'and Envirothon Team (an environmental education competition). During my third year of school, I discovered an interest in computer science and ' +
+                         'started making small Visual Basic applications. The rest is history!' }
             ]
         }
     }
@@ -165,7 +185,7 @@ export default {
     border-color: rgba(159, 168, 218) !important; 
 }
 a {
-  color: inherit;
-  text-decoration: inherit;
+    color: inherit;
+    text-decoration: inherit;
 }
 </style>

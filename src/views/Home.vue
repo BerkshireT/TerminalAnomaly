@@ -1,7 +1,7 @@
 <!-- 
 TODO:
 New about/background layout
-Add hover effects and maybe collapsing stuff
+Add some kind of backround animation, maybe panets/stars/comets or something more vaporwave?
 redo home page layout
 Add Headway info
 Add Super Smash Search info
