@@ -39,82 +39,108 @@
                     <!-- Programming -->
                     <v-card>
                         <v-layout>
-                            <v-flex xs12>
-                                <v-expansion-panel>
-                                    <v-expansion-panel-content :class="'grey darken-4 ' + theme.color">
-                                        <template v-slot:header>
-                                        <div class="pa-3 text-xs-center display-2 font-weight-thin">Programming Experience</div>
-                                        </template>
-                                        <template v-slot:actions>
-                                            <v-icon color="indigo lighten-3">$vuetify.icons.expand</v-icon>
-                                        </template>
-                                        <v-layout row wrap class="text-xs-center hidden-xs-only">
-                                            <v-flex xs4 v-for="icon in programmingIcons" :key="icon.lang">
-                                                <a v-bind:href="icon.route" target="blank">
-                                                    <font-awesome-icon v-if="icon.fa == true" :icon="[icon.type, icon.icon ]" class="display-4 pa-2" />
-                                                    <v-img v-else :src="require('@/assets/' + icon.icon)" contain max-height="112px" class="pa-2" />
-                                                </a>
-                                                <div class="pa-2 display-2 font-weight-thin white--text">{{ icon.lang }}</div>
-                                                <v-layout row wrap justify-center class="py-2">
-                                                    <v-rating background-color="indigo lighten-3" color="indigo lighten-3" :value="icon.stars" x-large readonly />
-                                                </v-layout>
-                                                <v-divider dark class="py-2" />
-                                            </v-flex>
-                                        </v-layout>
-                                        <!-- Programming Mobile-->
-                                        <v-layout row wrap class="text-xs-center hidden-sm-and-up">
-                                            <v-flex xs6 v-for="icon in programmingIcons" :key="icon.lang">
-                                                <a v-bind:href="icon.route" target="blank">
-                                                    <font-awesome-icon v-if="icon.fa == true" :icon="[icon.type, icon.icon ]" class="display-3 pa-2" />
-                                                    <v-img v-else :src="require('@/assets/' + icon.icon)" contain max-height="56px" class="pa-2" />
-                                                </a>
-                                                <div class="pa-2 headline font-weight-thin white--text">{{ icon.lang }}</div>
-                                                <div class="pa-2 subheading">{{ icon.level }}</div>
-                                                <v-divider dark class="py-2" />
-                                            </v-flex>
-                                        </v-layout>
-                                    <!-- End Programming Mobile-->
-                                    </v-expansion-panel-content>
-                                </v-expansion-panel>
-                            </v-flex>
+                            <v-expansion-panel>
+                                <v-expansion-panel-content :class="'grey darken-4 ' + theme.color">
+                                    <template v-slot:header>
+                                    <div class="pa-3 text-xs-center display-2 font-weight-thin">Programming Experience</div>
+                                    </template>
+                                    <template v-slot:actions>
+                                        <v-icon color="indigo lighten-3">$vuetify.icons.expand</v-icon>
+                                    </template>
+                                    <v-layout row wrap class="text-xs-center hidden-xs-only">
+                                        <v-flex xs4 v-for="icon in programmingIcons" :key="icon.lang">
+                                            <a v-bind:href="icon.route" target="blank">
+                                                <font-awesome-icon v-if="icon.fa == true" :icon="[icon.type, icon.icon ]" class="display-4 pa-2" />
+                                                <v-img v-else :src="require('@/assets/' + icon.icon)" contain max-height="112px" class="pa-2" />
+                                            </a>
+                                            <div class="pa-2 display-2 font-weight-thin white--text">{{ icon.lang }}</div>
+                                            <v-layout row wrap justify-center class="py-2">
+                                                <v-rating background-color="indigo lighten-3" color="indigo lighten-3" :value="icon.stars" x-large readonly />
+                                            </v-layout>
+                                            <v-divider dark class="py-2" />
+                                        </v-flex>
+                                    </v-layout>
+                                    <!-- Programming Mobile-->
+                                    <v-layout row wrap class="text-xs-center hidden-sm-and-up">
+                                        <v-flex xs6 v-for="icon in programmingIcons" :key="icon.lang">
+                                            <a v-bind:href="icon.route" target="blank">
+                                                <font-awesome-icon v-if="icon.fa == true" :icon="[icon.type, icon.icon ]" class="display-3 pa-2" />
+                                                <v-img v-else :src="require('@/assets/' + icon.icon)" contain max-height="56px" class="pa-2" />
+                                            </a>
+                                            <div class="pa-2 headline font-weight-thin white--text">{{ icon.lang }}</div>
+                                            <div class="pa-2 subheading">{{ icon.level }}</div>
+                                            <v-divider dark class="py-2" />
+                                        </v-flex>
+                                    </v-layout>
+                                <!-- End Programming Mobile-->
+                                </v-expansion-panel-content>
+                            </v-expansion-panel>
                         </v-layout>
                     </v-card>
                     <v-divider dark class="py-1" />
                     <!-- Education -->
                     <v-card>
                         <v-layout>
-                            <v-flex xs12>
-                                <v-expansion-panel>
-                                    <v-expansion-panel-content :class="'grey darken-4 ' + theme.color">
-                                        <template v-slot:header>
-                                        <div class="pa-3 text-xs-center display-2 font-weight-thin">Education</div>
-                                        </template>
-                                        <template v-slot:actions>
-                                            <v-icon color="indigo lighten-3">$vuetify.icons.expand</v-icon>
-                                        </template>
-                                        <v-layout row wrap v-for="school in educationText" :key="school.place" class="text-xs-left hidden-xs-only">
-                                            <v-flex xs1 />
-                                            <v-flex xs3 class="pl-5 pb-1 mr-5 headline font-weight-light">{{ school.place }}</v-flex>
-                                            <v-flex xs7 class="pb-1 headline font-weight-light">{{ school.status }}</v-flex>
-                                            <v-flex xs1 />
-                                            <v-flex xs3 class="pl-5 pb-3 mr-5 subheading font-weight-light white--text">{{ school.date }}</v-flex>
-                                            <v-flex xs7 class="pb-3 subheading font-weight-light white--text">{{ school.info }}</v-flex>
-                                            <v-flex xs1 />
-                                        </v-layout>
-                                        <!-- Education Mobile-->
-                                        <v-layout row wrap v-for="(school, index) in educationText" :key="index" class="text-xs-left hidden-sm-and-up">
-                                            <v-flex xs12 class="pl-2 pb-1 headline font-weight-light">{{ school.place }}</v-flex>
-                                            <v-flex xs12 class="pl-2 pb-1 body-2 font-weight-light white--text">{{ school.date }}</v-flex>
-                                            <v-flex xs12 class="pl-2 pb-3 subheading font-weight-light">{{ school.status }}</v-flex>
-                                        </v-layout>
-                                        <!-- End Education Mobile -->
-                                    </v-expansion-panel-content>
-                                </v-expansion-panel>
-                            </v-flex>
+                            <v-expansion-panel>
+                                <v-expansion-panel-content :class="'grey darken-4 ' + theme.color">
+                                    <template v-slot:header>
+                                    <div class="pa-3 text-xs-center display-2 font-weight-thin">Education</div>
+                                    </template>
+                                    <template v-slot:actions>
+                                        <v-icon color="indigo lighten-3">$vuetify.icons.expand</v-icon>
+                                    </template>
+                                    <v-layout row wrap v-for="school in educationText" :key="school.place" class="text-xs-left hidden-xs-only">
+                                        <v-flex xs1 />
+                                        <v-flex xs3 class="pl-5 pb-1 mr-5 headline font-weight-light">{{ school.place }}</v-flex>
+                                        <v-flex xs7 class="pb-1 headline font-weight-light">{{ school.status }}</v-flex>
+                                        <v-flex xs1 />
+                                        <v-flex xs3 class="pl-5 pb-3 mr-5 subheading font-weight-light white--text">{{ school.date }}</v-flex>
+                                        <v-flex xs7 class="pb-3 subheading font-weight-light white--text">{{ school.info }}</v-flex>
+                                        <v-flex xs1 />
+                                    </v-layout>
+                                    <!-- Education Mobile-->
+                                    <v-layout row wrap v-for="(school, index) in educationText" :key="index" class="text-xs-left hidden-sm-and-up">
+                                        <v-flex xs12 class="pl-2 pb-1 headline font-weight-light">{{ school.place }}</v-flex>
+                                        <v-flex xs12 class="pl-2 pb-1 body-2 font-weight-light white--text">{{ school.date }}</v-flex>
+                                        <v-flex xs12 class="pl-2 pb-3 subheading font-weight-light">{{ school.status }}</v-flex>
+                                    </v-layout>
+                                    <!-- End Education Mobile -->
+                                </v-expansion-panel-content>
+                            </v-expansion-panel>
                         </v-layout>
                     </v-card>
                     <v-divider dark class="py-1" />
                     <!-- Work -->
+                    <v-card>
+                        <v-layout>
+                            <v-expansion-panel>
+                                <v-expansion-panel-content :class="'grey darken-4 ' + theme.color">
+                                    <template v-slot:header>
+                                    <div class="pa-3 text-xs-center display-2 font-weight-thin">Work Experience</div>
+                                    </template>
+                                    <template v-slot:actions>
+                                        <v-icon color="indigo lighten-3">$vuetify.icons.expand</v-icon>
+                                    </template>
+                                    <v-layout row wrap v-for="work in workText" :key="work.place" class="text-xs-left hidden-xs-only">
+                                        <v-flex xs1 />
+                                        <v-flex xs3 class="pl-5 pb-1 mr-5 headline font-weight-light">{{ work.place }}</v-flex>
+                                        <v-flex xs7 class="pb-1 headline font-weight-light">{{ work.position }}</v-flex>
+                                        <v-flex xs1 />
+                                        <v-flex xs3 class="pl-5 pb-3 mr-5 subheading font-weight-light white--text">{{ work.date }}</v-flex>
+                                        <v-flex xs7 class="pb-3 subheading font-weight-light white--text">{{ work.info }}</v-flex>
+                                        <v-flex xs1 />
+                                    </v-layout>
+                                    <!-- Work Mobile-->
+                                    <v-layout row wrap v-for="(work, index) in workText" :key="index" class="text-xs-left hidden-sm-and-up">
+                                        <v-flex xs12 class="pl-2 pb-1 headline font-weight-light">{{ work.place }}</v-flex>
+                                        <v-flex xs12 class="pl-2 pb-1 body-2 font-weight-light white--text">{{ work.date }}</v-flex>
+                                        <v-flex xs12 class="pl-2 pb-3 subheading font-weight-light">{{ work.position }}</v-flex>
+                                    </v-layout>
+                                    <!-- End Work Mobile -->
+                                </v-expansion-panel-content>
+                            </v-expansion-panel>
+                        </v-layout>
+                    </v-card>
                     <v-divider dark class="py-1" />
                     <!-- Interests -->
                 </v-flex>
@@ -162,14 +188,45 @@ export default {
             ],
             educationText: [
                 { place: 'University of Dayton', status: 'BS in Computer Science (Minor in Psychology)', date: 'August 2016 - December 2019', info: 'I graduated magna cum laude ' +
-                         'and with Honors. I thoroughly enjoyed my time at UD and some of my favorite classes were Emerging Programming Languages, Linux Programming, Decriptive Astronomy, ' +
+                         'and with Honors. I thoroughly enjoyed my time at UD and some of my favorite classes were Emerging Programming Languages, Linux Programming, Descriptive Astronomy, ' +
                          'Biopsychology, and Abnormal Psychology. My capstone project involved building a full-stack web application using Vue.JS, Kotlin, Spring, and MongoDB. This project ' +
                          'taught me how much I enjoy all sides software development and showed me the scope of knowledge I had gained in three years. I also had the chance to co-found the ' +
                          'University of Dayton Super Smash Brothers Club, which became one of the fastest growing clubs at the university!' },
                 { place: 'Bethel High School', status: 'Highschool Diploma (Honors)', date: 'August 2012 - May 2016', info: 'I graduated highschool with a 4.10 GPA ' + 
                          'and enjoyed being a part of the Varsity Men\'s Soccer Team for all four years of my education. I was also a member of the National Honors Society ' + 
                          'and Envirothon Team (an environmental education competition). During my third year of school, I discovered an interest in computer science and ' +
-                         'started making small Visual Basic applications. The rest is history!' }
+                         'started making small Visual Basic applications after school. The rest is history!' }
+            ],
+            workText: [
+                { place: 'Hyland Software', position: 'Development Intern', date: 'May 2018 - August 2018 & May 2019 - August 2019', info: 'Hyland is a growing software company ' +
+                         'located in Westlake, OH, who is most well-known for OnBase, an enterprise information management application. I was placed in the Infrastructure Runway team ' +
+                         'under their Content Services Platform. I worked to create a command-line utility in C# which helped developer machines transition from TFS to Git without ' +
+                         'losing or transferring the wrong project resource files. I also developed Roslyn code analyzers, used SourceLink to debug NuGet packages, and created a ' +
+                         'cloud-based story recording application with Google Actions which received first place at the Intern Hackathon! The next summer I was lucky enough to be ' +
+                         'welcomed back to the same team where I mainly worked on developing UI Automation Toolkits in C# for use with internal installers and continuous integration ' +
+                         'regression testing. My team also won the Intern Hackathon for a second year in a row with our VR "knock-knock" system which utilized AWS IoT buttons to notify ' +
+                         'VR developers when someone entered the room. Hyland offers a great atmosphere for collaboration and growth and I enjoyed exploring downtown and the greater ' +
+                         'Cleveland area!' },
+                { place: 'U.S. Air Force Institute of Technology', position: 'S.O.C.H.E. Research Intern', date: 'June 2017 - August 2017', info: 'At first, it was pretty intimidating ' +
+                         'to commute to Wright Patterson Air Force Base everyday for work, but I eventually found my groove and ended up taking away a lot from my time as a research intern. ' +
+                         'I was working on a team of three other interns to help a lieutenant with his PhD dissertation. Our task was to develop and train a convolutional neural network ' +
+                         'to recognize airports and naval bases in AWS and DigitalGlobe Landsat (Land Remote-Sensing Satellite) images. I learned a lot about modern methods of ' +
+                         'machine learning and ran through the sample TensorFlow projects using Python as preparation for the task. My main job in the cycle of retrieving images, ' +
+                         'splicing them for analysis, and categorizing them for training and testing was to locate known airports and naval bases and download any Landsat images of them.' +
+                         'I developed web scrapers for internal sites to gather data about the locations of interest and created a GUI to download thousands of images from AWS and ' +
+                         'DigitalGlobe servers. I utilized parallel processing to speed up this task significantly, but it still took an overnight run of the application to retrieve ' +
+                         'all of the imgages due to the bottlenecked download bitrate of the internet connection. It was really cool to see the direction computer science is heading ' +
+                         'in terms of artificial intelligence and I learned a lot about how to work efficiently as a team during the internship.' },
+                { place: 'Trophy Nut Company', position: 'Bulk Production Operator', date: 'May 2016 - August 2016', info: 'My very first job was working in a local peanut and candy ' +
+                         'shop\'s production factory where my father had worked as a manager for years. During my summer there, I worked on various machines which included the peanut roaster, ' +
+                         'canning line, garbage disposal, and the bulk production area (my main job). The bulk production area consisted of a filling machine which placed various types ' +
+                         'of products into boxes that then had to be loaded onto wood pallets and taken to shipping. I managed to increase the output efficiency of bulk production by ' +
+                         '10% in a few months which was measured by weekly production and shipping paperwork I had to complete. I did this by thinking of ways to reduce downtime, such as ' +
+                         'placing filled boxes on temporary stacks until a new pallet was dropped off for them. The main takeaway I got from this experience was the value ' +
+                         'of a good work ethic and a better appreciation for the opportunity I had to pursue higher education.' }
+            ],
+            interestsText: [
+
             ]
         }
     }
