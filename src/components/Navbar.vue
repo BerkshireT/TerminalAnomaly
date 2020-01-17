@@ -2,7 +2,7 @@
     <nav>
         <v-toolbar flat dark app>
             <v-toolbar-side-icon exact route :to="'/'">
-                <v-img :src="require('../assets/' + imageProp)" />
+                <v-img :src="require('../assets/logos/' + imageProp)" />
             </v-toolbar-side-icon>
             <v-toolbar-title class="hidden-xs-only">
                 <span>TerminalAnomaly.dev</span>
