@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <v-toolbar flat dark app>
+        <v-toolbar dark app>
             <v-toolbar-side-icon exact route :to="'/'">
                 <v-img :src="require('../assets/logos/' + imageProp)" />
             </v-toolbar-side-icon>

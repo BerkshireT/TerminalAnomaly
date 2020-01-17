@@ -1,6 +1,5 @@
 <!-- 
 TODO:
-New about/background layout
 Add some kind of backround animation, maybe panets/stars/comets or something more vaporwave?
 redo home page layout
 Add Headway info
@@ -106,7 +105,7 @@ export default {
                 { image: 'comingsoon.jpg', title: 'Game', button: 'Coming Soon', route: 'game' }
             ],
             parallaxes3: [
-                { image: 'melee.png', title: 'Melee Tournament Tracker', button: 'Coming Soon', route: 'melee' }
+                { image: 'comingsoon.jpg', title: 'Melee Tournament Tracker', button: 'Coming Soon', route: 'melee' }
             ]
         }
     }

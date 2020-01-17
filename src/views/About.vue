@@ -1,6 +1,6 @@
 <template>
     <v-container fluid fill-height class="about indigo lighten-3">
-        <Navbar :colorProp="theme.color" :imageProp="theme.image"/>  
+        <Navbar :colorProp="theme.color" :imageProp="theme.image"/>
         <v-container justify-center > 
             <v-layout row wrap>
                 <v-flex xs12>
@@ -97,7 +97,7 @@
                                         <v-flex xs3 class="pl-5 pb-3 mr-5 subheading font-weight-light white--text">
                                             {{ school.date }}
                                             <a v-bind:href="school.link" target="blank">
-                                                <v-img :src="require('@/assets/school/' + school.logo + '.png')" contain height="300px" />
+                                                <v-img :src="require('@/assets/school/' + school.logo + '.png')" contain max-height="175px" />
                                             </a>
                                         </v-flex>
                                         <v-flex xs7 class="pb-3 subheading font-weight-light white--text">{{ school.info }}</v-flex>
@@ -134,7 +134,7 @@
                                         <v-flex xs3 class="pl-5 pb-3 mr-5 subheading font-weight-light white--text">
                                             {{ work.date }}
                                             <a v-bind:href="work.link" target="blank">
-                                                <v-img class="mt-5" :src="require('@/assets/work/' + work.logo + '.png')" contain height="200px" />
+                                                <v-img class="mt-5" :src="require('@/assets/work/' + work.logo + '.png')" contain max-height="125px" />
                                             </a>
                                         </v-flex>
                                         <v-flex xs7 class="pb-3 subheading font-weight-light white--text">{{ work.info }}</v-flex>
