@@ -1,8 +1,7 @@
 <!-- 
 TODO:
-take out cards and make about one fluent page
-redo theme, maybe white background with vaporwave stuff
-redo home page layout, big pcture scroll down for more, gooey menu? sparline that changes on scroll?
+Add home page stuff, desc of each thing? idk yet
+Redo about page to match new theme
 Add Headway info
 Add Super Smash Search info
 Add vaporwave page, make album art, list other cool sites, music
@@ -15,6 +14,7 @@ Add vaporwave page, make album art, list other cool sites, music
       </v-flex>
     </v-layout>
 
+    
 
     <Footer :border="theme.color"/>
   </v-container>

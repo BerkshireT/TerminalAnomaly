@@ -28,8 +28,8 @@
       <v-navigation-drawer v-model="drawer" absolute temporary>
         <v-container fill-height class="drawer">
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">Résumé</a></li>
+            <li><a href="/">Home ・ ホーム</a></li>
+            <li><a href="/about">Résumé ・ 履歴書</a></li>
           </ul>
         </v-container>
       </v-navigation-drawer>
