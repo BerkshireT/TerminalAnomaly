@@ -15,7 +15,7 @@
       <v-flex xs2 class="hidden-xs-only">
         <v-img :src="require('@/assets/logos/' + image)" contain :max-height="$vuetify.breakpoint.smAndUp? '50px' : '25px'"/>
       </v-flex>
-      <v-flex xs12 :style="{ borderColor: color }" class="nav" v-if="$vuetify.breakpoint.smAndUp">
+      <v-flex xs8 :style="{ borderColor: color }" class="nav" v-if="$vuetify.breakpoint.smAndUp">
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/about">Résumé</a></li>

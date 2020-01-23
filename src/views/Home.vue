@@ -29,8 +29,7 @@ export default {
   components: { Footer, Navbar },
   data () {
     return {
-      theme: { color: '#05ffa1', image: 'ta-green.gif' },
-      info: 'This website serves as an online resume and as a portfolio for some of my favorite projects. It\'s also '
+      theme: { color: '#05ffa1', image: 'ta-green.gif' }
     }
   }
 }
@@ -38,9 +37,11 @@ export default {
 
 <style scoped>
 .home {
-  background-color: #212121;
   width: 100vw;
   height: 100vh;
   font-family: 'Times New Roman', Times, serif;
+  background: url(../assets/bebop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 </style>
