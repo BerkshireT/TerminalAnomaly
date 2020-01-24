@@ -1,33 +1,25 @@
 <template>
-  <footer>
-    <v-flex pa-2 text-xs-center class="footer-border" :style="{ borderColor: border }">
-      &copy; {{ new Date().getFullYear() }} - Tyler Berkshire
-    </v-flex>
-  </footer>
+  <v-flex pa-2 text-xs-center class="footer-border">
+    <span :class="$vuetify.breakpoint.smAndUp? 'text' : 'text-m'">
+      Copyright 20XX &copy; Tyler Berkshire
+    </span>
+  </v-flex>
 </template>
-
-<script>
-export default {
-  props: {
-    border: {
-      required: true,
-      default: '#212121'
-    }
-  }
-}
-</script>
 
 <style scoped>
 .footer-border {
-  border-top: solid;
-  border-bottom: solid;
-  border-width: 1px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.3em;
   background: rgb(1, 1, 1, 0.0);
   color: white;
-  position: absolute;
+  font-family: 'OCR-A', 'Courier', monospace;
+
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
+}
+
+.text-m {
+  font-size: 10px;
 }
 </style>

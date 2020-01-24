@@ -1,6 +1,5 @@
 <template>
   <v-container fluid fill-height class="about indigo lighten-3">
-    <Navbar :colorProp="theme.color" :imageProp="theme.image"/>
     <v-container justify-center > 
       <v-layout row wrap>
         <v-flex xs12>
@@ -200,11 +199,10 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar'
 
 export default {
   title: 'About - TerminalAnomaly',
-  components: { Navbar },
+  components: { },
   data () {
     return {
       theme: { 
