@@ -8,10 +8,10 @@
         <v-card-text class="white--text">
           <div :class="$vuetify.breakpoint.mdAndUp? 'top-title' : 'top-title-m'" :style="{ textShadow: '1px 1px ' + color }">Terminal Anomaly</div>
           <div :class="$vuetify.breakpoint.mdAndUp? 'top-sub' : 'top-sub-m'" :style="{ color: color }">ターミナル・アノマリー</div>
-          <a href="/">
-            <div v-if="inner" class="glow" :style="{ textShadow: '1px 1px ' + color }">go back</div>
+            <div v-if="inner">
+              <router-link to="/" class="back" :style="{ textShadow: '1px 1px ' + color }">go back</router-link>
+            </div>
             <div v-else class="glow" :style="{ textShadow: '1px 1px ' + color }">welcome</div>
-          </a>
         </v-card-text>
       </v-flex>
     </v-layout>
@@ -71,6 +71,12 @@ export default {
   letter-spacing: .5em;
   font-family: 'OCR-A', 'Courier', monospace;
   transition: all 2s ease;
+}
+
+.back {
+  font-size: 17px;
+  letter-spacing: .5em;
+  font-family: 'OCR-A', 'Courier', monospace;
 }
 
 .glow:hover {

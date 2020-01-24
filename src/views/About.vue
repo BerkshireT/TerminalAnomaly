@@ -116,8 +116,8 @@ export default {
 }
 
 .text:hover {
-  color: #05ffa1;
-  text-shadow: 0 0 5px #05ffa1;
+  color: #01cdfe;
+  text-shadow: 0 0 5px #01cdfe;
 }
 
 a {

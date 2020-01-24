@@ -14,26 +14,26 @@ Add vaporwave page, make album art, list other cool sites, music
       </v-flex>
       <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs2' : 'xs12'">
         <div class="glow">
-          <a href="/gallery">
+          <router-link to="/gallery">
             <div class="ma-1">gallery</div>
             <div class="ma-1">ギャラリー</div>
-          </a>
+          </router-link>
         </div>
       </v-flex>
       <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs2' : 'xs12'">
         <div class="glow">
-          <a href="/about">
+          <router-link to="/about">
             <div class="ma-1">about</div>
             <div class="ma-1">アバウト</div>
-          </a>
+          </router-link>
         </div>
       </v-flex>
       <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs2' : 'xs12'">
         <div class="glow">
-          <a href="/projects">
+          <router-link to="/projects">
             <div class="ma-1">projects</div>
             <div class="ma-1">プロジェクト</div>
-          </a>
+          </router-link>
         </div>
         </v-flex>
     </v-layout>
