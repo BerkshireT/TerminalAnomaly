@@ -1,113 +1,87 @@
 <!-- 
 TODO:
-Add some kind of backround animation, maybe panets/stars/comets or something more vaporwave?
-redo home page layout
+send message page
+Redo about page to match new theme
 Add Headway info
 Add Super Smash Search info
-Add vaporwave page
+Add vaporwave page, make album art, list other cool sites, music
 -->
 <template>
-    <v-container fluid fill-height class="home teal lighten-3">
-    <Navbar :colorProp="theme.color" :imageProp="theme.image"/>
-        <v-container grid-list-md>
-            <ParaCards
-            :parallaxProp="parallaxes1"
-            :layoutProp="'column'"
-            :visibilityProp="'hidden-xs-only'"
-            :themeProp="theme.theme"
-            />
-            <ImgCards
-            :imgProp="parallaxes1"
-            :layoutProp="'column'" 
-            :visibilityProp="'hidden-sm-and-up'"
-            :themeProp="theme.theme"
-            />
-
-            <ImgCards
-            :imgProp="images1"
-            :layoutProp="'row'"
-            :visibilityProp="'hidden-xs-only'"
-            :themeProp="theme.theme"
-            />
-            <ImgCards
-            :imgProp="images1"
-            :layoutProp="'column'"
-            :visibilityProp="'hidden-sm-and-up'"
-            :themeProp="theme.theme"
-            />
-
-            <ParaCards
-            :parallaxProp="parallaxes2"
-            :layoutProp="'column'"
-            :visibilityProp="'hidden-xs-only'"
-            :themeProp="theme.theme"
-            />
-            <ImgCards
-            :imgProp="parallaxes2"
-            :layoutProp="'column'"
-            :visibilityProp="'hidden-sm-and-up'"
-            :themeProp="theme.theme"
-            />
-
-            <ImgCards
-            :imgProp="images2"
-            :layoutProp="'row'"
-            :visibilityProp="'hidden-xs-only'"
-            :themeProp="theme.theme"
-            />
-            <ImgCards
-            :imgProp="images2"
-            :layoutProp="'column'"
-            :visibilityProp="'hidden-sm-and-up'"
-            :themeProp="theme.theme"
-            />
-
-            <ParaCards
-            :parallaxProp="parallaxes3"
-            :layoutProp="'column'"
-            :visibilityProp="'hidden-xs-only'"
-            :themeProp="theme.theme"
-            />
-            <ImgCards
-            :imgProp="parallaxes3"
-            :layoutProp="'column'"
-            :visibilityProp="'hidden-sm-and-up'"
-            :themeProp="theme.theme"
-            />
-        </v-container>
-    </v-container>
+  <v-container fluid fill-height class="home">
+    <v-layout wrap text-xs-center justify-center>
+      <v-flex xs12>
+        <Topbar :inner="false" :image="theme.image" :color="theme.color" />
+      </v-flex>
+      <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs2' : 'xs12'">
+        <div class="glow">
+          <a href="/gallery">
+            <div class="ma-1">gallery</div>
+            <div class="ma-1">ギャラリー</div>
+          </a>
+        </div>
+      </v-flex>
+      <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs2' : 'xs12'">
+        <div class="glow">
+          <a href="/about">
+            <div class="ma-1">about</div>
+            <div class="ma-1">アバウト</div>
+          </a>
+        </div>
+      </v-flex>
+      <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs2' : 'xs12'">
+        <div class="glow">
+          <a href="/projects">
+            <div class="ma-1">projects</div>
+            <div class="ma-1">プロジェクト</div>
+          </a>
+        </div>
+        </v-flex>
+    </v-layout>
+    <Footer />
+  </v-container>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar'
-import ParaCards from '@/components/ParaCards'
-import ImgCards from '@/components/ImgCards'
+import Footer from '@/components/Footer.vue'
+import Topbar from '@/components/Topbar.vue'
 
 export default {
-    title: 'Home - TerminalAnomaly',
-    components: { Navbar, ParaCards, ImgCards },
-    data () {
-        return {
-            theme:
-                { theme: 'teal', color: 'teal--text text--lighten-3', image: 'ta-nav-te.png' },
-            parallaxes1: [
-                { image: 'pic.jpg', title: 'Tyler Berkshire', button: 'About Me', route: 'about' }
-            ],
-            images1: [
-                { image: 'comingsoon.jpg', title: 'Art Gallery', button: 'Coming Soon', route: 'gallery' },
-                { image: 'comingsoon.jpg', title: 'Library', button: 'Coming Soon', route: 'library' }
-            ],
-            parallaxes2: [
-                { image: 'comingsoon.jpg', title: 'Headway', button: 'Coming Soon', route: 'headway' }
-            ],
-            images2: [
-                { image: 'comingsoon.jpg', title: 'Quote of the Day', button: 'Coming Soon', route: 'quote' },
-                { image: 'comingsoon.jpg', title: 'Game', button: 'Coming Soon', route: 'game' }
-            ],
-            parallaxes3: [
-                { image: 'comingsoon.jpg', title: 'Melee Tournament Tracker', button: 'Coming Soon', route: 'melee' }
-            ]
-        }
+  title: 'TERMINAL ANOMALY',
+  components: { Footer, Topbar },
+  data () {
+    return {
+      theme: { color: '#05ffa1', image: 'ta-green.gif' }
     }
+  }
 }
 </script>
+
+<style scoped>
+.home {
+  width: 100vw;
+  height: 100vh;
+  background: url(../assets/backgrounds/grid-green.png);
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.glow {
+  font-size: 17px;
+  letter-spacing: .5em;
+  font-family: 'OCR-A', 'Courier', monospace;
+  transition: all 2s ease;
+}
+
+.glow:hover {
+  color: #05ffa1;
+  text-shadow: 0 0 5px #05ffa1;
+}
+</style>
