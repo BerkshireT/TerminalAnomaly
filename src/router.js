@@ -7,7 +7,7 @@ import Projects from './views/Projects.vue'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -24,15 +24,17 @@ export default new Router({
     {
       path: '/gallery',
       name: 'gallery',
-      coponent: Gallery
+      component: Gallery
     },
     {
       path: '/projects',
       name: 'projects',
-      coponent: Projects
+      component: Projects
     }
   ],
   scrollBehavior () {
     return { x: 0, y: 0 }
   }
 })
+
+export default router

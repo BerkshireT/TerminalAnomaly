@@ -8,16 +8,12 @@
         <v-card-text class="white--text">
           <div :class="$vuetify.breakpoint.mdAndUp? 'top-title' : 'top-title-m'" :style="{ textShadow: '1px 1px ' + color }">Terminal Anomaly</div>
           <div :class="$vuetify.breakpoint.mdAndUp? 'top-sub' : 'top-sub-m'" :style="{ color: color }">ターミナル・アノマリー</div>
-          <a href="javascript:history.go(-1)">
-            <div v-if="inner" :class="$vuetify.breakpoint.mdAndUp? 'top-sub' : 'top-sub-m'" :style="{ textShadow: '1px 1px ' + color }">Go Back</div>
+          <a href="/">
+            <div v-if="inner" class="glow" :style="{ textShadow: '1px 1px ' + color }">go back</div>
+            <div v-else class="glow" :style="{ textShadow: '1px 1px ' + color }">welcome</div>
           </a>
         </v-card-text>
       </v-flex>
-
-
-      
-      <!-- Mobile -->
-      <!-- End Mobile -->
     </v-layout>
   </v-container>
 </template>
@@ -62,6 +58,24 @@ export default {
   letter-spacing: 0.1em;
   padding-bottom: 2px;
   padding-top: 2px;
+}
+
+.top-sub-b {
+  font-size: 17px;
+  font-style: italic;
+  letter-spacing: 0.5em;
+}
+
+.glow {
+  font-size: 17px;
+  letter-spacing: .5em;
+  font-family: 'OCR-A', 'Courier', monospace;
+  transition: all 2s ease;
+}
+
+.glow:hover {
+  color: #05ffa1;
+  text-shadow: 0 0 5px #05ffa1;
 }
 
 a {

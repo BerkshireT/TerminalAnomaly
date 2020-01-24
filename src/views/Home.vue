@@ -60,7 +60,7 @@ export default {
 .home {
   width: 100vw;
   height: 100vh;
-  background: url(../assets/grid.png);
+  background: url(../assets/backgrounds/grid-green.png);
   background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
@@ -77,7 +77,7 @@ a {
   font-size: 17px;
   letter-spacing: .5em;
   font-family: 'OCR-A', 'Courier', monospace;
-  transition: 1s;
+  transition: all 2s ease;
 }
 
 .glow:hover {
