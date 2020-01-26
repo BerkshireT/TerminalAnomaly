@@ -2,7 +2,7 @@
   <v-container grid-list-xs fluid class="text-xs-center">
     <v-layout row fluid justify-space-around wrap>
       <v-flex xs12 :class="$vuetify.breakpoint.smAndUp? 'analog' : 'analog-m'">
-        <v-img class="ma-4" :src="require('@/assets/logos/' + image)" contain :max-height="$vuetify.breakpoint.smAndUp? '200px' : '175px'"/>
+        <v-img class="ma-4" :src="require('@/assets/logos/' + image)" contain :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
       </v-flex>
       <v-flex :class="$vuetify.breakpoint.smAndUp? 'xs8' : 'xs12'">
         <v-card-text class="white--text">
@@ -11,7 +11,6 @@
             <div v-if="inner">
               <router-link to="/" class="back" :style="{ textShadow: '1px 1px ' + color }">go back</router-link>
             </div>
-            <div v-else class="glow" :style="{ textShadow: '1px 1px ' + color }">welcome</div>
         </v-card-text>
       </v-flex>
     </v-layout>
@@ -57,7 +56,6 @@ export default {
   font-style: italic;
   letter-spacing: 0.1em;
   padding-bottom: 2px;
-  padding-top: 2px;
 }
 
 .top-sub-b {
@@ -91,7 +89,7 @@ a {
 
 /* Mobile */
 .top-title-m {
-  font-size: 33px;
+  font-size: 23px;
   font-style: italic;
   font-family: 'OCR-A', 'Courier', monospace;
 }
@@ -105,9 +103,8 @@ a {
 }
 
 .top-sub-m {
-  font-size: 17px;
+  font-size: 13px;
   letter-spacing: 0.1em;
   font-style: italic;
-  padding-top: 1px;
 }
 </style>

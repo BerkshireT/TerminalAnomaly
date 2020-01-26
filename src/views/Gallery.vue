@@ -4,7 +4,7 @@
       <v-flex xs12>
         <Topbar :inner="true" :image="theme.image" :color="theme.color" />
       </v-flex>
-      <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs12' : 'xs12'">
+      <v-flex :class="$vuetify.breakpoint.lgAndUp? 'xs12' : 'xs12'">
         <div class="glow">
           <div class="ma-1">Coming Soon</div>
           <div class="ma-1">カミング・スーン</div>

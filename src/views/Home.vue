@@ -12,7 +12,7 @@ Add vaporwave page, make album art, list other cool sites, music
       <v-flex xs12>
         <Topbar :inner="false" :image="theme.image" :color="theme.color" />
       </v-flex>
-      <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs2' : 'xs12'">
+      <v-flex :class="$vuetify.breakpoint.lgAndUp? 'xs2' : 'xs12'">
         <div class="glow">
           <router-link to="/gallery">
             <div class="ma-1">gallery</div>
@@ -20,7 +20,7 @@ Add vaporwave page, make album art, list other cool sites, music
           </router-link>
         </div>
       </v-flex>
-      <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs2' : 'xs12'">
+      <v-flex :class="$vuetify.breakpoint.lgAndUp? 'xs2' : 'xs12'">
         <div class="glow">
           <router-link to="/about">
             <div class="ma-1">about</div>
@@ -28,7 +28,7 @@ Add vaporwave page, make album art, list other cool sites, music
           </router-link>
         </div>
       </v-flex>
-      <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs2' : 'xs12'">
+      <v-flex :class="$vuetify.breakpoint.lgAndUp? 'xs2' : 'xs12'">
         <div class="glow">
           <router-link to="/projects">
             <div class="ma-1">projects</div>
@@ -65,6 +65,7 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   color: white;
 }
 
