@@ -32,13 +32,14 @@ export default {
 
 <style scoped>
 .projects {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: url(../assets/backgrounds/grid-purple.png);
   background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   color: white;
 }
 

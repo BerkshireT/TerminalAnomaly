@@ -8,7 +8,7 @@
       <v-flex v-if="$vuetify.breakpoint.lgAndUp" xs3>
         <div class="text">
           <div class="ma-1">resume</div>
-          <div class="ma-1">レジューメー</div>
+          <div class="ma-1">履歴書</div>
         </div>
       </v-flex>
       <!-- Mobile -->
@@ -16,8 +16,10 @@
         <v-dialog v-model="dialogR" width="500">
           <template v-slot:activator="{ on }">
             <div class="text-m" v-on="on">
-              <div class="ma-1">resume</div>
-              <div class="ma-1">レジューメー</div>
+              <a class="a-m">
+                <div class="ma-1">resume</div>
+                <div class="ma-1">レジューメー</div>
+              </a>
             </div>
           </template>
           <div class="dialog text-xs-center">
@@ -36,7 +38,7 @@
       <v-flex v-if="$vuetify.breakpoint.lgAndUp" xs3>
         <div class="text">
           <div class="ma-1">interests</div>
-          <div class="ma-1">イントレスツ</div>
+          <div class="ma-1">興味</div>
         </div>
       </v-flex>
       <!-- Mobile -->
@@ -44,8 +46,10 @@
         <v-dialog v-model="dialogI" width="500">
           <template v-slot:activator="{ on }">
             <div class="text-m" v-on="on">
-              <div class="ma-1">interests</div>
-              <div class="ma-1">イントレスツ</div>
+              <a class="a-m">
+                <div class="ma-1">interests</div>
+                <div class="ma-1">イントレスツ</div>
+              </a>
             </div>
           </template>
           <div class="dialog text-xs-center">
@@ -75,8 +79,10 @@
         <v-dialog v-model="dialogL" width="500">
           <template v-slot:activator="{ on }">
             <div class="text-m" v-on="on">
-            <div class="ma-1">links</div>
-          <div class="ma-1">リンクス</div>
+              <a class="a-m">
+                <div class="ma-1">links</div>
+                <div class="ma-1">リンクス</div>
+              </a>
             </div>
           </template>
           <div class="dialog text-xs-center">
@@ -101,7 +107,7 @@
       <v-flex v-if="$vuetify.breakpoint.lgAndUp" xs3>
         <div class="text">
           <div class="ma-1">contact</div>
-          <div class="ma-1">コンタクト</div>
+          <div class="ma-1">連絡先</div>
         </div>
       </v-flex>
       <!-- Mobile -->
@@ -109,8 +115,10 @@
         <v-dialog v-model="dialogC" width="500">
           <template v-slot:activator="{ on }">
             <div class="text-m" v-on="on">
-              <div class="ma-1">contact</div>
-              <div class="ma-1">コンタクト</div>
+              <a class="a-m">
+                <div class="ma-1">contact</div>
+                <div class="ma-1">コンタクト</div>
+              </a>
             </div>
           </template>
           <div class="dialog text-xs-center">
@@ -151,8 +159,8 @@ export default {
 
 <style scoped>
 .about {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: url(../assets/backgrounds/grid-blue.png);
   background-color: black;
   background-size: cover;
@@ -182,6 +190,7 @@ export default {
   font-size: 15px;
   letter-spacing: .5em;
   font-family: 'OCR-A', 'Courier', monospace;
+  transition: all 2s ease;
 }
 
 .dialog-text {
@@ -202,7 +211,12 @@ export default {
   font-family: 'OCR-A', 'Courier', monospace;
 }
 
-.text:hover {
+.text:hover{
+  color: #01cdfe;
+  text-shadow: 0 0 5px #01cdfe;
+}
+
+.text-m:hover{
   color: #01cdfe;
   text-shadow: 0 0 5px #01cdfe;
 }
@@ -210,5 +224,10 @@ export default {
 a {
   color: inherit;
   text-decoration: underline;
+}
+
+.a-m {
+  color: inherit;
+  text-decoration: none;
 }
 </style>
