@@ -24,7 +24,7 @@ Add vaporwave page, make album art, list other cool sites, music
         <div class="glow">
           <router-link to="/about">
             <div class="ma-1">about</div>
-            <div class="ma-1">アバウト</div>
+            <div class="ma-1">約</div>
           </router-link>
         </div>
       </v-flex>
@@ -58,8 +58,8 @@ export default {
 
 <style scoped>
 .home {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: url(../assets/backgrounds/grid-green.png);
   background-color: black;
   background-size: cover;

@@ -12,6 +12,7 @@
               <router-link to="/" class="back" :style="{ textShadow: '1px 1px ' + color }">go back</router-link>
             </div>
         </v-card-text>
+        <v-divider :style="{ borderColor: color + ' !important' }" />
       </v-flex>
     </v-layout>
   </v-container>
