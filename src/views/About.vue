@@ -99,7 +99,8 @@
           <a :class="$vuetify.breakpoint.lgAndUp? 'text' : 'text-m'" href="https://github.com/BerkshireT" target="blank">github</a>・
           <a :class="$vuetify.breakpoint.lgAndUp? 'text' : 'text-m'" href="https://open.spotify.com/user/cf9hq7vhmnz4lizol8969ph6t?si=3uj903wIRji4mHXT0q3GmQ" target="blank">spotify</a>・
           <a :class="$vuetify.breakpoint.lgAndUp? 'text' : 'text-m'" href="https://www.instagram.com/terminalanomaly/" target="blank">instagram</a>・
-          <a :class="$vuetify.breakpoint.lgAndUp? 'text' : 'text-m'" href="https://www.goodreads.com/user/show/108732185-tyler" target="blank">good reads</a>
+          <a :class="$vuetify.breakpoint.lgAndUp? 'text' : 'text-m'" href="https://www.goodreads.com/user/show/108732185-tyler" target="blank">good reads</a>・
+          <a :class="$vuetify.breakpoint.lgAndUp? 'text' : 'text-m'" href="https://www.myanimelist.net/animelist/TerminalAnomaly" target="blank">my anime list</a>
         </div>
       </v-flex>
       <v-flex xs3 v-if="$vuetify.breakpoint.lgAndUp" />

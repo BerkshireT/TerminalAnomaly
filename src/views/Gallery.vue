@@ -15,7 +15,7 @@
           <v-img class="ma-4 image" :src="require('@/assets/gallery/photography/compressed/' + image.name)" :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
         </div>
         <div v-else @click="image.expanded = false" class="expanded">
-          <v-img class="image" :src="require('@/assets/gallery/photography/' + image.name)" />
+          <v-img contain :src="require('@/assets/gallery/photography/' + image.name)" />
           <div :class="$vuetify.breakpoint.smAndUp? 'image-text' : 'image-text-m' ">{{ image.info }}</div>
         </div>
       </v-flex>
@@ -30,7 +30,7 @@
           <v-img class="ma-4 image" :src="require('@/assets/gallery/edits/' + image.name)" :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
         </div>
         <div v-else @click="image.expanded = false" class="expanded">
-          <v-img class="image" :src="require('@/assets/gallery/edits/' + image.name)"/>
+          <v-img contain :src="require('@/assets/gallery/edits/' + image.name)"/>
           <div :class="$vuetify.breakpoint.smAndUp? 'image-text' : 'image-text-m' ">{{ image.info }}</div>
         </div>
       </v-flex>
@@ -67,11 +67,13 @@ export default {
          { name: 'image15.jpg', expanded: false, info: 'cobo center, detroit, michigan' }
        ],
        imagesEdits: [
-         { name: 'image1.png', expanded: false, info: 'terminal anomaly' },
-         { name: 'image2.png', expanded: false, info: 'lank' },
-         { name: 'image3.png', expanded: false, info: 'melee icon' },
-         { name: 'image4.png', expanded: false, info: 'music icon' },
-         { name: 'image5.png', expanded: false, info: 'photography icon' }
+         { name: 'image1.png', expanded: false, info: 'static' },
+         { name: 'image2.png', expanded: false, info: 'glitch' },
+         { name: 'image3.png', expanded: false, info: 'terminal anomaly' },
+         { name: 'image4.png', expanded: false, info: 'lank' },
+         { name: 'image5.png', expanded: false, info: 'melee icon' },
+         { name: 'image6.png', expanded: false, info: 'music icon' },
+         { name: 'image7.png', expanded: false, info: 'photography icon' }
       ]
      }
   }
@@ -98,6 +100,8 @@ export default {
 }
 
 .image-text {
+  border-style: solid;
+  border-color: #fffb96;
   font-size: 17px;
   letter-spacing: .5em;
   font-family: 'OCR-A', 'Courier', monospace;
@@ -105,12 +109,14 @@ export default {
   background-color: black;
   position: fixed;
   top: 1%;
-  left: 0;
-  width: 100%;
+  left: 25%;
+  width: 50%;
   padding: 1px;
 }
 
 .image-text-m {
+  border-style: solid;
+  border-color: #fffb96;
   font-size: 13px;
   letter-spacing: .5em;
   font-family: 'OCR-A', 'Courier', monospace;
