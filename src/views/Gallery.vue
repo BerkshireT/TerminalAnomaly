@@ -12,10 +12,10 @@
       </v-flex>
       <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs6' : 'xs12'" v-for="image in imagesPhotos" :key="image.name">
         <div v-if="!image.expanded" @click="image.expanded = true">
-          <v-img class="ma-4 image" :src="require('@/assets/gallery/photography/compressed/' + image.name)" :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
+          <v-img class="ma-4 image" :src="require('@/assets/gallery/photography/compressed/' + image.name + '.jpg')" :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
         </div>
         <div v-else @click="image.expanded = false" class="expanded">
-          <v-img contain :src="require('@/assets/gallery/photography/' + image.name)" />
+          <v-img contain :src="require('@/assets/gallery/photography/' + image.name + '.jpg')" />
           <div :class="$vuetify.breakpoint.smAndUp? 'image-text' : 'image-text-m' ">{{ image.info }}</div>
         </div>
       </v-flex>
@@ -27,10 +27,10 @@
       </v-flex>
       <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs6' : 'xs12'" v-for="image in imagesEdits" :key="image.name">
         <div v-if="!image.expanded" @click="image.expanded = true">
-          <v-img class="ma-4 image" :src="require('@/assets/gallery/edits/' + image.name)" :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
+          <v-img class="ma-4 image" :src="require('@/assets/gallery/edits/compressed/' + image.name + '.jpg')" :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
         </div>
         <div v-else @click="image.expanded = false" class="expanded">
-          <v-img contain :src="require('@/assets/gallery/edits/' + image.name)"/>
+          <v-img contain :src="require('@/assets/gallery/edits/' + image.name + '.png')"/>
           <div :class="$vuetify.breakpoint.smAndUp? 'image-text' : 'image-text-m' ">{{ image.info }}</div>
         </div>
       </v-flex>
@@ -50,30 +50,31 @@ export default {
      return {
        theme: { color: '#fffb96', image: 'ta-yellow.gif' },
        imagesPhotos: [
-         { name: 'image1.jpg', expanded: false, info: 'paseo de la princesa, san juan, puerto rico' },
-         { name: 'image2.jpg', expanded: false, info: 'umbrella street, san juan, puerto rico' },
-         { name: 'image3.jpg', expanded: false, info: 'roebling suspension bridge, cincinnati, ohio' },
-         { name: 'image4.jpg', expanded: false, info: 'the 529, dayton, ohio' },
-         { name: 'image5.jpg', expanded: false, info: 'euclid commons, cleveland, ohio' },
-         { name: 'image6.jpg', expanded: false, info: 'the metra, chicago, illinois' },
-         { name: 'image7.jpg', expanded: false, info: 'cockleshell bay, st. kitts' },
-         { name: 'image8.jpg', expanded: false, info: 'euclid avenue, cleveland, ohio' },
-         { name: 'image9.jpg', expanded: false, info: 'washington boulevard, detroit, michigan' },
-         { name: 'image10.jpg', expanded: false, info: 'japanese tea garden, san francisco, california' },
-         { name: 'image11.jpg', expanded: false, info: 'cleveland state university, cleveland, ohio' },
-         { name: 'image12.jpg', expanded: false, info: 'irving commons, dayton, ohio' },
-         { name: 'image13.jpg', expanded: false, info: 'trinity cathedral, cleveland, ohio' },
-         { name: 'image14.jpg', expanded: false, info: 'lake shore east park, chicago, illinois' },
-         { name: 'image15.jpg', expanded: false, info: 'cobo center, detroit, michigan' }
+         { name: 'image1', expanded: false, info: 'paseo de la princesa, san juan, puerto rico' },
+         { name: 'image2', expanded: false, info: 'umbrella street, san juan, puerto rico' },
+         { name: 'image3', expanded: false, info: 'roebling suspension bridge, cincinnati, ohio' },
+         { name: 'image4', expanded: false, info: 'the 529, dayton, ohio' },
+         { name: 'image5', expanded: false, info: 'euclid commons, cleveland, ohio' },
+         { name: 'image6', expanded: false, info: 'the metra, chicago, illinois' },
+         { name: 'image7', expanded: false, info: 'cockleshell bay, st. kitts' },
+         { name: 'image8', expanded: false, info: 'euclid avenue, cleveland, ohio' },
+         { name: 'image9', expanded: false, info: 'washington boulevard, detroit, michigan' },
+         { name: 'image10', expanded: false, info: 'japanese tea garden, san francisco, california' },
+         { name: 'image11', expanded: false, info: 'cleveland state university, cleveland, ohio' },
+         { name: 'image12', expanded: false, info: 'irving commons, dayton, ohio' },
+         { name: 'image13', expanded: false, info: 'trinity cathedral, cleveland, ohio' },
+         { name: 'image14', expanded: false, info: 'lake shore east park, chicago, illinois' },
+         { name: 'image15', expanded: false, info: 'cobo center, detroit, michigan' }
        ],
        imagesEdits: [
-         { name: 'image1.png', expanded: false, info: 'static' },
-         { name: 'image2.png', expanded: false, info: 'glitch' },
-         { name: 'image3.png', expanded: false, info: 'terminal anomaly' },
-         { name: 'image4.png', expanded: false, info: 'lank' },
-         { name: 'image5.png', expanded: false, info: 'melee icon' },
-         { name: 'image6.png', expanded: false, info: 'music icon' },
-         { name: 'image7.png', expanded: false, info: 'photography icon' }
+         { name: 'image1', expanded: false, info: 'static' },
+         { name: 'image2', expanded: false, info: 'glitch' },
+         { name: 'image3', expanded: false, info: 'stages' },
+         { name: 'image4', expanded: false, info: 'terminal anomaly' },
+         { name: 'image5', expanded: false, info: 'lank' },
+         { name: 'image6', expanded: false, info: 'melee icon' },
+         { name: 'image7', expanded: false, info: 'music icon' },
+         { name: 'image8', expanded: false, info: 'photography icon' }
       ]
      }
   }
