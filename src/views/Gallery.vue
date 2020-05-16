@@ -46,6 +46,11 @@ import Topbar from '@/components/Topbar.vue'
 export default {
   title: 'GALLERY',
   components: { Footer, Topbar },
+  methods: {
+    async randomImages(list) {
+      return list.sort(function(){return 0.5 - Math.random()})
+    }
+  },
   data () {
      return {
        theme: { color: '#fffb96', image: 'ta-yellow.gif' },
@@ -64,19 +69,31 @@ export default {
          { name: 'image12', expanded: false, info: 'irving commons, dayton, ohio' },
          { name: 'image13', expanded: false, info: 'trinity cathedral, cleveland, ohio' },
          { name: 'image14', expanded: false, info: 'lake shore east park, chicago, illinois' },
-         { name: 'image15', expanded: false, info: 'cobo center, detroit, michigan' }
+         { name: 'image15', expanded: false, info: 'cobo center, detroit, michigan' },
+         { name: 'image16', expanded: false, info: 'university of dayton, dayton, ohio' },
+         { name: 'image17', expanded: false, info: 'panama city beach, florida' },
+         { name: 'image18', expanded: false, info: 'dan, panama city beach, florida' },
+         { name: 'image19', expanded: false, info: 'panama city beach, florida' },
+         { name: 'image20', expanded: false, info: 'steve, panama city beach, florida' },
+         { name: 'image21', expanded: false, info: 'panama city beach, florida' }
        ],
        imagesEdits: [
          { name: 'image1', expanded: false, info: 'static' },
          { name: 'image2', expanded: false, info: 'glitch' },
-         { name: 'image3', expanded: false, info: 'stages' },
-         { name: 'image4', expanded: false, info: 'terminal anomaly' },
-         { name: 'image5', expanded: false, info: 'lank' },
-         { name: 'image6', expanded: false, info: 'melee icon' },
-         { name: 'image7', expanded: false, info: 'music icon' },
-         { name: 'image8', expanded: false, info: 'photography icon' }
+         { name: 'image3', expanded: false, info: 'shiawase' },
+         { name: 'image4', expanded: false, info: 'views' },
+         { name: 'image5', expanded: false, info: 'stages' },
+         { name: 'image6', expanded: false, info: 'terminal anomaly' },
+         { name: 'image7', expanded: false, info: 'lank' },
+         { name: 'image8', expanded: false, info: 'melee icon' },
+         { name: 'image9', expanded: false, info: 'music icon' },
+         { name: 'image10', expanded: false, info: 'photography icon' }
       ]
      }
+  },
+  async mounted() {
+    this.$data.imagesPhotos = await this.randomImages(this.$data.imagesPhotos)
+    this.$data.imagesEdits = await this.randomImages(this.$data.imagesEdits)
   }
 }
 </script>

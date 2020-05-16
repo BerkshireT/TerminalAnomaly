@@ -63,7 +63,7 @@
       <!-- End Mobile -->
       <v-flex v-if="$vuetify.breakpoint.lgAndUp" xs3>
         <div :class="$vuetify.breakpoint.lgAndUp? 'text-desc' : 'text-desc-m'">
-          <div class="ma-1">programming, smash melee, video editing, aesthetics</div>
+          <div class="ma-1">programming, smash melee, photography, aesthetics</div>
         </div>
       </v-flex>
       <v-flex xs3 v-if="$vuetify.breakpoint.lgAndUp" />
