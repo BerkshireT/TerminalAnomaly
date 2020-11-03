@@ -30,7 +30,7 @@
       <!-- End Mobile -->
       <v-flex v-if="$vuetify.breakpoint.lgAndUp" xs3>
         <div class="ma-1">
-          <a :class="$vuetify.breakpoint.lgAndUp? 'text' : 'text-m'" href="./TylerBerkshire_Resume.pdf" target="blank">view</a>
+          <a :class="$vuetify.breakpoint.lgAndUp? 'text' : 'text-m'" href="https://github.com/BerkshireT/Resume/blob/main/TylerBerkshire_Resume.pdf" target="blank">view</a>
         </div>
       </v-flex>
       <v-flex xs3 v-if="$vuetify.breakpoint.lgAndUp" />

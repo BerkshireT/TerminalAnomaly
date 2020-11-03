@@ -75,19 +75,26 @@ export default {
          { name: 'image18', expanded: false, info: 'dan, panama city beach, florida' },
          { name: 'image19', expanded: false, info: 'panama city beach, florida' },
          { name: 'image20', expanded: false, info: 'steve, panama city beach, florida' },
-         { name: 'image21', expanded: false, info: 'panama city beach, florida' }
+         { name: 'image21', expanded: false, info: 'panama city beach, florida' },
+         { name: 'image22', expanded: false, info: 'stuart field, dayton, ohio' },
+         { name: 'image23', expanded: false, info: 'tucker, tipp city, ohio' },
+         { name: 'image24', expanded: false, info: 'jasper, dayton, ohio' },
+         { name: 'image25', expanded: false, info: 'oregon district, dayton, ohio' },
+         { name: 'image26', expanded: false, info: 'flanagan\'s pub, dayton, ohio' }
        ],
        imagesEdits: [
-         { name: 'image1', expanded: false, info: 'static' },
-         { name: 'image2', expanded: false, info: 'glitch' },
-         { name: 'image3', expanded: false, info: 'shiawase' },
-         { name: 'image4', expanded: false, info: 'views' },
-         { name: 'image5', expanded: false, info: 'stages' },
-         { name: 'image6', expanded: false, info: 'terminal anomaly' },
-         { name: 'image7', expanded: false, info: 'lank' },
-         { name: 'image8', expanded: false, info: 'melee icon' },
-         { name: 'image9', expanded: false, info: 'music icon' },
-         { name: 'image10', expanded: false, info: 'photography icon' }
+         { name: 'edit1', expanded: false, info: 'static' },
+         { name: 'edit2', expanded: false, info: 'glitch' },
+         { name: 'edit3', expanded: false, info: 'shiawase' },
+         { name: 'edit4', expanded: false, info: 'views' },
+         { name: 'edit5', expanded: false, info: 'stages' },
+         { name: 'edit6', expanded: false, info: 'terminal anomaly' },
+         { name: 'edit7', expanded: false, info: 'lank' },
+         { name: 'edit8', expanded: false, info: 'melee icon' },
+         { name: 'edit9', expanded: false, info: 'music icon' },
+         { name: 'edit10', expanded: false, info: 'photography icon' },
+         { name: 'edit11', expanded: false, info: 'rebirth' },
+         { name: 'edit12', expanded: false, info: 'neo' }
       ]
      }
   },
