@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Gallery from './views/Gallery.vue'
 import Projects from './views/Projects.vue'
+import KO from './views/KO.vue'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ const router = new Router({
       path: '/projects',
       name: 'projects',
       component: Projects
+    },
+    {
+      path: '/KOeveryDayO',
+      name: 'KOeveryDayO',
+      component: KO
     }
   ],
   scrollBehavior () {

@@ -6,8 +6,10 @@
       </v-flex>
       <v-flex :class="$vuetify.breakpoint.lgAndUp? 'xs12' : 'xs12'">
         <div class="glow">
-          <div class="ma-1">Coming Soon</div>
-          <div class="ma-1">カミング・スーン</div>
+          <router-link to="/KOeveryDayO">
+            <div class="ma-1">#KOeveryDayO</div>
+            <div class="ma-1">ノックアウト</div>
+          </router-link>
         </div>
       </v-flex>
     </v-layout>
@@ -43,10 +45,20 @@ export default {
   color: white;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .glow {
   font-size: 17px;
   letter-spacing: .5em;
   font-family: 'OCR-A', 'Courier', monospace;
   transition: all 2s ease;
+}
+
+.glow:hover {
+  color: #b967ff;
+  text-shadow: 0 0 5px #b967ff;
 }
 </style>
