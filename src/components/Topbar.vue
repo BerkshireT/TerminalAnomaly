@@ -9,7 +9,7 @@
           <div :class="$vuetify.breakpoint.mdAndUp? 'top-title' : 'top-title-m'" :style="{ textShadow: '1px 1px ' + color }">Terminal Anomaly</div>
           <div :class="$vuetify.breakpoint.mdAndUp? 'top-sub' : 'top-sub-m'" :style="{ color: color }">ターミナル・アノマリー</div>
             <div v-if="inner">
-              <router-link to="/" class="back" :style="{ textShadow: '1px 1px ' + color }">go back</router-link>
+              <router-link to="/" class="back" :style="{ textShadow: '1px 1px ' + color }">go home</router-link>
             </div>
         </v-card-text>
         <v-divider :style="{ borderColor: color + ' !important' }" />
