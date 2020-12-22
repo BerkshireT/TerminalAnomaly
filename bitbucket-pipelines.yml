@@ -9,5 +9,5 @@ pipelines:
           script: # Modify the commands below to build your repository.
             - npm install
             - npm run build
-            - ssh ubuntu@52.72.101.212 'SMASHGG_API=$SMASHGG_API' > /var/www/html/.env
+            - ssh ubuntu@52.72.101.212 -T "echo SMASHGG_API=$SMASHGG_API > /var/www/html/.env"
             - scp -r dist/* ubuntu@52.72.101.212:/var/www/html
