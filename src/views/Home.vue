@@ -5,6 +5,7 @@ Redo about page to match new theme
 Add Headway info
 Add Super Smash Search info
 Add vaporwave page, make album art, list other cool sites, music
+program that matches controller inputs onto a canvas :o
 -->
 <template>
   <v-container fluid fill-height class="home">
