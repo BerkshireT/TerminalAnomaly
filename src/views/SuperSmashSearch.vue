@@ -48,7 +48,7 @@ import Topbar from '@/components/Topbar.vue'
 import Request from '@/scripts/SmashGG.js'
 
 export default {
-  title: 'SuperSmashSearch',
+  title: 'Super Smash Search',
   components: { Footer, Topbar },
   data () {
      return {
@@ -74,7 +74,7 @@ export default {
   },
   methods: {
     search(lan, miles) {
-      Request(lan , miles, this.$data.location)
+      Request(process.env.VUE_APP_SMASHGG_API, lan , miles, this.$data.location)
       .then(data => {
         let result = [];
         if (data.data.tournaments.nodes.length === 0) {
