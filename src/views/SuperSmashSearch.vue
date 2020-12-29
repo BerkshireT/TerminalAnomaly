@@ -74,7 +74,9 @@ export default {
   },
   methods: {
     search(lan, miles) {
-      Request(process.env.VUE_APP_SMASHGG_API, lan , miles, this.$data.location)
+      // Something with the .env file was broken, so prod's bearer token would be undefined
+      // private keys be damned I guess ¯\_(ツ)_/¯
+      Request("4974397d9375ba433fecf39e6b51d219", lan , miles, this.$data.location)
       .then(data => {
         let result = [];
         if (data.data.tournaments.nodes.length === 0) {
