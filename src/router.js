@@ -5,6 +5,7 @@ import About from './views/About.vue'
 import Gallery from './views/Gallery.vue'
 import Projects from './views/Projects.vue'
 import KO from './views/KO.vue'
+import Smash from './views/SuperSmashSearch.vue'
 
 Vue.use(Router)
 
@@ -36,6 +37,11 @@ const router = new Router({
       path: '/KOeveryDayO',
       name: 'KOeveryDayO',
       component: KO
+    },
+    {
+      path: '/SuperSmashSearch',
+      name: 'SuperSmashSearch',
+      component: Smash
     }
   ],
   scrollBehavior () {

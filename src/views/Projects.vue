@@ -12,6 +12,14 @@
           </router-link>
         </div>
       </v-flex>
+      <v-flex :class="$vuetify.breakpoint.lgAndUp? 'xs12' : 'xs12'">
+        <div class="glow">
+          <router-link to="/SuperSmashSearch">
+            <div class="ma-1">Super Smash Search</div>
+            <div class="ma-1">スーパー・スマッシュ・サーチ</div>
+          </router-link>
+        </div>
+      </v-flex>
     </v-layout>
     <Footer />
   </v-container>
