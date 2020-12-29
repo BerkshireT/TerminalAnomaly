@@ -4,37 +4,37 @@
       <v-flex xs12>
         <Topbar :inner="true" :image="theme.image" :color="theme.color" />
       </v-flex>
-      <body>
+      <body v-if="$vuetify.breakpoint.lgAndUp">
         <div class="window">
           <div class="title-bar">
             <div class="title-bar-text">Super Smash Search</div>
+            <div class="title-bar-controls">made with <a href="https://jdan.github.io/98.css/" target="_blank">98.css</a></div>
           </div>
           <div class="window-body">
             <span>I'm looking for upcoming </span>
             <select v-model="lan"><option v-for="option in lanOptions" :key="option.title" v-bind:value="{ selection: option.title }">{{ option.title }}</option></select>
-            <select v-model="game"><option v-for="option in gameOptions" :key="option.title" v-bind:value="{ selection: option.title }">{{ option.title }}</option></select>
-            <span> tournaments </span>
+            <span> melee tournaments </span>
             <select v-model="miles"><option v-for="option in milesOptions" :key="option.title" v-bind:value="{ selection: option.title }">{{ option.title }}</option></select>
-            <span> from </span>
-            <div class="field-row">
-              <input type="text" v-model="location" />
-            </div>
-            <span>.</span>
-            <button v-on:click="search(lan.selection, game.selection, miles.selection, location)">Search!</button>
+            <span> miles from </span>
+            <button v-on:click="getLocation()">{{ location.text }}</button>
+            <button v-on:click="search(lan.selection, miles.selection)" :disabled="!this.$data.isLocated || this.$data.lan == null || this.$data.miles == null">Search!</button>
             <ul v-if="!isHidden" class="tree-view">
-              <div v-if="isVerified">
-                <li class="results" v-for="result in resultsList" :key="result.data">
+              <div v-if="isLocated && containsElements">
+                <li class="results" v-for="result in resultsList" :key="result.title">
                   <img :src="result.img" />
-                  <h2>{{ result.title }}</h2>
+                  <h2><a :href="result.url" target="_blank" class="link">{{ result.title }}</a></h2>
                   <h3>{{ result.date }}</h3>
-                  <h3>{{ result.game }}</h3>
-                  <h3>{{ result.type }}</h3>
                   <h3>{{ result.location }}</h3>
                 </li>
               </div>
-              <div v-else>{{ resultsList }}</div>
+              <h3 v-else>{{ resultsList }}</h3>
             </ul>
           </div>
+        </div>
+      </body>
+      <body v-else>
+        <div class="window">
+          <div class="window-body">This feature is not available on mobile :(</div>
         </div>
       </body>
     </v-layout>
@@ -45,7 +45,7 @@
 <script>
 import Footer from '@/components/Footer.vue'
 import Topbar from '@/components/Topbar.vue'
-import { Request, Verify } from '@/scripts/SmashGG.js'
+import Request from '@/scripts/SmashGG.js'
 
 export default {
   title: 'SuperSmashSearch',
@@ -56,52 +56,75 @@ export default {
         lanOptions: [
           { title: 'online' },
           { title: 'lan' },
-          { title: 'online & lan'},
         ],
-        lan: '',
-        gameOptions: [
-          { title: 'Melee' },
-          { title: 'Ultimate' },
-          { title: 'Melee & Ultimate' },
-        ],
-        game: '',
+        lan: null,
         milesOptions: [ 
-          { title: '10 miles' },
-          { title: '50 miles' },
-          { title: '100 miles' },
-          { title: 'unlimited miles'},
+          { title: '10' },
+          { title: '50' },
+          { title: '100' },
+          { title: 'unlimited'},
         ],
-        miles: '',
-        location: '(city name)',
+        miles: null,
         isHidden: true,
-        isVerified: false,
-        resultsList: [],
-        errorMessage: '',
+        isLocated: false,
+        containsElements: false,
+        resultsList: "No results for the given criteria.",
+        location: { text: 'get current location', lat: '', long: ''}
      }
   },
   methods: {
-    search(lan, game, miles, location) {
-      let verification = Verify(lan, game, miles, location)
-      if (verification == null) {
-        this.$data.isVerified = true
-        Request(lan, game, miles, location);
-        this.$data.resultsList = [ 
-          { img: "https://cdn.eso.org/images/thumb300y/eso1907a.jpg", title: "tournament", date: "today", game: "melee", type: "online", location: "md" },
-          { img: "https://www.w3schools.com/w3css/img_forest.jpg", title: "tournament", date: "tomorrow", game: "ult", type: "online", location: "md" },
-        ]
-      }
-      else {
-        this.$data.isVerified = false
-        this.$data.resultsList = verification
-      }
+    search(lan, miles) {
+      Request(lan , miles, this.$data.location)
+      .then(data => {
+        let result = [];
+        if (data.data.tournaments.nodes.length === 0) {
+          this.$data.containsElements = false;
+          this.$data.resultsList = "No results for the given criteria.";
+        }
+        else {
+          data.data.tournaments.nodes.forEach(tournament => {
+            let date = new Date(tournament.startAt * 1000);
+            if (date.getTime() < Date.now()) {
+              return;
+            }
+            let tourney = { 
+              img: tournament.images.length === 0 ? require('@/assets/logos/ta-purple.gif') : tournament.images[0].url,
+              title: tournament.name,
+              date: date.toString(),
+              location: tournament.venueAddress ,
+              url: "https://smash.gg/" + tournament.slug
+            }
+            result.push(tourney);
+          });
+          if (result.length === 0) {
+            this.$data.containsElements = false;
+            this.$data.resultsList = "No results for the given criteria.";
+          }
+          else {
+            this.$data.containsElements = true;
+            this.$data.resultsList = result;
+          }
+        }
+      });
       
       this.$data.isHidden = false;
+    },
+    setPosition(position) {
+      this.$data.location.text = position.coords.latitude + ', ' + position.coords.longitude;
+      this.$data.location.lat = position.coords.latitude;
+      this.$data.location.long = position.coords.longitude;
+      this.$data.isLocated = true;
+    },
+    showError(error) {
+      this.$data.isHidden = false;
+      this.$data.isLocated = false;
+      this.$data.resultsList = error.message;
+    },
+    getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(this.setPosition, this.showError);
+      }
     }
-  },
-  created() {
-     let twitterFeed = document.createElement("script");
-     twitterFeed.setAttribute("src", "https://platform.twitter.com/widgets.js");
-     document.head.appendChild(twitterFeed);
   }
 }
 </script>
@@ -139,7 +162,12 @@ option, p {
 }
 
 img {
-  width: 100%;
+  width: 50%;
+}
+
+.link {
+  color: blue;
+  text-decoration: underline;
 }
 
 .window {
