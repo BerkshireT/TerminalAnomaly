@@ -1,6 +1,4 @@
-function Request(lan, miles, location) {
-   let key = process.env.VUE_APP_SMASHGG_API
-
+function Request(key, lan, miles, location) {
    let online = false;
    if (lan.includes('online')) {
       online = true;
