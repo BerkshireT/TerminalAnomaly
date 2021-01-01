@@ -1,7 +1,6 @@
 <!--
 TODO
 neon sign three animation of smash combos
-inspiration section icons
 mobile
 -->
 <template>
@@ -11,8 +10,8 @@ mobile
         <Topbar :inner="true" :image="theme.image" :color="theme.color" />
       </v-flex>
       <!-- RESUME -->
-      <v-flex xs2 />
-      <v-flex xs8 class="wiggles">
+      <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
+      <v-flex xs8 class="wiggles" v-if="$vuetify.breakpoint.lgAndUp">
         <div class="text">
           <div class="ma-1">resumé</div>
           <div class="ma-1">履歴書</div>
@@ -22,12 +21,13 @@ mobile
           <div class="ma-1"><a href="https://github.com/BerkshireT/Resume/blob/main/TylerBerkshire_Resume.pdf" target="blank">view</a></div>
         </div>
       </v-flex>
-      <v-flex xs2 />
+      <MobileAbout v-else :title="'resumé'" :japanese="'履歴書'" :innerText="1"/>
+      <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <!-- END RESUME -->
       <v-flex xs12> hi </v-flex>
       <!-- INTERESTS -->
-      <v-flex xs2 />
-      <v-flex xs8 class="diamonds">
+      <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
+      <v-flex xs8 class="diamonds" v-if="$vuetify.breakpoint.lgAndUp">
         <div class="text">
           <div class="ma-1">interests</div>
           <div class="ma-1">興味</div>
@@ -42,12 +42,13 @@ mobile
           <img class="img-spaced" src="https://win98icons.alexmeub.com/icons/png/help_book_cool-4.png" />
         </div>
       </v-flex>
-      <v-flex xs2 />
+      <MobileAbout v-else :title="'interests'" :japanese="'興味'" :innerText="2"/>
+      <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <!-- END INTERESTS -->
       <v-flex xs12> hi </v-flex>
       <!-- PERSONALS -->
-      <v-flex xs2 />
-      <v-flex xs8 class="circles">
+      <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
+      <v-flex xs8 class="circles" v-if="$vuetify.breakpoint.lgAndUp">
         <div class="text">
           <div class="ma-1">personals</div>
           <div class="ma-1">パーソナルズ</div>
@@ -64,34 +65,33 @@ mobile
           </div>
         </div>
       </v-flex>
-      <v-flex xs2 />
+      <MobileAbout v-else :title="'personals'" :japanese="'パーソナルズ'" :innerText="3"/>
+      <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <!-- END PERSONALS -->
       <v-flex xs12> hi </v-flex>
       <!-- VISTAS -->
-      <v-flex xs2 />
-      <v-flex xs8 class="fan">
+      <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
+      <v-flex xs8 class="fan" v-if="$vuetify.breakpoint.lgAndUp">
         <div class="text">
           <div class="ma-1">vistas</div>
           <div class="ma-1">眺望</div>
         </div>
-        <div class="words">
-          <div class="ma-1"> <!--
-            <a href="http://cachemonet.com/" target="blank"><img class="img-spaced" :src="require()" height="48px" width="48px"/></a>
-            <a href="http://zoomquilt2.com/" target="blank"><img class="img-spaced" :src="require()" height="48px" width="48px"/></a>
-            <a href="https://www.samspratt.com/" target="blank"><img class="img-spaced" :src="require()" height="48px" width="48px"/></a>
-            <a href="https://falsememories.neocities.org/" target="blank"><img class="img-spaced" :src="require()" height="48px" width="48px"/></a>
-            <a href="https://blissnet.neocities.org/" target="blank"><img class="img-spaced" :src="require()" height="48px" width="48px"/></a>
-            <a href="https://www.youtube.com/channel/UCWlhyyYBiD67Aju1CXUgaug" target="blank"><img class="img-spaced" :src="require()" height="48px" width="48px"/></a>
-            <a href="https://jdan.github.io/98.css/" target="blank"><img class="img-spaced" :src="require()" height="48px" width="48px"/></a> -->
+        <div class="vistas">
+          <div class="ma-1">
+            <a href="http://cachemonet.com/" target="blank" style="margin-right: 1em;">cachemonet.com</a><a href="http://zoomquilt2.com/" target="blank">zoomquilt2.com</a><br/>
+            <a href="https://www.samspratt.com/" target="blank" style="margin-right: 1em;">sampspratt.com</a><a href="https://falsememories.neocities.org/" target="blank">falsememories</a><br/>
+            <a href="https://blissnet.neocities.org/" target="blank" style="margin-right: 1em;">blissnet</a><a href="https://www.youtube.com/channel/UCWlhyyYBiD67Aju1CXUgaug" target="blank">tardiobscurus</a><br/>
+            <a href="https://jdan.github.io/98.css/" target="blank">98.css</a>
           </div>
         </div>
       </v-flex>
-      <v-flex xs2 />
+      <MobileAbout v-else :title="'vistas'" :japanese="'眺望'" :innerText="4"/>
+      <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <!-- END VISTAS -->
       <v-flex xs12> hi </v-flex>
       <!-- CONTACT -->
-      <v-flex xs2 />
-      <v-flex xs8 class="tac">
+      <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
+      <v-flex xs8 class="tac" v-if="$vuetify.breakpoint.lgAndUp">
         <div class="text">
           <div class="ma-1">contact</div>
           <div class="ma-1">連絡先</div>
@@ -101,7 +101,8 @@ mobile
           <div class="ma-1"><a href="mailto:berkshiret122@gmail.com" target="blank">send virtual mail</a></div>
         </div>
       </v-flex>
-      <v-flex xs2 />
+      <MobileAbout v-else :title="'contact'" :japanese="'連絡先'" :innerText="5"/>
+      <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <!-- END CONTACT -->
     </v-layout>
     <Footer />
@@ -111,17 +112,14 @@ mobile
 <script>
 import Footer from '@/components/Footer.vue'
 import Topbar from '@/components/Topbar.vue'
+import MobileAbout from '@/components/MobileAbout.vue'
 
 export default {
   title: 'ABOUT',
-  components: { Footer, Topbar },
+  components: { Footer, Topbar, MobileAbout },
   data () {
      return {
         theme: { color: '#01cdfe', image: 'ta-blue.gif' },
-        dialogR: false,
-        dialogI: false,
-        dialogL: false,
-        dialogC: false
      }
   }
 }
@@ -142,23 +140,29 @@ export default {
   color: white;
 }
 
-.text, .words {
+.text, .words, .vistas {
   float: left;
   width: 50%;
   justify-content: center;
   align-items: center;
-  margin-top: .5em;
 }
 
 .text {
   font-size: 4em;
   letter-spacing: .5em;
   font-family: 'Cutive Mono', 'Courier', monospace;
+  margin-top: .5em;
   margin-bottom: .5em;
 }
 
 .words {
-  font-size: 3.5em;
+  font-size: 3em;
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 1.5em;
+}
+
+.vistas {
+  font-size: 2.5em;
   font-family: "Times New Roman", Times, serif;
 }
 
