@@ -1,8 +1,3 @@
-<!--
-TODO
-neon sign three animation of smash combos
-mobile
--->
 <template>
   <v-container fluid fill-height class="about">
     <v-layout wrap text-xs-center justify-center>
@@ -24,7 +19,6 @@ mobile
       <MobileAbout v-else :title="'resumé'" :japanese="'履歴書'" :innerText="1"/>
       <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <!-- END RESUME -->
-      <v-flex xs12> hi </v-flex>
       <!-- INTERESTS -->
       <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <v-flex xs8 class="diamonds" v-if="$vuetify.breakpoint.lgAndUp">
@@ -45,7 +39,6 @@ mobile
       <MobileAbout v-else :title="'interests'" :japanese="'興味'" :innerText="2"/>
       <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <!-- END INTERESTS -->
-      <v-flex xs12> hi </v-flex>
       <!-- PERSONALS -->
       <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <v-flex xs8 class="circles" v-if="$vuetify.breakpoint.lgAndUp">
@@ -68,7 +61,6 @@ mobile
       <MobileAbout v-else :title="'personals'" :japanese="'パーソナルズ'" :innerText="3"/>
       <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <!-- END PERSONALS -->
-      <v-flex xs12> hi </v-flex>
       <!-- VISTAS -->
       <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <v-flex xs8 class="fan" v-if="$vuetify.breakpoint.lgAndUp">
@@ -88,7 +80,6 @@ mobile
       <MobileAbout v-else :title="'vistas'" :japanese="'眺望'" :innerText="4"/>
       <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <!-- END VISTAS -->
-      <v-flex xs12> hi </v-flex>
       <!-- CONTACT -->
       <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <v-flex xs8 class="tac" v-if="$vuetify.breakpoint.lgAndUp">
@@ -177,6 +168,12 @@ a {
   text-decoration: underline;
 }
 
+.neon {
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  max-height: 200px;
+}
+
 .wiggles a:hover, .circles a:hover, .tac a:hover {
   color: #b967ff;
   transition: all 2s ease;
@@ -195,6 +192,7 @@ a {
   border-bottom: 0;
   box-shadow: 10px 10px;
   text-shadow: 2px 2px black;
+  margin-top: 3em;
 }
 
 .wiggles {
