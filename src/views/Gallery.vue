@@ -155,8 +155,6 @@ export default {
 }
 
 .expanded {
-  max-width: 90%;
-  max-height: 90%;
   margin: auto;
   top: 0;
   bottom: 0;
@@ -166,6 +164,7 @@ export default {
   position: fixed;
   z-index: 100000;
   overflow: hidden;
+  backdrop-filter: blur(5px);
 }
 
 .glow {

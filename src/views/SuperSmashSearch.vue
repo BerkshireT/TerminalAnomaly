@@ -4,7 +4,7 @@
       <v-flex xs12>
         <Topbar :inner="true" :image="theme.image" :color="theme.color" />
       </v-flex>
-      <body v-if="$vuetify.breakpoint.lgAndUp">
+      <body>
         <div class="window">
           <div class="title-bar">
             <div class="title-bar-text">Super Smash Search</div>
@@ -30,11 +30,6 @@
               <h3 v-else>{{ resultsList }}</h3>
             </ul>
           </div>
-        </div>
-      </body>
-      <body v-else>
-        <div class="window">
-          <div class="window-body">This feature is not available on mobile :(</div>
         </div>
       </body>
     </v-layout>
