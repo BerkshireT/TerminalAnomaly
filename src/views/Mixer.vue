@@ -71,7 +71,7 @@ export default {
                 pic: "step3.jpg",
                 text: "Now that I knew I could create the mixer, I thought it would be a novel challenge to try and put it in a controller shell. I initially wanted to use a N64 controller. After " +
                 "taking it apart, though, I was surprised to find very little space in the shell itself. So I dug up a broken GameCube controller a friend had given me and scoped out the " +
-                "dimensions. Being an avide SSBM player, I was no stranger to taking these controllers apart and was happy to find much more space than in the N64 controller. I sketched out " +
+                "dimensions. Being an avid SSBM player, I was no stranger to taking these controllers apart and was happy to find much more space than in the N64 controller. I sketched out " +
                 "the schematics and got to work!"
                 },
 
