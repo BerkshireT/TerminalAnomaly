@@ -1,9 +1,6 @@
 <!-- 
-TODO:
-Redo about page, new vaporwave css maybe? or 98.cs stuff?
-Add Headway info
-Add vaporwave page, make album art, list other cool sites, music
-program that matches controller inputs onto a canvas :o
+Ideas:
+Add vaporwave page, make album art, music page
 -->
 <template>
   <v-container fluid fill-height class="home">

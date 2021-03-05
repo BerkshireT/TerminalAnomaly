@@ -94,7 +94,8 @@ export default {
          { name: 'edit9', expanded: false, info: 'music icon' },
          { name: 'edit10', expanded: false, info: 'photography icon' },
          { name: 'edit11', expanded: false, info: 'rebirth' },
-         { name: 'edit12', expanded: false, info: 'neo' }
+         { name: 'edit12', expanded: false, info: 'neo' },
+         { name: 'edit13', expanded: false, info: 'omedetou'}
       ]
      }
   },

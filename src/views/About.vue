@@ -51,10 +51,10 @@
             <a href="https://github.com/BerkshireT" target="blank"><img class="img-spaced" src="https://image.flaticon.com/icons/png/512/25/25231.png" height="48px" width="48px"/></a>
             <a href="https://open.spotify.com/user/cf9hq7vhmnz4lizol8969ph6t?si=3uj903wIRji4mHXT0q3GmQ" target="blank"><img class="img-spaced" src="https://image.flaticon.com/icons/png/512/2111/2111624.png" height="48px" width="48px"/></a>
             <a href="https://www.instagram.com/terminalanomaly/" target="blank"><img class="img-spaced" src="https://image.flaticon.com/icons/png/512/174/174855.png" height="48px" width="48px"/></a>
+            <a href="https://www.youtube.com/c/TerminalAnomaly" target="blank"><img class="img-spaced" src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Emblem.png" height="48px" width="60px"/></a>
             <a href="https://www.goodreads.com/user/show/108732185-tyler" target="blank"><img class="img-spaced" src="https://www.flaticon.com/svg/static/icons/svg/2111/2111431.svg" height="48px" width="48px"/></a>
             <a href="https://www.myanimelist.net/animelist/TerminalAnomaly" target="blank"><img class="img-spaced" src="https://image.myanimelist.net/ui/OK6W_koKDTOqqqLDbIoPAiC8a86sHufn_jOI-JGtoCQ" height="48px" width="48px"/></a>
             <a href="https://www.twitter.com/TerminalAnomaly" target="blank"><img class="img-spaced" src="https://elementarylibrarian.com/wp-content/uploads/2013/11/twitter-bird-white-on-blue.png" height="48px" width="48px"/></a>
-            <a href="https://steamcommunity.com/id/terminalanomaly/" target="blank"><img class="img-spaced" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/1024px-Steam_icon_logo.svg.png" height="48px" width="48px"/></a>
           </div>
         </div>
       </v-flex>
