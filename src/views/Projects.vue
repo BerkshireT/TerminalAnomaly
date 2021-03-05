@@ -6,9 +6,9 @@
       </v-flex>
       <v-flex :class="$vuetify.breakpoint.lgAndUp? 'xs12' : 'xs12'">
         <div class="glow">
-          <router-link to="/KOeveryDayO">
-            <div class="ma-1">#KOeveryDayO</div>
-            <div class="ma-1">ノックアウト</div>
+          <router-link to="/DirtyVideoMixer">
+            <div class="ma-1">Karl Klomp Video Mixer</div>
+            <div class="ma-1">ビデオミキサー</div>
           </router-link>
         </div>
       </v-flex>
@@ -17,6 +17,14 @@
           <router-link to="/SuperSmashSearch">
             <div class="ma-1">Super Smash Search</div>
             <div class="ma-1">スーパー・スマッシュ・サーチ</div>
+          </router-link>
+        </div>
+      </v-flex>
+      <v-flex :class="$vuetify.breakpoint.lgAndUp? 'xs12' : 'xs12'">
+        <div class="glow">
+          <router-link to="/KOeveryDayO">
+            <div class="ma-1">#KOeveryDayO</div>
+            <div class="ma-1">ノックアウト</div>
           </router-link>
         </div>
       </v-flex>

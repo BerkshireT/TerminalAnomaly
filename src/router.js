@@ -6,6 +6,7 @@ import Gallery from './views/Gallery.vue'
 import Projects from './views/Projects.vue'
 import KO from './views/KO.vue'
 import Smash from './views/SuperSmashSearch.vue'
+import Mixer from './views/Mixer.vue'
 
 Vue.use(Router)
 
@@ -42,6 +43,11 @@ const router = new Router({
       path: '/SuperSmashSearch',
       name: 'SuperSmashSearch',
       component: Smash
+    },
+    {
+      path: '/DirtyVideoMixer',
+      name: 'DirtyVideoMixer',
+      component: Mixer
     }
   ],
   scrollBehavior () {
