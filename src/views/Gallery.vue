@@ -95,7 +95,8 @@ export default {
          { name: 'edit10', expanded: false, info: 'photography icon' },
          { name: 'edit11', expanded: false, info: 'rebirth' },
          { name: 'edit12', expanded: false, info: 'neo' },
-         { name: 'edit13', expanded: false, info: 'omedetou'}
+         { name: 'edit13', expanded: false, info: 'omedetou' },
+         { name: 'edit14', expanded: false, info: 'rapture' }
       ]
      }
   },
