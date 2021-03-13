@@ -65,22 +65,10 @@ export default {
   letter-spacing: 0.5em;
 }
 
-.glow {
-  font-size: 17px;
-  letter-spacing: .5em;
-  font-family: 'OCR-A', 'Courier', monospace;
-  transition: all 2s ease;
-}
-
 .back {
   font-size: 17px;
   letter-spacing: .5em;
   font-family: 'OCR-A', 'Courier', monospace;
-}
-
-.glow:hover {
-  color: #05ffa1;
-  text-shadow: 0 0 5px #05ffa1;
 }
 
 a {

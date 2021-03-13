@@ -1,11 +1,18 @@
 <template>
   <v-container fluid fill-height class="gallery">
     <v-layout wrap text-xs-center justify-center>
+      <v-flex v-if="$vuetify.breakpoint.smAndUp" pa-2 text-xs-center class="jumps">
+        <div class="inline text">jump to</div>
+        <div class="inline text"> - </div>
+        <div class="inline"><a href="#photography" class="text">photography</a></div>
+        <div class="inline text"> - </div>
+        <div class="inline"><a href="#edits" class="text">edits</a></div>
+      </v-flex>
       <v-flex xs12>
         <Topbar :inner="true" :image="theme.image" :color="theme.color" />
       </v-flex>
       <v-flex xs12>
-        <div class="text">
+        <div class="text" id="photography">
           <div class="ma-1">photography</div>
           <div class="ma-1">写真撮影</div>
         </div>
@@ -20,7 +27,7 @@
         </div>
       </v-flex>
       <v-flex xs12>
-        <div class="text">
+        <div class="text" id="edits">
           <div class="ma-1">edits</div>
           <div class="ma-1">編集する</div>
         </div>
@@ -85,18 +92,12 @@ export default {
        imagesEdits: [
          { name: 'edit1', expanded: false, info: 'static' },
          { name: 'edit2', expanded: false, info: 'glitch' },
-         { name: 'edit3', expanded: false, info: 'shiawase' },
-         { name: 'edit4', expanded: false, info: 'views' },
-         { name: 'edit5', expanded: false, info: 'stages' },
-         { name: 'edit6', expanded: false, info: 'terminal anomaly' },
-         { name: 'edit7', expanded: false, info: 'lank' },
-         { name: 'edit8', expanded: false, info: 'melee icon' },
-         { name: 'edit9', expanded: false, info: 'music icon' },
-         { name: 'edit10', expanded: false, info: 'photography icon' },
-         { name: 'edit11', expanded: false, info: 'rebirth' },
-         { name: 'edit12', expanded: false, info: 'neo' },
-         { name: 'edit13', expanded: false, info: 'omedetou' },
-         { name: 'edit14', expanded: false, info: 'rapture' }
+         { name: 'edit3', expanded: false, info: 'views' },
+         { name: 'edit4', expanded: false, info: 'melee icon' },
+         { name: 'edit5', expanded: false, info: 'music icon' },
+         { name: 'edit6', expanded: false, info: 'photography icon' },
+         { name: 'edit7', expanded: false, info: 'omedetou' },
+         { name: 'edit8', expanded: false, info: 'rapture' }
       ]
      }
   },
@@ -180,15 +181,38 @@ export default {
   font-size: 17px;
   letter-spacing: .5em;
   font-family: 'OCR-A', 'Courier', monospace;
-  transition: all 2s ease;
-}
-
-.text:hover {
-  color: #fffb96;
-  text-shadow: 0 0 5px #fffb96;
 }
 
 .image:hover {
   box-shadow: 0 0 20px #fffb96;
+}
+
+.jumps {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: black;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  transition: all 2s ease;
+}
+
+a:hover {
+  color: #fffb96;
+  text-shadow: 0 0 5px #fffb96;
+}
+
+.inline {
+  display: inline;
+}
+
+#photography, #edits {
+    padding-top: 50px;
+    margin-top: -50px;
 }
 </style>
