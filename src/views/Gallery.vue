@@ -17,12 +17,12 @@
           <div class="ma-1">写真撮影</div>
         </div>
       </v-flex>
-      <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs6' : 'xs12'" v-for="image in imagesPhotos" :key="image.name">
+      <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs6' : 'xs12'" v-for="image in imagesPhotos" :key="image.full">
         <div v-if="!image.expanded" @click="image.expanded = true">
-          <v-img class="ma-4 image" :src="require('@/assets/gallery/photography/compressed/' + image.name + '.jpg')" :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
+          <v-img class="ma-4 image" :src="image.compressed" :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
         </div>
         <div v-else @click="image.expanded = false" class="expanded">
-          <v-img contain :src="require('@/assets/gallery/photography/' + image.name + '.jpg')" />
+          <v-img contain :src="image.full" />
           <div :class="$vuetify.breakpoint.smAndUp? 'image-text' : 'image-text-m' ">{{ image.info }}</div>
         </div>
       </v-flex>
@@ -32,12 +32,12 @@
           <div class="ma-1">編集する</div>
         </div>
       </v-flex>
-      <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs6' : 'xs12'" v-for="image in imagesEdits" :key="image.name">
+      <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs6' : 'xs12'" v-for="image in imagesEdits" :key="image.full">
         <div v-if="!image.expanded" @click="image.expanded = true">
-          <v-img class="ma-4 image" :src="require('@/assets/gallery/edits/compressed/' + image.name + '.jpg')" :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
+          <v-img class="ma-4 image" :src="image.compressed" :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
         </div>
         <div v-else @click="image.expanded = false" class="expanded">
-          <v-img contain :src="require('@/assets/gallery/edits/' + image.name + '.png')"/>
+          <v-img contain :src="image.full" />
           <div :class="$vuetify.breakpoint.smAndUp? 'image-text' : 'image-text-m' ">{{ image.info }}</div>
         </div>
       </v-flex>
@@ -62,42 +62,42 @@ export default {
      return {
        theme: { color: '#fffb96', image: 'ta-yellow.gif' },
        imagesPhotos: [
-         { name: 'image1', expanded: false, info: 'paseo de la princesa, san juan, puerto rico' },
-         { name: 'image2', expanded: false, info: 'umbrella street, san juan, puerto rico' },
-         { name: 'image3', expanded: false, info: 'roebling suspension bridge, cincinnati, ohio' },
-         { name: 'image4', expanded: false, info: 'the 529, dayton, ohio' },
-         { name: 'image5', expanded: false, info: 'euclid commons, cleveland, ohio' },
-         { name: 'image6', expanded: false, info: 'the metra, chicago, illinois' },
-         { name: 'image7', expanded: false, info: 'cockleshell bay, st. kitts' },
-         { name: 'image8', expanded: false, info: 'euclid avenue, cleveland, ohio' },
-         { name: 'image9', expanded: false, info: 'washington boulevard, detroit, michigan' },
-         { name: 'image10', expanded: false, info: 'japanese tea garden, san francisco, california' },
-         { name: 'image11', expanded: false, info: 'cleveland state university, cleveland, ohio' },
-         { name: 'image12', expanded: false, info: 'irving commons, dayton, ohio' },
-         { name: 'image13', expanded: false, info: 'trinity cathedral, cleveland, ohio' },
-         { name: 'image14', expanded: false, info: 'lake shore east park, chicago, illinois' },
-         { name: 'image15', expanded: false, info: 'cobo center, detroit, michigan' },
-         { name: 'image16', expanded: false, info: 'university of dayton, dayton, ohio' },
-         { name: 'image17', expanded: false, info: 'panama city beach, florida' },
-         { name: 'image18', expanded: false, info: 'dan, panama city beach, florida' },
-         { name: 'image19', expanded: false, info: 'panama city beach, florida' },
-         { name: 'image20', expanded: false, info: 'steve, panama city beach, florida' },
-         { name: 'image21', expanded: false, info: 'panama city beach, florida' },
-         { name: 'image22', expanded: false, info: 'stuart field, dayton, ohio' },
-         { name: 'image23', expanded: false, info: 'tucker, tipp city, ohio' },
-         { name: 'image24', expanded: false, info: 'jasper, dayton, ohio' },
-         { name: 'image25', expanded: false, info: 'oregon district, dayton, ohio' },
-         { name: 'image26', expanded: false, info: 'flanagan\'s pub, dayton, ohio' }
+         { expanded: false, info: 'the 529, dayton, ohio', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/529.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/529.jpg?raw=true' },
+         { expanded: false, info: 'cobo center, detroit, michigan', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/cobo.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/cobo.jpg?raw=true' },
+         { expanded: false, info: 'cockleshell bay, st. kitts', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/cockleshell.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/cockleshell.jpg?raw=true' },
+         { expanded: false, info: 'cleveland state university, cleveland, ohio', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/csu.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/csu.jpg?raw=true' },
+         { expanded: false, info: 'dan, panama city beach, florida', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/dan.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/dan.jpg?raw=true' },
+         { expanded: false, info: 'euclid avenue, cleveland, ohio', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/euclid%20ave.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/euclid%20ave.jpg?raw=true' },
+         { expanded: false, info: 'euclid commons, cleveland, ohio', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/euclid%20commons.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/euclid%20commons.jpg?raw=true' },
+         { expanded: false, info: 'flanagan\'s pub, dayton, ohio', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/flanagan.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/flanagan.jpg?raw=true' },
+         { expanded: false, info: 'irving commons, dayton, ohio', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/irving.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/irving.jpg?raw=true' },
+         { expanded: false, info: 'japanese tea garden, san francisco, california', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/japanese.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/japanese.jpg?raw=true' },
+         { expanded: false, info: 'jasper, dayton, ohio', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/jasper.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/jasper.jpg?raw=true' },
+         { expanded: false, info: 'lake shore east park, chicago, illinois', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/lake.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/lake.jpg?raw=true' },
+         { expanded: false, info: 'the metra, chicago, illinois', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/metra.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/metra.jpg?raw=true' },
+         { expanded: false, info: 'oregon district, dayton, ohio', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/oregon.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/oregon.jpg?raw=true' },
+         { expanded: false, info: 'panama city beach, florida', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/panama%20balcony.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/panama%20balcony.jpg?raw=true' },
+         { expanded: false, info: 'panama city beach, florida', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/panama%20sign.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/panama%20sign.jpg?raw=true' },
+         { expanded: false, info: 'panama city beach, florida', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/panama%20skyline.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/panama%20skyline.jpg?raw=true' },
+         { expanded: false, info: 'paseo de la princesa, san juan, puerto rico', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/paseo.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/paseo.jpg?raw=true' },
+         { expanded: false, info: 'roebling suspension bridge, cincinnati, ohio', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/roebling.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/roebling.jpg?raw=true' },
+         { expanded: false, info: 'steve, panama city beach, florida', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/steve.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/steve.jpg?raw=true' },
+         { expanded: false, info: 'stuart field, dayton, ohio', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/stuart.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/stuart.jpg?raw=true' },
+         { expanded: false, info: 'trinity cathedral, cleveland, ohio', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/trinity.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/trinity.jpg?raw=true' },
+         { expanded: false, info: 'tucker, tipp city, ohio', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/tucker.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/tucker.jpg?raw=true' },
+         { expanded: false, info: 'university of dayton, dayton, ohio', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/university.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/university.jpg?raw=true' },
+         { expanded: false, info: 'umbrella street, san juan, puerto rico', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/umbrella.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/umbrella.jpg?raw=true' },
+         { expanded: false, info: 'washington boulevard, detroit, michigan', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/washington.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/washington.jpg?raw=true' }
        ],
        imagesEdits: [
-         { name: 'edit1', expanded: false, info: 'static' },
-         { name: 'edit2', expanded: false, info: 'glitch' },
-         { name: 'edit3', expanded: false, info: 'views' },
-         { name: 'edit4', expanded: false, info: 'melee icon' },
-         { name: 'edit5', expanded: false, info: 'music icon' },
-         { name: 'edit6', expanded: false, info: 'photography icon' },
-         { name: 'edit7', expanded: false, info: 'omedetou' },
-         { name: 'edit8', expanded: false, info: 'rapture' }
+         { expanded: false, info: 'glitch', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/glitch.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/glitch.jpg?raw=true' },
+         { expanded: false, info: 'melee icon', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/melee%20icon.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/melee%20icon.jpg?raw=true' },
+         { expanded: false, info: 'music icon', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/music%20icon.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/music%20icon.jpg?raw=true' },
+         { expanded: false, info: 'omedetou', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/omedetou.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/omedetou.jpg?raw=true' },
+         { expanded: false, info: 'photography icon', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/photography%20icon.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/photography%20icon.jpg?raw=true' },
+         { expanded: false, info: 'rapture', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/rapture.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/rapture.jpg?raw=true' },
+         { expanded: false, info: 'static', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/static.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/static.jpg?raw=true' },
+         { expanded: false, info: 'views', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/views.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/views.jpg?raw=true' }
       ]
      }
   },
