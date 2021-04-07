@@ -51,9 +51,9 @@
             <a href="https://github.com/BerkshireT" target="blank"><img class="img-spaced" src="https://image.flaticon.com/icons/png/512/25/25231.png" height="48px" width="48px"/></a>
             <a href="https://open.spotify.com/user/cf9hq7vhmnz4lizol8969ph6t?si=3uj903wIRji4mHXT0q3GmQ" target="blank"><img class="img-spaced" src="https://image.flaticon.com/icons/png/512/2111/2111624.png" height="48px" width="48px"/></a>
             <a href="https://www.instagram.com/terminalanomaly/" target="blank"><img class="img-spaced" src="https://image.flaticon.com/icons/png/512/174/174855.png" height="48px" width="48px"/></a>
-            <a href="https://www.youtube.com/c/TerminalAnomaly" target="blank"><img class="img-spaced" src="https://www.flaticon.com/svg/vstatic/svg/185/185983.svg?token=exp=1615607462~hmac=4c13fa5eafbde700e8b8ee235df86489" height="48px" width="48px"/></a>
+            <a href="https://www.youtube.com/c/TerminalAnomaly" target="blank"><img class="img-spaced" src="https://github.com/BerkshireT/Assets/blob/main/yt.png?raw=true" height="48px" width="48px"/></a>
             <a href="https://www.goodreads.com/user/show/108732185-tyler" target="blank"><img class="img-spaced" src="https://www.flaticon.com/svg/static/icons/svg/2111/2111431.svg" height="48px" width="48px"/></a>
-            <a href="https://www.myanimelist.net/animelist/TerminalAnomaly" target="blank"><img class="img-spaced" src="https://image.myanimelist.net/ui/OK6W_koKDTOqqqLDbIoPAiC8a86sHufn_jOI-JGtoCQ" height="48px" width="48px"/></a>
+            <a href="https://anilist.co/user/terminalanomaly/animelist" target="blank"><img class="img-spaced" src="https://anilist.co/img/icons/android-chrome-512x512.png" height="48px" width="48px"/></a>
             <a href="https://www.twitter.com/TerminalAnomaly" target="blank"><img class="img-spaced" src="https://elementarylibrarian.com/wp-content/uploads/2013/11/twitter-bird-white-on-blue.png" height="48px" width="48px"/></a>
           </div>
         </div>
