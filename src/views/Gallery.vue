@@ -97,7 +97,9 @@ export default {
          { expanded: false, info: 'photography icon', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/photography%20icon.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/photography%20icon.jpg?raw=true' },
          { expanded: false, info: 'rapture', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/rapture.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/rapture.jpg?raw=true' },
          { expanded: false, info: 'static', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/static.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/static.jpg?raw=true' },
-         { expanded: false, info: 'views', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/views.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/views.jpg?raw=true' }
+         { expanded: false, info: 'views', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/views.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/views.jpg?raw=true' },
+         { expanded: false, info: 'jaguar', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/jaguar.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/jaguar.jpg?raw=true'},
+         { expanded: false, info: 'portrait palette', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/portrait%20palette.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/portrait-palette.jpg?raw=true'}
       ]
      }
   },
