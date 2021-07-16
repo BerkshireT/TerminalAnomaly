@@ -128,7 +128,6 @@ export default {
   background: url(../assets/backgrounds/grid-yellow.png);
   background-color: black;
   background-size: cover;
-  background-repeat:repeat-y;
   background-position: center;
   background-attachment: fixed;
   color: white;
