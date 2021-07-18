@@ -1,6 +1,6 @@
 <template>
-   <v-flex :class="$vuetify.breakpoint.lgAndUp? 'xs12' : 'xs12'">
-      <div class="glow my-4">
+   <v-flex xs12>
+      <div v-if="$vuetify.breakpoint.mdAndUp" class="glow my-4">
          <router-link :to="link">
             <v-layout v-if="isLeft" justify-center align-center>
                <v-flex xs2>
@@ -18,6 +18,19 @@
                </v-flex>
                <v-flex xs2>
                   <v-img :src="require('@/assets/projectListThumbs/' + image)" max-height="150px" contain/>
+               </v-flex>
+            </v-layout>
+         </router-link>
+      </div>
+      <div v-else class="glow my-2">
+         <router-link :to="link">
+            <v-layout justify-center align-center wrap>
+               <v-flex xs12 class="mb-4">
+                  <v-img :src="require('@/assets/projectListThumbs/' + image)" max-height="150px" contain/>
+               </v-flex>
+               <v-flex xs12>
+                  <div class="ma-1">{{title}}</div>
+                  <div class="ma-1">{{titleJap}}</div>
                </v-flex>
             </v-layout>
          </router-link>

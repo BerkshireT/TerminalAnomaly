@@ -1,46 +1,23 @@
 <template>
   <v-container fluid fill-height class="gallery">
     <v-layout wrap text-xs-center justify-center>
-      <v-flex v-if="$vuetify.breakpoint.smAndUp" pa-2 text-xs-center class="jumps">
-        <div class="inline text">jump to</div>
-        <div class="inline text"> - </div>
-        <div class="inline"><a href="#photography" class="text">photography</a></div>
-        <div class="inline text"> - </div>
-        <div class="inline"><a href="#edits" class="text">edits</a></div>
-      </v-flex>
       <v-flex xs12>
         <Topbar :inner="true" :image="theme.image" :color="theme.color" />
       </v-flex>
       <v-flex xs12>
-        <div class="text" id="photography">
+        <div class="text mt-2" id="photography">
           <div class="ma-1">photography</div>
           <div class="ma-1">写真撮影</div>
         </div>
       </v-flex>
-      <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs6' : 'xs12'" v-for="image in imagesPhotos" :key="image.full">
-        <div v-if="!image.expanded" @click="image.expanded = true">
-          <v-img class="ma-4 image" :src="image.compressed" :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
-        </div>
-        <div v-else @click="image.expanded = false" class="expanded">
-          <v-img contain :src="image.full" />
-          <div :class="$vuetify.breakpoint.smAndUp? 'image-text' : 'image-text-m' ">{{ image.info }}</div>
-        </div>
-      </v-flex>
+      <ImageList :originalData="imagesPhotos" />
       <v-flex xs12>
-        <div class="text" id="edits">
+        <div class="text mt-2" id="edits">
           <div class="ma-1">edits</div>
           <div class="ma-1">編集する</div>
         </div>
       </v-flex>
-      <v-flex :class="$vuetify.breakpoint.mdAndUp? 'xs6' : 'xs12'" v-for="image in imagesEdits" :key="image.full">
-        <div v-if="!image.expanded" @click="image.expanded = true">
-          <v-img class="ma-4 image" :src="image.compressed" :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
-        </div>
-        <div v-else @click="image.expanded = false" class="expanded">
-          <v-img contain :src="image.full" />
-          <div :class="$vuetify.breakpoint.smAndUp? 'image-text' : 'image-text-m' ">{{ image.info }}</div>
-        </div>
-      </v-flex>
+      <ImageList :originalData="imagesEdits" />
     </v-layout>
     <Footer />
   </v-container>
@@ -49,10 +26,11 @@
 <script>
 import Footer from '@/components/Footer.vue'
 import Topbar from '@/components/Topbar.vue'
+import ImageList from '@/components/ImageList.vue'
 
 export default {
   title: 'GALLERY',
-  components: { Footer, Topbar },
+  components: { Footer, Topbar, ImageList },
   methods: {
     async randomImages(list) {
       return list.sort(function(){return 0.5 - Math.random()})
@@ -133,94 +111,10 @@ export default {
   color: white;
 }
 
-.image {
-  border-style: solid;
-  border-color: #fffb96;
-  transition: all 2s ease;
-}
-
-.image-text {
-  border-style: solid;
-  border-color: #fffb96;
-  font-size: 17px;
-  letter-spacing: .5em;
-  font-family: 'OCR-A', 'Courier', monospace;
-  -webkit-text-stroke: .03em #fffb96;
-  background-color: black;
-  position: fixed;
-  top: 1%;
-  left: 25%;
-  width: 50%;
-  padding: 1px;
-}
-
-.image-text-m {
-  border-style: solid;
-  border-color: #fffb96;
-  font-size: 13px;
-  letter-spacing: .5em;
-  font-family: 'OCR-A', 'Courier', monospace;
-  -webkit-text-stroke: .03em #fffb96;
-  background-color: black;
-  position: fixed;
-  top: 1%;
-  left: 0;
-  width: 100%;
-  padding: 1px;
-}
-
-.expanded {
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  position: fixed;
-  z-index: 100000;
-  overflow: hidden;
-  backdrop-filter: blur(5px);
-}
-
-.glow {
-  font-size: 17px;
-  letter-spacing: .5em;
-  font-family: 'OCR-A', 'Courier', monospace;
-  transition: all 2s ease;
-}
-
 .text {
   font-size: 17px;
   letter-spacing: .5em;
   font-family: 'OCR-A', 'Courier', monospace;
-}
-
-.image:hover {
-  box-shadow: 0 0 20px #fffb96;
-}
-
-.jumps {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-  background-color: black;
-}
-
-a {
-  color: inherit;
-  text-decoration: underline;
-  transition: all 2s ease;
-}
-
-a:hover {
-  color: #fffb96;
-  text-shadow: 0 0 5px #fffb96;
-}
-
-.inline {
-  display: inline;
 }
 
 #photography, #edits {
