@@ -22,6 +22,6 @@ jobs:
           host: ${{ secrets.TERM_HOST }}
           username: ${{ secrets.TERM_USERNAME }}
           port: ${{ secrets.TERM_PORT }}
-          key: ${{ secrets.PRIVATE }}
+          key: ${{ secrets.TERM_PRIVATE }}
           source: "dist/*"
           target: "/var/www/html"
