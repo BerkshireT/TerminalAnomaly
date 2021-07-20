@@ -2,7 +2,7 @@
   <v-container fluid fill-height class="projects">
     <v-layout wrap text-xs-center justify-center>
       <v-flex xs12>
-        <Topbar :inner="true" :image="theme.image" :color="theme.color" />
+        <Topbar :inner="true" :image="theme.image" gif="projects" :color="theme.color" />
       </v-flex>
       <ProjectListItem link="/AnalogFractals" image="MixerThumb.png" title="Analog Fractals" titleJap="アナログ・フラクタル" :isLeft="true"/>
       <ProjectListItem link="/DirtyVideoMixer" image="MixerThumb.png" title="Karl Klomp Video Mixer" titleJap="ビデオミキサー" :isLeft="false"/>

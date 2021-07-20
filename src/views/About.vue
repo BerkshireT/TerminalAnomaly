@@ -2,7 +2,7 @@
   <v-container fluid fill-height class="about">
     <v-layout wrap text-xs-center justify-center>
       <v-flex xs12>
-        <Topbar :inner="true" :image="theme.image" :color="theme.color" />
+        <Topbar :inner="true" :image="theme.image" gif="about" :color="theme.color" />
       </v-flex>
       <!-- RESUME -->
       <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>

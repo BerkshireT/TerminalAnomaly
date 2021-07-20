@@ -2,7 +2,7 @@
   <v-container fluid fill-height class="Mixer">
     <v-layout wrap text-xs-center justify-center>
       <v-flex xs12>
-        <Topbar :inner="true" :image="theme.image" :color="theme.color" />
+        <Topbar :inner="true" :image="theme.image" gif="projects" :color="theme.color" />
       </v-flex>
       <v-flex xs12  v-for="item in text" :key="item.title">
         <v-layout wrap text-xs-left justify-center>
@@ -83,7 +83,7 @@ export default {
                 { title: "GAME SET!",
                 pic: "step5.jpg",
                 text: "Everything worked as expected! I just had to be careful when plugging the RCA cables into the rig, since the super glued ports weren't the " +
-                "strongest. "
+                "strongest. I've used this mixer to create the gifs you see at the top of the each page. Hope you enjoy!"
                 }],
      }
   }
