@@ -12,8 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Build and Push
+      - uses: actions/checkout@master
       - run: npm install
       - run: npm run build
       - run: scp -r dist/* ubuntu@52.72.101.212:/var/www/html
