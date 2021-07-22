@@ -4,7 +4,6 @@
       <v-flex xs12>
         <Topbar :inner="true" :image="theme.image" gif="projects" :color="theme.color" />
       </v-flex>
-      <ProjectListItem link="/AnalogFractals" image="MixerThumb.png" title="Analog Fractals" titleJap="アナログ・フラクタル" :isLeft="true"/>
       <ProjectListItem link="/DirtyVideoMixer" image="MixerThumb.png" title="Karl Klomp Video Mixer" titleJap="ビデオミキサー" :isLeft="false"/>
       <ProjectListItem link="/KOeveryDayO" image="KOThumb.png" title="#KOeveryDayO" titleJap="ノックアウト" :isLeft="true"/>
       <ProjectListItem link="/SuperSmashSearch" image="SmashThumb.png" title="Super Smash Search" titleJap="スーパー・スマッシュ・サーチ" :isLeft="false"/>
