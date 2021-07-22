@@ -2,7 +2,7 @@
   <v-container fluid fill-height class="smash">
     <v-layout wrap text-xs-center justify-center>
       <v-flex xs12>
-        <Topbar :inner="true" :image="theme.image" :color="theme.color" />
+        <Topbar :inner="true" :image="theme.image" gif="projects" :color="theme.color" />
       </v-flex>
       <body>
         <div class="window">

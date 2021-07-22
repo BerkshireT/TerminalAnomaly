@@ -2,7 +2,7 @@
   <v-container fluid fill-height class="KO">
     <v-layout wrap text-xs-center justify-center>
       <v-flex xs12>
-        <Topbar :inner="true" :image="theme.image" :color="theme.color" />
+        <Topbar :inner="true" :image="theme.image" gif="projects" :color="theme.color" />
       </v-flex>
       <v-flex xs12>
         <div class="glitch">#KOeveryDayO</div>

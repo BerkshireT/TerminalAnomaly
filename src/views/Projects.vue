@@ -2,32 +2,12 @@
   <v-container fluid fill-height class="projects">
     <v-layout wrap text-xs-center justify-center>
       <v-flex xs12>
-        <Topbar :inner="true" :image="theme.image" :color="theme.color" />
+        <Topbar :inner="true" :image="theme.image" gif="projects" :color="theme.color" />
       </v-flex>
-      <v-flex :class="$vuetify.breakpoint.lgAndUp? 'xs12' : 'xs12'">
-        <div class="glow">
-          <router-link to="/DirtyVideoMixer">
-            <div class="ma-1">Karl Klomp Video Mixer</div>
-            <div class="ma-1">ビデオミキサー</div>
-          </router-link>
-        </div>
-      </v-flex>
-      <v-flex :class="$vuetify.breakpoint.lgAndUp? 'xs12' : 'xs12'">
-        <div class="glow">
-          <router-link to="/SuperSmashSearch">
-            <div class="ma-1">Super Smash Search</div>
-            <div class="ma-1">スーパー・スマッシュ・サーチ</div>
-          </router-link>
-        </div>
-      </v-flex>
-      <v-flex :class="$vuetify.breakpoint.lgAndUp? 'xs12' : 'xs12'">
-        <div class="glow">
-          <router-link to="/KOeveryDayO">
-            <div class="ma-1">#KOeveryDayO</div>
-            <div class="ma-1">ノックアウト</div>
-          </router-link>
-        </div>
-      </v-flex>
+      <ProjectListItem link="/AnalogFractals" image="MixerThumb.png" title="Analog Fractals" titleJap="アナログ・フラクタル" :isLeft="true"/>
+      <ProjectListItem link="/DirtyVideoMixer" image="MixerThumb.png" title="Karl Klomp Video Mixer" titleJap="ビデオミキサー" :isLeft="false"/>
+      <ProjectListItem link="/KOeveryDayO" image="KOThumb.png" title="#KOeveryDayO" titleJap="ノックアウト" :isLeft="true"/>
+      <ProjectListItem link="/SuperSmashSearch" image="SmashThumb.png" title="Super Smash Search" titleJap="スーパー・スマッシュ・サーチ" :isLeft="false"/>
     </v-layout>
     <Footer />
   </v-container>
@@ -36,10 +16,11 @@
 <script>
 import Footer from '@/components/Footer.vue'
 import Topbar from '@/components/Topbar.vue'
+import ProjectListItem from '@/components/ProjectListItem.vue'
 
 export default {
   title: 'PROJECTS',
-  components: { Footer, Topbar },
+  components: { Footer, Topbar, ProjectListItem },
   data () {
      return {
         theme: { color: '#b967ff', image: 'ta-purple.gif' }
@@ -55,26 +36,9 @@ export default {
   background: url(../assets/backgrounds/grid-purple.png);
   background-color: black;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: center;
   background-attachment: fixed;
   color: white;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.glow {
-  font-size: 17px;
-  letter-spacing: .5em;
-  font-family: 'OCR-A', 'Courier', monospace;
-  transition: all 2s ease;
-}
-
-.glow:hover {
-  color: #b967ff;
-  text-shadow: 0 0 5px #b967ff;
 }
 </style>

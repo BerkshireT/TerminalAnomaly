@@ -1,7 +1,16 @@
 <template>
   <v-container grid-list-xs fluid class="text-xs-center">
     <v-layout row fluid justify-space-around wrap>
-      <v-flex xs12 :class="$vuetify.breakpoint.smAndUp? 'analog' : 'analog-m'">
+      <v-flex v-if="gif === 'projects'" xs12 :class="$vuetify.breakpoint.smAndUp? 'projects' : 'projects-m'">
+        <v-img class="ma-4" :src="require('@/assets/logos/' + image)" contain :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
+      </v-flex>
+      <v-flex v-if="gif === 'gallery'" xs12 :class="$vuetify.breakpoint.smAndUp? 'gallery' : 'gallery-m'">
+        <v-img class="ma-4" :src="require('@/assets/logos/' + image)" contain :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
+      </v-flex>
+      <v-flex v-if="gif === 'about'" xs12 :class="$vuetify.breakpoint.smAndUp? 'about' : 'about-m'">
+        <v-img class="ma-4" :src="require('@/assets/logos/' + image)" contain :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
+      </v-flex>
+      <v-flex v-if="gif === 'home'" xs12 :class="$vuetify.breakpoint.smAndUp? 'home' : 'home-m'">
         <v-img class="ma-4" :src="require('@/assets/logos/' + image)" contain :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
       </v-flex>
       <v-flex :class="$vuetify.breakpoint.smAndUp? 'xs8' : 'xs12'">
@@ -23,7 +32,11 @@ export default {
   props: {
     image: {
       required: true,
-      default: '@/assets/logos/ta-green.gif'
+      default: 'ta-green.gif'
+    },
+    gif: {
+      required: true,
+      default: 'home'
     },
     color: {
       required: true,
@@ -44,9 +57,24 @@ export default {
   font-family: 'OCR-A', 'Courier', monospace;
 }
 
-.analog {
+.home, .home-m {
+  background: url(../assets/home.gif);
+}
+
+.gallery, .gallery-m {
+  background: url(../assets/gallery.gif);
+}
+
+.projects, .projects-m {
+  background: url(../assets/projects.gif);
+}
+
+.about, .about-m {
+  background: url(../assets/about.gif);
+}
+
+.home, .gallery, .projects, .about {
   height: 100%;
-  background: url(../assets/analog.gif);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -83,9 +111,8 @@ a {
   font-family: 'OCR-A', 'Courier', monospace;
 }
 
-.analog-m {
+.home-m, .gallery-m, .projects-m, .about-m {
   height: 100%;
-  background: url(../assets/analog.gif);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

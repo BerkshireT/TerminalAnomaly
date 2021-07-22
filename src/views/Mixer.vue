@@ -2,7 +2,7 @@
   <v-container fluid fill-height class="Mixer">
     <v-layout wrap text-xs-center justify-center>
       <v-flex xs12>
-        <Topbar :inner="true" :image="theme.image" :color="theme.color" />
+        <Topbar :inner="true" :image="theme.image" gif="projects" :color="theme.color" />
       </v-flex>
       <v-flex xs12  v-for="item in text" :key="item.title">
         <v-layout wrap text-xs-left justify-center>
@@ -13,16 +13,13 @@
           <!-- PICTURE -->
           <v-flex xs3 v-if="$vuetify.breakpoint.mdAndUp" />
           <v-flex :xs6="$vuetify.breakpoint.mdAndUp" :xs10="$vuetify.breakpoint.smAndDown" class="pic">
-            <v-img :src="require('@/assets/mixer/' + item.pic)"/>
+            <v-img :src="require('@/assets/mixer/' + item.pic)" max-height="450px" contain/>
           </v-flex>
           <v-flex xs3 v-if="$vuetify.breakpoint.mdAndUp" />
           <!-- TEXT -->
           <v-flex xs3 v-if="$vuetify.breakpoint.mdAndUp" />
           <v-flex :xs6="$vuetify.breakpoint.mdAndUp" :xs10="$vuetify.breakpoint.smAndDown" class="box" v-if="item.title === 'Karl Klomp Dirty Video Mixer (GCC Edition)'">
             <div class="text">{{ item.text }}<a href="https://www.karlklomp.nl/" target="blank">site.</a></div>
-          </v-flex>
-          <v-flex :xs6="$vuetify.breakpoint.mdAndUp" :xs10="$vuetify.breakpoint.smAndDown" class="box" v-else-if="item.title === 'GAME SET!'">
-            <div class="text">{{ item.text }}<a href="https://www.youtube.com/c/TerminalAnomaly" target="blank">YouTube channel!</a></div>
           </v-flex>
           <v-flex :xs6="$vuetify.breakpoint.mdAndUp" :xs10="$vuetify.breakpoint.smAndDown" class="box" v-else>
             <div class="text">{{ item.text }}</div>
@@ -85,9 +82,8 @@ export default {
                 
                 { title: "GAME SET!",
                 pic: "step5.jpg",
-                text: "Everything worked as expected! I just had to be careful when plugging the RCA cables into the rig since the super glued ports weren't the " +
-                "strongest thing in the world. Now I could start to create trippy visuals to my heart's content. If you want to see what kind of cool things I'm trying with this, " +
-                "be sure to check out my "
+                text: "Everything worked as expected! I just had to be careful when plugging the RCA cables into the rig, since the super glued ports weren't the " +
+                "strongest. I've used this mixer to create the gifs you see at the top of the each page. Hope you enjoy!"
                 }],
      }
   }
@@ -118,11 +114,15 @@ export default {
 }
 
 .box, .pic {
-  border: 2px solid #b967ff;
   margin-bottom: 24px;
 }
 
+.pic {
+  background-color: #b967ff;
+}
+
 .box {
+  border: 2px solid #b967ff;
   background-color: black;
 }
 
