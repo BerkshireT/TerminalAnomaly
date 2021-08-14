@@ -125,6 +125,7 @@ export default {
 
 .image:hover {
   box-shadow: 0 0 20px #fffb96;
+  cursor: pointer;
 }
 
 a {
