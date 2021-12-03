@@ -1,10 +1,10 @@
 <template>
    <div>
-      <button v-if="isPreviousButtonDisabled" class="button-disabled" v-html="previous" disabled="true"/>
-      <button v-else class="button" v-html="previous" @click="previousPage" />
+      <button v-if="isPreviousButtonDisabled" :class="$vuetify.breakpoint.smAndUp ? 'button-disabled' : 'button-disabled-m'" v-html="previous" disabled="true"/>
+      <button v-else :class="$vuetify.breakpoint.smAndUp ? 'button' : 'button-m'" v-html="previous" @click="previousPage" />
 
-      <button v-if="isNextButtonDisabled" class="button-disabled" v-html="next" disabled="true"/>
-      <button v-else class="button" v-html="next" @click="nextPage" />
+      <button v-if="isNextButtonDisabled" :class="$vuetify.breakpoint.smAndUp ? 'button-disabled' : 'button-disabled-m'" v-html="next" disabled="true"/>
+      <button v-else :class="$vuetify.breakpoint.smAndUp ? 'button' : 'button-m'" v-html="next" @click="nextPage" />
    </div>
 </template>
 
@@ -52,12 +52,25 @@ export default {
    color: #fffb96;
 }
 
+.button-m {
+   font-size: 3em;
+   color: #fffb96;
+   box-shadow: none;
+}
+
 .button-disabled {
    font-size: 5em;
    opacity: 0;
 }
 
+.button-disabled-m {
+   font-size: 3em;
+   opacity: 0;
+   box-shadow: none;
+}
+
 .button:active {
    color: white;
+   box-shadow: none;
 }
 </style>

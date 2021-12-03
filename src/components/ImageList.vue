@@ -1,12 +1,27 @@
 <template>
-   <v-layout wrap text-xs-center justify-center>
+   <v-layout v-if="$vuetify.breakpoint.lgAndUp" wrap text-xs-center justify-center>
       <v-flex xs3 v-for="image in images" :key="image.full">
          <div v-if="!image.expanded" @click="image.expanded = true">
-            <v-img class="ma-4 image" :src="image.compressed" :max-height="$vuetify.breakpoint.smAndUp? '200px' : '75px'"/>
+            <v-img class="ma-4 image" :src="image.compressed" max-height="200px"/>
          </div>
          <div v-else @click="image.expanded = false" class="expanded">
             <v-img contain :src="image.full" />
-            <div :class="$vuetify.breakpoint.smAndUp? 'image-text' : 'image-text-m'">{{ image.info }}</div>
+            <div class="image-text">{{ image.info }}</div>
+         </div>
+      </v-flex>
+      <v-flex xs12>
+         <PaginationControl :currentPage="page" :pageCount="pageCount" @nextPage="pageChangeHandle('next')" @previousPage="pageChangeHandle('previous')"/>
+      </v-flex>
+   </v-layout>
+   
+   <v-layout v-else wrap text-xs-center justify-center>
+      <v-flex xs6 v-for="image in imagesMobile" :key="image.full">
+         <div v-if="!image.expanded" @click="image.expanded = true">
+            <v-img class="ma-4 image" :src="image.compressed" :max-height="$vuetify.breakpoint.smAndDown ? '60px' : '200px'"/>
+         </div>
+         <div v-else @click="image.expanded = false" class="expanded">
+            <v-img contain :src="image.full" />
+            <div class="image-text-m">{{ image.info }}</div>
          </div>
       </v-flex>
       <v-flex xs12>
@@ -35,14 +50,24 @@ export default {
                this.page += 1
                this.start += 8
                this.end += 8
+
+               this.pageMobile += 1
+               this.startMobile += 4
+               this.endMobile += 4
                break
             case 'previous':
                this.page -= 1
                this.start -= 8
                this.end -= 8
+               
+               this.pageMobile -= 1
+               this.startMobile -= 4
+               this.endMobile -= 4
                break
             }
          this.images = this.originalData.slice(this.start, this.end)
+
+         this.imagesMobile = this.originalData.slice(this.startMobile, this.endMobile)
       }
    },
    data () {
@@ -52,11 +77,20 @@ export default {
          start: 0,
          end: 8,
          pageCount: 1,
+
+         imagesMobile: [],
+         pageMobile: 1,
+         startMobile: 0,
+         endMobile: 4,
+         pageCountMobile: 1,
       }
    },
    async mounted() {
       this.$data.images = this.originalData.slice(this.start, this.end)
       this.$data.pageCount = Math.ceil(this.originalData.length / 8)
+
+      this.$data.imagesMobile = this.originalData.slice(this.startMobile, this.endMobile)
+      this.$data.pageCountMobile = Math.ceil(this.originalData.length / 4)
    }
 }
 </script>

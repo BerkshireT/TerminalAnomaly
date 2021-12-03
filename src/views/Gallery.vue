@@ -5,14 +5,14 @@
         <Topbar :inner="true" :image="theme.image" gif="gallery" :color="theme.color" />
       </v-flex>
       <v-flex xs12>
-        <div class="text mt-2" id="photography">
+        <div :class="$vuetify.breakpoint.smAndUp ? 'text mt-2' : 'text-m mt-2'" id="photography">
           <div class="ma-1">P H O T O G R A P H Y</div>
           <div class="ma-1">写真撮影</div>
         </div>
       </v-flex>
       <ImageList :originalData="imagesPhotos" />
       <v-flex xs12>
-        <div class="text mt-2" id="edits">
+        <div :class="$vuetify.breakpoint.smAndUp ? 'text mt-2' : 'text-m mt-2'" id="edits">
           <div class="ma-1">E D I T S</div>
           <div class="ma-1">編集する</div>
         </div>
@@ -122,6 +122,12 @@ export default {
   font-size: 24px;
   font-weight: bold;
   letter-spacing: .5em;
+  font-family: 'OCR-A', 'Courier', monospace;
+}
+
+.text-m {
+  font-size: 17px;
+  letter-spacing: .1em;
   font-family: 'OCR-A', 'Courier', monospace;
 }
 
