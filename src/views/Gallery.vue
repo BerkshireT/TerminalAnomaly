@@ -6,14 +6,14 @@
       </v-flex>
       <v-flex xs12>
         <div class="text mt-2" id="photography">
-          <div class="ma-1">photography</div>
+          <div class="ma-1">P H O T O G R A P H Y</div>
           <div class="ma-1">写真撮影</div>
         </div>
       </v-flex>
       <ImageList :originalData="imagesPhotos" />
       <v-flex xs12>
         <div class="text mt-2" id="edits">
-          <div class="ma-1">edits</div>
+          <div class="ma-1">E D I T S</div>
           <div class="ma-1">編集する</div>
         </div>
       </v-flex>
@@ -96,7 +96,7 @@ export default {
         { expanded: false, info: 'portrait palette', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/portrait%20palette.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/portrait-palette.jpg?raw=true'},
         { expanded: false, info: 'rainbow cruise', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/rainbow%20cruise.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/rainbow%20cruise.jpg?raw=true' },
         { expanded: false, info: 'eden', full: 'https://github.com/BerkshireT/Assets/blob/main/edits/eden.png?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/edits/compressed/eden.jpg?raw=true' },
-    ]
+      ]
     }
   },
   async mounted() {
@@ -119,13 +119,14 @@ export default {
 }
 
 .text {
-  font-size: 17px;
+  font-size: 24px;
+  font-weight: bold;
   letter-spacing: .5em;
   font-family: 'OCR-A', 'Courier', monospace;
 }
 
 #photography, #edits {
-    padding-top: 50px;
-    margin-top: -50px;
+  padding-top: 10px;
+  margin-top: -50px;
 }
 </style>

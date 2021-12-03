@@ -1,12 +1,12 @@
 <template>
    <v-layout wrap text-xs-center justify-center>
-      <v-flex xs6 v-for="image in images" :key="image.full">
+      <v-flex xs3 v-for="image in images" :key="image.full">
          <div v-if="!image.expanded" @click="image.expanded = true">
             <v-img class="ma-4 image" :src="image.compressed" :max-height="$vuetify.breakpoint.smAndUp? '200px' : '75px'"/>
          </div>
          <div v-else @click="image.expanded = false" class="expanded">
             <v-img contain :src="image.full" />
-            <div :class="$vuetify.breakpoint.smAndUp? 'image-text' : 'image-text-m' ">{{ image.info }}</div>
+            <div :class="$vuetify.breakpoint.smAndUp? 'image-text' : 'image-text-m'">{{ image.info }}</div>
          </div>
       </v-flex>
       <v-flex xs12>
@@ -33,13 +33,13 @@ export default {
          switch (value) {
             case 'next':
                this.page += 1
-               this.start += 4
-               this.end += 4
+               this.start += 8
+               this.end += 8
                break
             case 'previous':
                this.page -= 1
-               this.start -= 4
-               this.end -= 4
+               this.start -= 8
+               this.end -= 8
                break
             }
          this.images = this.originalData.slice(this.start, this.end)
@@ -50,13 +50,13 @@ export default {
          images: [],
          page: 1,
          start: 0,
-         end: 4,
+         end: 8,
          pageCount: 1,
       }
    },
    async mounted() {
       this.$data.images = this.originalData.slice(this.start, this.end)
-      this.$data.pageCount = Math.ceil(this.originalData.length / 4)
+      this.$data.pageCount = Math.ceil(this.originalData.length / 8)
    }
 }
 </script>

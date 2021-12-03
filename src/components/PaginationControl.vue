@@ -1,7 +1,10 @@
 <template>
    <div>
-      <v-btn text large class="button pb-2" outline color="#fffb96" v-html="previous" :disabled="isPreviousButtonDisabled" @click.native="previousPage" />
-      <v-btn text large class="button pb-2" outline color="#fffb96" v-html="next" :disabled="isNextButtonDisabled" @click.native="nextPage" />
+      <button v-if="isPreviousButtonDisabled" class="button-disabled" v-html="previous" disabled="true"/>
+      <button v-else class="button" v-html="previous" @click="previousPage" />
+
+      <button v-if="isNextButtonDisabled" class="button-disabled" v-html="next" disabled="true"/>
+      <button v-else class="button" v-html="next" @click="nextPage" />
    </div>
 </template>
 
@@ -19,8 +22,8 @@ export default {
    },
    data() {
       return {
-         previous: "&#8678",
-         next: "&#8680",
+         previous: "&#129152",
+         next: "&#129154",
       }
    },
    computed: {
@@ -46,9 +49,15 @@ export default {
 <style scoped>
 .button {
    font-size: 5em;
+   color: #fffb96;
 }
 
-.button:hover {
-  box-shadow: 0 0 20px #fffb96;
+.button-disabled {
+   font-size: 5em;
+   opacity: 0;
+}
+
+.button:active {
+   color: white;
 }
 </style>
