@@ -31,11 +31,6 @@ import ImageList from '@/components/ImageList.vue'
 export default {
   title: 'GALLERY',
   components: { Footer, Topbar, ImageList },
-  methods: {
-    async randomImages(list) {
-      return list.sort(function(){return 0.5 - Math.random()})
-    }
-  },
   data () {
     return {
       theme: { color: '#fffb96', image: 'ta-yellow.gif' },
@@ -99,10 +94,6 @@ export default {
       ]
     }
   },
-  async mounted() {
-    this.$data.imagesPhotos = await this.randomImages(this.$data.imagesPhotos)
-    this.$data.imagesEdits = await this.randomImages(this.$data.imagesEdits)
-  }
 }
 </script>
 

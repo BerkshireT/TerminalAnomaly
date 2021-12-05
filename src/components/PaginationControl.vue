@@ -47,8 +47,12 @@ export default {
 
 
 <style scoped>
+* {
+   box-shadow: none;
+}
+
 .button {
-   font-size: 5em;
+   font-size: 4em;
    color: #fffb96;
 }
 

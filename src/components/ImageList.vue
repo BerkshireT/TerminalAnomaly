@@ -1,7 +1,10 @@
 <template>
    <v-layout v-if="$vuetify.breakpoint.lgAndUp" wrap text-xs-center justify-center>
       <v-flex xs3 v-for="image in images" :key="image.full">
-         <div v-if="!image.expanded" @click="image.expanded = true">
+         <div v-if="image.isEmpty">
+            <v-img class="ma-4 image-trans" :src="image.emptyLink" max-height="200px"/>
+         </div>
+         <div v-else-if="!image.expanded" @click="image.expanded = true">
             <v-img class="ma-4 image" :src="image.compressed" max-height="200px"/>
          </div>
          <div v-else @click="image.expanded = false" class="expanded">
@@ -16,7 +19,10 @@
    
    <v-layout v-else wrap text-xs-center justify-center>
       <v-flex xs6 v-for="image in imagesMobile" :key="image.full">
-         <div v-if="!image.expanded" @click="image.expanded = true">
+         <div v-if="image.isEmpty">
+            <v-img class="ma-4 image-trans" :src="image.emptyLink" :max-height="$vuetify.breakpoint.smAndDown ? '60px' : '200px'"/>
+         </div>
+         <div v-else-if="!image.expanded" @click="image.expanded = true">
             <v-img class="ma-4 image" :src="image.compressed" :max-height="$vuetify.breakpoint.smAndDown ? '60px' : '200px'"/>
          </div>
          <div v-else @click="image.expanded = false" class="expanded">
@@ -25,7 +31,7 @@
          </div>
       </v-flex>
       <v-flex xs12>
-         <PaginationControl :currentPage="page" :pageCount="pageCount" @nextPage="pageChangeHandle('next')" @previousPage="pageChangeHandle('previous')"/>
+         <PaginationControl :currentPage="pageMobile" :pageCount="pageCountMobile" @nextPage="pageChangeHandle('next')" @previousPage="pageChangeHandle('previous')"/>
       </v-flex>
    </v-layout>
 </template>
@@ -41,7 +47,7 @@ export default {
       }
    },
    methods: {
-      async randomImages(list) {
+      randomImages(list) {
          return list.sort(function(){return 0.5 - Math.random()})
       },
       async pageChangeHandle(value) {
@@ -66,8 +72,7 @@ export default {
                break
             }
          this.images = this.originalData.slice(this.start, this.end)
-
-         this.imagesMobile = this.originalData.slice(this.startMobile, this.endMobile)
+         this.imagesMobile = this.$data.dataCopy.slice(this.startMobile, this.endMobile)
       }
    },
    data () {
@@ -77,26 +82,50 @@ export default {
          start: 0,
          end: 8,
          pageCount: 1,
+         pageEmpties: 0,
 
+         dataCopy: [],
          imagesMobile: [],
          pageMobile: 1,
          startMobile: 0,
          endMobile: 4,
          pageCountMobile: 1,
+         pageEmptiesMobile: 0,
       }
    },
    async mounted() {
-      this.$data.images = this.originalData.slice(this.start, this.end)
-      this.$data.pageCount = Math.ceil(this.originalData.length / 8)
+      this.originalData = this.randomImages(this.originalData)
+      let empty = { isEmpty: true, emptyLink: "https://github.com/BerkshireT/Assets/blob/main/transparent.png?raw=true" }
 
-      this.$data.imagesMobile = this.originalData.slice(this.startMobile, this.endMobile)
-      this.$data.pageCountMobile = Math.ceil(this.originalData.length / 4)
+      if (this.$vuetify.breakpoint.lgAndUp) {
+         let perPageCount = 8
+         this.$data.pageCount = Math.ceil(this.originalData.length / perPageCount)
+         this.$data.pageEmpties = perPageCount - (this.originalData.length % perPageCount)
+         if (perPageCount != this.$data.pageEmpties) {
+            for (let x = 1; x <= this.$data.pageEmpties; x++) {
+               this.originalData.push(empty)
+            }
+         }
+         this.$data.images = this.originalData.slice(this.start, this.end)
+      }
+      else {
+         this.$data.dataCopy = [...this.originalData]
+         let perPageCountMobile = 4
+         this.$data.pageCountMobile = Math.ceil(this.originalData.length / perPageCountMobile)
+         this.$data.pageEmptiesMobile = perPageCountMobile - (this.originalData.length % perPageCountMobile)
+         if (perPageCountMobile != this.$data.pageEmptiesMobile) {
+            for (let x = 1; x <= this.$data.pageEmptiesMobile; x++) {
+               this.$data.dataCopy.push(empty)
+            }
+         }
+         this.$data.imagesMobile = this.$data.dataCopy.slice(this.startMobile, this.endMobile) 
+      }
    }
 }
 </script>
 
 <style scoped>
-.image {
+.image, .image-trans {
   border-style: solid;
   border-color: #fffb96;
   transition: all .5s ease;
