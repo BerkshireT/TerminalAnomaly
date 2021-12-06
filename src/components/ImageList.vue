@@ -8,6 +8,7 @@
             <v-img class="ma-4 image" :src="image.compressed" max-height="200px"/>
          </div>
          <div v-else @click="image.expanded = false" class="expanded">
+            <div class="image-placeholder">loading...<br>読み込み...</div>
             <v-img contain :src="image.full" />
             <div class="image-text">{{ image.info }}</div>
          </div>
@@ -26,6 +27,7 @@
             <v-img class="ma-4 image" :src="image.compressed" :max-height="$vuetify.breakpoint.smAndDown ? '60px' : '200px'"/>
          </div>
          <div v-else @click="image.expanded = false" class="expanded">
+            <div class="image-placeholder">loading...<br>読み込み...</div>
             <v-img contain :src="image.full" />
             <div class="image-text-m">{{ image.info }}</div>
          </div>
@@ -73,7 +75,7 @@ export default {
             }
          this.images = this.originalData.slice(this.start, this.end)
          this.imagesMobile = this.$data.dataCopy.slice(this.startMobile, this.endMobile)
-      }
+      },
    },
    data () {
       return {
@@ -129,6 +131,16 @@ export default {
   border-style: solid;
   border-color: #fffb96;
   transition: all .5s ease;
+}
+
+.image-placeholder {
+  font-size: 20px;
+  letter-spacing: .5em;
+  font-family: 'OCR-A', 'Courier', monospace;
+  position: fixed;
+  top: 50%;
+  width: 100%;
+  height: 100%;
 }
 
 .image-text {
