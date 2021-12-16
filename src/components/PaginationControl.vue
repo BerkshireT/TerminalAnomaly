@@ -1,7 +1,10 @@
 <template>
    <div>
-      <v-btn text large class="button pb-2" outline color="#fffb96" v-html="previous" :disabled="isPreviousButtonDisabled" @click.native="previousPage" />
-      <v-btn text large class="button pb-2" outline color="#fffb96" v-html="next" :disabled="isNextButtonDisabled" @click.native="nextPage" />
+      <button v-if="isPreviousButtonDisabled" :class="$vuetify.breakpoint.smAndUp ? 'button-disabled' : 'button-disabled-m'" v-html="previous" disabled="true"/>
+      <button v-else :class="$vuetify.breakpoint.smAndUp ? 'button' : 'button-m'" v-html="previous" @click="previousPage" />
+
+      <button v-if="isNextButtonDisabled" :class="$vuetify.breakpoint.smAndUp ? 'button-disabled' : 'button-disabled-m'" v-html="next" disabled="true"/>
+      <button v-else :class="$vuetify.breakpoint.smAndUp ? 'button' : 'button-m'" v-html="next" @click="nextPage" />
    </div>
 </template>
 
@@ -19,8 +22,8 @@ export default {
    },
    data() {
       return {
-         previous: "&#8678",
-         next: "&#8680",
+         previous: "&#129152",
+         next: "&#129154",
       }
    },
    computed: {
@@ -44,11 +47,34 @@ export default {
 
 
 <style scoped>
-.button {
-   font-size: 5em;
+* {
+   box-shadow: none;
 }
 
-.button:hover {
-  box-shadow: 0 0 20px #fffb96;
+.button {
+   font-size: 4em;
+   color: #fffb96;
+}
+
+.button-m {
+   font-size: 3em;
+   color: #fffb96;
+   box-shadow: none;
+}
+
+.button-disabled {
+   font-size: 5em;
+   opacity: 0;
+}
+
+.button-disabled-m {
+   font-size: 3em;
+   opacity: 0;
+   box-shadow: none;
+}
+
+.button:active {
+   color: white;
+   box-shadow: none;
 }
 </style>

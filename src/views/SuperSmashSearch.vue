@@ -8,7 +8,7 @@
         <div class="window">
           <div class="title-bar">
             <div class="title-bar-text">Super Smash Search</div>
-            <div class="title-bar-controls">made with <a href="https://jdan.github.io/98.css/" target="_blank">98.css</a></div>
+            <div class="title-bar-controls">styled with <a href="https://jdan.github.io/98.css/" target="_blank">98.css</a></div>
           </div>
           <div class="window-body">
             <span>I'm looking for upcoming </span>
