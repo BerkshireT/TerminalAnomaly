@@ -40,7 +40,7 @@
 <script>
 import Footer from '@/components/Footer.vue'
 import Topbar from '@/components/Topbar.vue'
-import Request from '@/scripts/SmashGG.js'
+import Request from '@/scripts/SuperSmashSearchRequest.js'
 
 export default {
   title: 'Super Smash Search',
@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     search(lan, miles) {
-      Request(process.env.VUE_APP_SMASHGG_API, lan , miles, this.$data.location)
+      Request("9f47b09aa50177c219f052a794b9b2c1", lan , miles, this.$data.location)
       .then(data => {
         let result = [];
         if (data.data.tournaments.nodes.length === 0) {
