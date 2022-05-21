@@ -24,17 +24,23 @@
       <v-flex xs8 class="personalsBox" v-if="$vuetify.breakpoint.lgAndUp">
         <div class="words">
           <div class="ma-1 personals">
-            <a href="https://github.com/BerkshireT" target="blank"><img class="img-spaced" src="https://image.flaticon.com/icons/png/512/25/25231.png" height="48px" width="48px"/></a>
-            <a href="https://open.spotify.com/user/cf9hq7vhmnz4lizol8969ph6t?si=3uj903wIRji4mHXT0q3GmQ" target="blank"><img class="img-spaced" src="https://image.flaticon.com/icons/png/512/2111/2111624.png" height="48px" width="48px"/></a>
-            <a href="https://www.instagram.com/terminalanomaly/" target="blank"><img class="img-spaced" src="https://image.flaticon.com/icons/png/512/174/174855.png" height="48px" width="48px"/></a>
-            <a href="https://www.youtube.com/c/TerminalAnomaly" target="blank"><img class="img-spaced" src="https://github.com/BerkshireT/Assets/blob/main/yt.png?raw=true" height="48px" width="48px"/></a>
-            <a href="https://anilist.co/user/terminalanomaly/animelist" target="blank"><img class="img-spaced" src="https://anilist.co/img/icons/android-chrome-512x512.png" height="48px" width="48px"/></a>
-            <a href="https://www.twitter.com/TerminalAnomaly" target="blank"><img class="img-spaced" src="https://elementarylibrarian.com/wp-content/uploads/2013/11/twitter-bird-white-on-blue.png" height="48px" width="48px"/></a>
+            <a href="https://github.com/BerkshireT" target="blank">
+              <img class="img-spaced" src="https://win98icons.alexmeub.com/icons/png/program_manager-1.png" height="48px" width="48px"/>
+            </a>
+            <a href="https://open.spotify.com/user/cf9hq7vhmnz4lizol8969ph6t?si=3uj903wIRji4mHXT0q3GmQ" target="blank">
+              <img class="img-spaced" src="https://win98icons.alexmeub.com/icons/png/computer_musical_keyboard-2.png" height="48px" width="48px"/>
+            </a>
+            <a href="https://www.instagram.com/terminalanomaly/" target="blank">
+              <img class="img-spaced" src="https://win98icons.alexmeub.com/icons/png/camera3-2.png" height="48px" width="48px"/>
+            </a>
+            <a href="https://anilist.co/user/terminalanomaly/animelist" target="blank">
+              <img class="img-spaced" src="https://win98icons.alexmeub.com/icons/png/msagent-3.png" height="48px" width="48px"/>
+            </a>
           </div>
         </div>
         <div class="text">
-          <div class="ma-1">personals</div>
-          <div class="ma-1">パーソナルズ</div>
+          <div class="ma-1">links</div>
+          <div class="ma-1">リンク</div>
         </div>
       </v-flex>
       <MobileAbout v-else :title="'personals'" :japanese="'パーソナルズ'" :innerText="3"/>

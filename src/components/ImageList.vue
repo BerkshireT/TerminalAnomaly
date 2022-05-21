@@ -2,15 +2,15 @@
    <v-layout v-if="$vuetify.breakpoint.lgAndUp" wrap text-xs-center justify-center>
       <v-flex xs3 v-for="image in images" :key="image.full">
          <div v-if="image.isEmpty">
-            <v-img class="ma-4 image-trans" :src="image.emptyLink" max-height="200px"/>
+            <v-img class="ma-4 image-trans" :src="image.emptyLink" max-height="150px"/>
          </div>
          <div v-else-if="!image.expanded" @click="image.expanded = true">
-            <v-img class="ma-4 image" :src="image.compressed" max-height="200px"/>
+            <v-img class="ma-4 image" :src="image.compressed" max-height="150px"/>
+            <div class="image-text">{{ image.info }}</div>
          </div>
          <div v-else @click="image.expanded = false" class="expanded">
             <div class="image-placeholder">loading...<br>読み込み...</div>
             <v-img contain :src="image.full" />
-            <div class="image-text">{{ image.info }}</div>
          </div>
       </v-flex>
       <v-flex xs12>
@@ -25,11 +25,11 @@
          </div>
          <div v-else-if="!image.expanded" @click="image.expanded = true">
             <v-img class="ma-4 image" :src="image.compressed" :max-height="$vuetify.breakpoint.smAndDown ? '60px' : '200px'"/>
+            <div class="image-text-m">{{ image.info }}</div>
          </div>
          <div v-else @click="image.expanded = false" class="expanded">
             <div class="image-placeholder">loading...<br>読み込み...</div>
             <v-img contain :src="image.full" />
-            <div class="image-text-m">{{ image.info }}</div>
          </div>
       </v-flex>
       <v-flex xs12>
@@ -97,7 +97,15 @@ export default {
    },
    async mounted() {
       this.originalData = this.randomImages(this.originalData)
-      let empty = { isEmpty: true, emptyLink: "https://github.com/BerkshireT/Assets/blob/main/transparent.png?raw=true" }
+
+      let emptyOptions = 
+      [
+         { isEmpty: true, emptyLink: "https://github.com/BerkshireT/Assets/blob/main/transparent1.png?raw=true" },
+         { isEmpty: true, emptyLink: "https://github.com/BerkshireT/Assets/blob/main/transparent2.png?raw=true" },
+         { isEmpty: true, emptyLink: "https://github.com/BerkshireT/Assets/blob/main/transparent3.png?raw=true" },
+         { isEmpty: true, emptyLink: "https://github.com/BerkshireT/Assets/blob/main/transparent4.png?raw=true" },
+         { isEmpty: true, emptyLink: "https://github.com/BerkshireT/Assets/blob/main/transparent5.png?raw=true" },
+      ]
 
       if (this.$vuetify.breakpoint.lgAndUp) {
          let perPageCount = 8
@@ -105,6 +113,7 @@ export default {
          this.$data.pageEmpties = perPageCount - (this.originalData.length % perPageCount)
          if (perPageCount != this.$data.pageEmpties) {
             for (let x = 1; x <= this.$data.pageEmpties; x++) {
+               let empty = emptyOptions[Math.floor(Math.random() * 5)];
                this.originalData.push(empty)
             }
          }
@@ -117,6 +126,7 @@ export default {
          this.$data.pageEmptiesMobile = perPageCountMobile - (this.originalData.length % perPageCountMobile)
          if (perPageCountMobile != this.$data.pageEmptiesMobile) {
             for (let x = 1; x <= this.$data.pageEmptiesMobile; x++) {
+               let empty = emptyOptions[Math.floor(Math.random() * 5)];
                this.$data.dataCopy.push(empty)
             }
          }
@@ -144,32 +154,16 @@ export default {
 }
 
 .image-text {
-  border-style: solid;
-  border-color: #fffb96;
   font-size: 17px;
-  letter-spacing: .5em;
   font-family: 'OCR-A', 'Courier', monospace;
   -webkit-text-stroke: .03em #fffb96;
-  background-color: black;
-  position: fixed;
-  top: 1%;
-  left: 25%;
-  width: 50%;
   padding: 1px;
 }
 
 .image-text-m {
-  border-style: solid;
-  border-color: #fffb96;
   font-size: 13px;
-  letter-spacing: .5em;
   font-family: 'OCR-A', 'Courier', monospace;
   -webkit-text-stroke: .03em #fffb96;
-  background-color: black;
-  position: fixed;
-  top: 1%;
-  left: 0;
-  width: 100%;
   padding: 1px;
 }
 

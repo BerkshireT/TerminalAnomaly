@@ -24,14 +24,4 @@ export default {
 .app {
   background-color: black;
 }
-.fade-enter-active {
-  transition: all 2s ease;
-}
-.fade-leave-active, .fade-leave-to {
-  filter: hue-rotate(90deg);
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
 </style>
