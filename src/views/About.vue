@@ -2,7 +2,7 @@
   <v-container fluid fill-height class="about">
     <v-layout wrap text-xs-center justify-center>
       <v-flex xs12>
-        <Topbar :inner="true" :image="theme.image" gif="about" :color="theme.color" />
+        <Topbar :inner="true" :image="theme.image" gif="about" :color="theme.color" :path="theme.path"/>
       </v-flex>
       <!-- RESUME -->
       <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
@@ -76,7 +76,7 @@ export default {
   components: { Footer, Topbar, MobileAbout },
   data () {
      return {
-        theme: { color: '#01cdfe', image: 'ta-blue.gif' },
+        theme: { color: '#01cdfe', image: 'ta-blue.gif', path: '/home/about$ ' },
      }
   }
 }
@@ -127,6 +127,7 @@ export default {
 a {
   color: inherit;
   text-decoration: underline;
+  cursor: crosshair;
 }
 
 .neon {

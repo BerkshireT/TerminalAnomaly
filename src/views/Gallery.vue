@@ -2,7 +2,7 @@
   <v-container fluid fill-height class="gallery">
     <v-layout wrap text-xs-center justify-center>
       <v-flex xs12>
-        <Topbar :inner="true" :image="theme.image" gif="gallery" :color="theme.color" />
+        <Topbar :inner="true" :image="theme.image" gif="gallery" :color="theme.color" :path="theme.path"/>
       </v-flex>
       <v-flex xs12>
         <div :class="$vuetify.breakpoint.smAndUp ? 'text mt-2' : 'text-m mt-2'" id="photography">
@@ -33,7 +33,7 @@ export default {
   components: { Footer, Topbar, ImageList },
   data () {
     return {
-      theme: { color: '#fffb96', image: 'ta-yellow.gif' },
+      theme: { color: '#fffb96', image: 'ta-yellow.gif', path: '/home/gallery$ ' },
       imagesPhotos: [
         { expanded: false, info: 'the 529, dayton, ohio', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/529.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/529.jpg?raw=true' },
         { expanded: false, info: 'cobo center, detroit, michigan', full: 'https://github.com/BerkshireT/Assets/blob/main/photography/cobo.jpg?raw=true', compressed: 'https://github.com/BerkshireT/Assets/blob/main/photography/compressed/cobo.jpg?raw=true' },
