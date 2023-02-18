@@ -1,3 +1,5 @@
+// disable smash search functionality and explain the project instead
+<!--
 <template>
   <v-container fluid fill-height class="smash">
     <v-layout wrap text-xs-center justify-center>
@@ -187,3 +189,5 @@ img {
    font-size: 10px;
 }
 </style>
+
+-->

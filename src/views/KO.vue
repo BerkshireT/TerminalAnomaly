@@ -1,3 +1,5 @@
+// honestly, remove this page
+<!--
 <template>
   <v-container fluid fill-height class="KO">
     <v-layout wrap text-xs-center justify-center>
@@ -123,3 +125,4 @@ export default {
   }
 }
 </style>
+-->
