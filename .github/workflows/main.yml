@@ -13,7 +13,6 @@ jobs:
     if: github.ref != 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
-      - name: Build
       - uses: actions/checkout@master
       - run: npm install
       - run: npm run build
@@ -22,7 +21,6 @@ jobs:
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
-      - name: Build
       - uses: actions/checkout@master
       - run: npm install
       - run: npm run build
