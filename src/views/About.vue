@@ -4,7 +4,7 @@
       <v-flex xs12>
         <Topbar :inner="true" :image="theme.image" gif="about" :color="theme.color" :path="theme.path"/>
       </v-flex>
-      <!-- RESUME -->
+      <!-- RESUME 
       <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <v-flex xs8 class="resumeBox" v-if="$vuetify.breakpoint.lgAndUp">
         <div class="text">
@@ -18,7 +18,7 @@
       </v-flex>
       <MobileAbout v-else :title="'resumé'" :japanese="'履歴書'" :innerText="1"/>
       <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
-      <!-- END RESUME -->
+      END RESUME -->
       <!-- PERSONALS -->
       <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <v-flex xs8 class="personalsBox" v-if="$vuetify.breakpoint.lgAndUp">
@@ -46,7 +46,7 @@
       <MobileAbout v-else :title="'personals'" :japanese="'パーソナルズ'" :innerText="3"/>
       <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <!-- END PERSONALS -->
-      <!-- CONTACT -->
+      <!-- CONTACT
       <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <v-flex xs8 class="contactBox" v-if="$vuetify.breakpoint.lgAndUp">
         <div class="text">
@@ -60,7 +60,7 @@
       </v-flex>
       <MobileAbout v-else :title="'contact'" :japanese="'連絡先'" :innerText="5"/>
       <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
-      <!-- END CONTACT -->
+      END CONTACT -->
     </v-layout>
     <Footer />
   </v-container>
@@ -95,6 +95,7 @@ export default {
   background-position: center;
   background-attachment: fixed;
   color: white;
+  padding-bottom: 50px;
 }
 
 .text, .words, .vistas {

@@ -5,7 +5,7 @@
         <Topbar :inner="true" :image="theme.image" gif="projects" :color="theme.color" :path="theme.path"/>
       </v-flex>
       <ProjectListItem link="/DirtyVideoMixer" image="MixerThumb.png" title="Karl Klomp Video Mixer" titleJap="ビデオミキサー" :isLeft="false"/>
-      <ProjectListItem link="/SuperSmashSearch" image="SmashThumb.png" title="Super Smash Search" titleJap="スーパー・スマッシュ・サーチ" :isLeft="true"/>
+      <!--<ProjectListItem link="/SuperSmashSearch" image="SmashThumb.png" title="Super Smash Search" titleJap="スーパー・スマッシュ・サーチ" :isLeft="true"/>-->
     </v-layout>
     <Footer />
   </v-container>

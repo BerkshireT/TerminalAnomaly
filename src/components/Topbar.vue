@@ -14,7 +14,7 @@
         <v-img class="ma-4" :src="require('@/assets/logos/' + image)" contain :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
       </v-flex>
       <v-flex :class="$vuetify.breakpoint.smAndUp? 'xs8' : 'xs12'">
-        <v-card-text class="white--text">
+        <v-card-text class="white--text pb-0">
           <div :class="$vuetify.breakpoint.mdAndUp? 'top-title' : 'top-title-m'" :style="{ textShadow: '1px 1px ' + color }">Terminal Anomaly</div>
           <div :class="$vuetify.breakpoint.mdAndUp? 'top-sub' : 'top-sub-m'" :style="{ color: color }">ターミナル・アノマリー</div>
           <div class="mt-3" v-if=inner>
@@ -50,8 +50,8 @@ export default {
       default: false
     },
     path: {
-      required: true,
-      default: '~$ '
+      required: false,
+      default: '/home$ '
     }
   },
   computed: {

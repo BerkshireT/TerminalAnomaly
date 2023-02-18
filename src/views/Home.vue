@@ -6,7 +6,7 @@ Add vaporwave page, make album art, music page
   <v-container fluid fill-height class="home">
     <v-layout wrap text-xs-center justify-center>
       <v-flex xs12>
-        <Topbar :inner="false" :image="theme.image" gif="home" :color="theme.color"/>
+        <Topbar :inner="false" :image="theme.image" gif="home" :color="theme.color" />
       </v-flex>
       <v-flex :class="$vuetify.breakpoint.lgAndUp? 'xs2' : 'xs12'">
         <div class="glow">
