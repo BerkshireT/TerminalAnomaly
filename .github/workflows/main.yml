@@ -4,6 +4,7 @@ on:
   push:
     branches: [ master ]
   pull_request:
+    types: [merged]
     branches: [ master ]
     
   workflow_dispatch:
@@ -15,7 +16,12 @@ jobs:
       - uses: actions/checkout@master
       - run: npm install
       - run: npm run build
-      
+  
+  update-remote:
+    if: ${{ github.event.action }} == 'merged'
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Copy Files
         uses: appleboy/scp-action@master
         with:
