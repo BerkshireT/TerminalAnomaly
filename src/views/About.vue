@@ -45,9 +45,9 @@
       </v-flex>
       <MobileAbout v-else :title="'personals'" :japanese="'パーソナルズ'" :innerText="3"/>
       <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
+      <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <!-- END PERSONALS -->
       <!-- CONTACT
-      <v-flex xs2 v-if="$vuetify.breakpoint.lgAndUp"/>
       <v-flex xs8 class="contactBox" v-if="$vuetify.breakpoint.lgAndUp">
         <div class="text">
           <div class="ma-1">contact</div>
