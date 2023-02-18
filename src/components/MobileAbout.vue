@@ -102,5 +102,6 @@ export default {
 a {
   color: inherit;
   text-decoration: underline;
+  cursor: crosshair;
 }
 </style>

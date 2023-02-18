@@ -23,5 +23,6 @@ export default {
 <style scoped>
 .app {
   background-color: black;
+  cursor: crosshair;
 }
 </style>

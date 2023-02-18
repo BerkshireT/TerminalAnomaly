@@ -11,6 +11,7 @@
          <div v-else @click="image.expanded = false" class="expanded">
             <div class="image-placeholder">loading...<br>読み込み...</div>
             <v-img contain :src="image.full" />
+            <div class="image-text-expanded">{{ image.info }}</div>
          </div>
       </v-flex>
       <v-flex xs12>
@@ -30,6 +31,7 @@
          <div v-else @click="image.expanded = false" class="expanded">
             <div class="image-placeholder">loading...<br>読み込み...</div>
             <v-img contain :src="image.full" />
+            <div class="image-text-expanded-m">{{ image.info }}</div>
          </div>
       </v-flex>
       <v-flex xs12>
@@ -158,6 +160,10 @@ export default {
   font-family: 'OCR-A', 'Courier', monospace;
   -webkit-text-stroke: .03em #fffb96;
   padding: 1px;
+  overflow-wrap: break-word;
+  width: 65%;
+  justify-content: center;
+  margin: auto;
 }
 
 .image-text-m {
@@ -165,6 +171,46 @@ export default {
   font-family: 'OCR-A', 'Courier', monospace;
   -webkit-text-stroke: .03em #fffb96;
   padding: 1px;
+  overflow-wrap: break-word;
+  width: 100%;
+  justify-content: center;
+  margin: auto;
+}
+
+.image-text-expanded {
+  font-size: 17px;
+  font-family: 'OCR-A', 'Courier', monospace;
+  -webkit-text-stroke: .03em #fffb96;
+  padding: 1px;
+  overflow-wrap: break-word;
+  width: 65%;
+  justify-content: center;
+
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+
+  text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
+}
+
+.image-text-expanded-m {
+  font-size: 13px;
+  font-family: 'OCR-A', 'Courier', monospace;
+  -webkit-text-stroke: .03em #fffb96;
+  padding: 1px;
+  overflow-wrap: break-word;
+  width: 100%;
+  justify-content: center;
+  
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+
+  text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
 }
 
 .expanded {
@@ -194,12 +240,12 @@ export default {
 
 .image:hover {
   box-shadow: 0 0 20px #fffb96;
-  cursor: pointer;
 }
 
 a {
   color: inherit;
   text-decoration: underline;
+  cursor: crosshair;
 }
 
 a:hover {

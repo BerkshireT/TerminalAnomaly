@@ -2,7 +2,7 @@
   <v-container fluid fill-height class="Mixer">
     <v-layout wrap text-xs-center justify-center>
       <v-flex xs12>
-        <Topbar :inner="true" :image="theme.image" gif="projects" :color="theme.color" />
+        <Topbar :inner=true :image="theme.image" gif="projects" :color="theme.color" :path="theme.path"/>
       </v-flex>
       <v-flex xs12  v-for="item in text" :key="item.title">
         <v-layout wrap text-xs-left justify-center>
@@ -41,7 +41,7 @@ export default {
   components: { Footer, Topbar },
   data () {
      return {
-        theme: { color: '#b967ff', image: 'ta-purple.gif' },
+        theme: { color: '#b967ff', image: 'ta-purple.gif', path: '/home/projects/mixer$ ' },
         text: [ { title: "Karl Klomp Dirty Video Mixer (GCC Edition)",
                 pic: "step0.gif",
                 text: "Karl Klomp is an audiovisual designer who has created a number of cool gadgets for live performance visuals. One of these is dubbed the Dirty Video Mixer. This device " +

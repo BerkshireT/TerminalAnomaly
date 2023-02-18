@@ -54,6 +54,7 @@ export default {
 .button {
    font-size: 4em;
    color: #fffb96;
+   transition: all .5s ease;
 }
 
 .button-m {
@@ -76,5 +77,9 @@ export default {
 .button:active {
    color: white;
    box-shadow: none;
+}
+
+.button:hover {
+   box-shadow: 0 0 20px #fffb96;
 }
 </style>

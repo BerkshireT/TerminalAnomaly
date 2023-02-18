@@ -14,12 +14,15 @@
         <v-img class="ma-4" :src="require('@/assets/logos/' + image)" contain :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
       </v-flex>
       <v-flex :class="$vuetify.breakpoint.smAndUp? 'xs8' : 'xs12'">
-        <v-card-text class="white--text">
+        <v-card-text class="white--text pb-0">
           <div :class="$vuetify.breakpoint.mdAndUp? 'top-title' : 'top-title-m'" :style="{ textShadow: '1px 1px ' + color }">Terminal Anomaly</div>
           <div :class="$vuetify.breakpoint.mdAndUp? 'top-sub' : 'top-sub-m'" :style="{ color: color }">ターミナル・アノマリー</div>
-            <div v-if="inner">
-              <router-link to="/" class="back" :style="{ textShadow: '1px 1px ' + color }">go home</router-link>
-            </div>
+          <div class="mt-3" v-if=inner>
+            <a href="javascript:history.go(-1)" :class="$vuetify.breakpoint.mdAndUp? 'back' : 'back-m'" :style="backText">admin@terminal:{{path}}cd ..<p class="cursor">|</p></a>
+          </div>
+          <div class="mt-3" v-else>
+            <a :class="$vuetify.breakpoint.mdAndUp? 'back-home' : 'back-home-m'" :style="backText">admin@terminal:{{path}}<p class="cursor">|</p></a>
+          </div>
         </v-card-text>
         <v-divider :style="{ borderColor: color + ' !important' }" />
       </v-flex>
@@ -45,6 +48,17 @@ export default {
     inner: {
       required: true,
       default: false
+    },
+    path: {
+      required: false,
+      default: '/home$ '
+    }
+  },
+  computed: {
+    backText: function() {
+      return {
+        '--color': this.$props.color
+      }
     }
   }
 }
@@ -93,20 +107,40 @@ export default {
   letter-spacing: 0.5em;
 }
 
-.back {
-  font-size: 17px;
-  letter-spacing: .5em;
-  font-family: 'OCR-A', 'Courier', monospace;
+.back, .back-home {
+  font-size: 15px;
+  letter-spacing: .01em;
+  font-family: 'Lucida Sans Typewriter', 'Courier', monospace;
+
+  text-shadow: 1px 1px var(--color);
+  transition: all 2s ease;
+}
+
+.back:hover {
+  color: var(--color);
+  text-shadow: 0 0 5px var(--color);
+}
+
+.cursor {
+  display: inline-block;
+  animation: blinker 1s step-start infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
 
 a {
   color: white;
   text-decoration: none;
+  cursor: crosshair;
 }
 
 /* Mobile */
 .top-title-m {
-  font-size: 23px;
+  font-size: 20px;
   font-style: italic;
   font-family: 'OCR-A', 'Courier', monospace;
 }
@@ -122,5 +156,13 @@ a {
   font-size: 13px;
   letter-spacing: 0.1em;
   font-style: italic;
+}
+
+.back-m, .back-home-m {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  font-family: 'Lucida Sans Typewriter', 'Courier', monospace;
+
+  text-shadow: 1px 1px var(--color);
 }
 </style>

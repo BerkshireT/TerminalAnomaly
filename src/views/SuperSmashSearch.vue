@@ -1,8 +1,10 @@
+// disable smash search functionality and explain the project instead
+<!--
 <template>
   <v-container fluid fill-height class="smash">
     <v-layout wrap text-xs-center justify-center>
       <v-flex xs12>
-        <Topbar :inner="true" :image="theme.image" gif="projects" :color="theme.color" />
+        <Topbar :inner="true" :image="theme.image" gif="projects" :color="theme.color" :path="theme.path"/>
       </v-flex>
       <body>
         <div class="window">
@@ -47,7 +49,7 @@ export default {
   components: { Footer, Topbar },
   data () {
      return {
-        theme: { color: '#b967ff', image: 'ta-purple.gif' },
+        theme: { color: '#b967ff', image: 'ta-purple.gif', path: '/home/projects/search$ ' },
         lanOptions: [
           { title: 'online' },
           { title: 'lan' },
@@ -140,6 +142,7 @@ export default {
 a {
   color: inherit;
   text-decoration: underline;
+  cursor: crosshair;
 }
 
 button {
@@ -187,3 +190,5 @@ img {
    font-size: 10px;
 }
 </style>
+
+-->

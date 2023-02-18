@@ -68,6 +68,7 @@ export default {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: crosshair;
 }
 
 .glow {

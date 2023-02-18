@@ -2,11 +2,10 @@
   <v-container fluid fill-height class="projects">
     <v-layout wrap text-xs-center justify-center>
       <v-flex xs12>
-        <Topbar :inner="true" :image="theme.image" gif="projects" :color="theme.color" />
+        <Topbar :inner="true" :image="theme.image" gif="projects" :color="theme.color" :path="theme.path"/>
       </v-flex>
       <ProjectListItem link="/DirtyVideoMixer" image="MixerThumb.png" title="Karl Klomp Video Mixer" titleJap="ビデオミキサー" :isLeft="false"/>
-      <ProjectListItem link="/KOeveryDayO" image="KOThumb.png" title="#KOeveryDayO" titleJap="ノックアウト" :isLeft="true"/>
-      <ProjectListItem link="/SuperSmashSearch" image="SmashThumb.png" title="Super Smash Search" titleJap="スーパー・スマッシュ・サーチ" :isLeft="false"/>
+      <!--<ProjectListItem link="/SuperSmashSearch" image="SmashThumb.png" title="Super Smash Search" titleJap="スーパー・スマッシュ・サーチ" :isLeft="true"/>-->
     </v-layout>
     <Footer />
   </v-container>
@@ -22,9 +21,9 @@ export default {
   components: { Footer, Topbar, ProjectListItem },
   data () {
      return {
-        theme: { color: '#b967ff', image: 'ta-purple.gif' }
+        theme: { color: '#b967ff', image: 'ta-purple.gif', path: '/home/projects$ ' },
      }
-  }
+  },
 }
 </script>
 
