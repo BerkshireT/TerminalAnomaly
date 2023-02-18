@@ -17,7 +17,7 @@ jobs:
       - run: npm install
       - run: npm run build
   
-  update-remote:
+  build-and-update-remote:
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
