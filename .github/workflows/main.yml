@@ -27,12 +27,11 @@ jobs:
     
       - name: Copy Files
         uses: appleboy/scp-action@master
-        env:
+        with:
           host: ${{ secrets.TERM_HOST }}
           username: ${{ secrets.TERM_USERNAME }}
           port: ${{ secrets.TERM_PORT }}
           key: ${{ secrets.TERM_PRIVATE }}
-        with:
           source: "dist"
           target: "/var/www/html"
           strip_components: 1
