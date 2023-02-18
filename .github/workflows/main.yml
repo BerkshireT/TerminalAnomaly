@@ -1,8 +1,9 @@
 name: Node.js Build and Push
 
 on:
+  push:
+    branches: [ master ]
   pull_request:
-    types: [opened,merged,synchronize]
     branches: [ master ]
     
   workflow_dispatch:
@@ -16,7 +17,7 @@ jobs:
       - run: npm run build
   
   update-remote:
-    if: ${{ github.event.action }} == 'merged'
+    if: github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
     steps:
