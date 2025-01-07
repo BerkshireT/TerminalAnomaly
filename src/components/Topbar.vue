@@ -1,37 +1,31 @@
 <template>
   <v-container grid-list-xs fluid class="text-xs-center">
-    <v-layout row fluid justify-space-around wrap>
-      <v-flex v-if="gif === 'projects'" xs12 :class="$vuetify.breakpoint.smAndUp? 'projects' : 'projects-m'">
-        <v-img class="ma-4" :src="require('@/assets/logos/' + image)" contain :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
+    <v-layout v-if="gif === 'home'" row fluid justify-space-around wrap> <!-- home page -->
+      <v-flex xs12 class="home">
+        <v-img class="ma-4" :src="require('@/assets/logos/' + image)" contain max-height="200px"/>
       </v-flex>
-      <v-flex v-if="gif === 'gallery'" xs12 :class="$vuetify.breakpoint.smAndUp? 'gallery' : 'gallery-m'">
-        <v-img class="ma-4" :src="require('@/assets/logos/' + image)" contain :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
-      </v-flex>
-      <v-flex v-if="gif === 'about'" xs12 :class="$vuetify.breakpoint.smAndUp? 'about' : 'about-m'">
-        <v-img class="ma-4" :src="require('@/assets/logos/' + image)" contain :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
-      </v-flex>
-      <v-flex v-if="gif === 'home'" xs12 :class="$vuetify.breakpoint.smAndUp? 'home' : 'home-m'">
-        <v-img class="ma-4" :src="require('@/assets/logos/' + image)" contain :max-height="$vuetify.breakpoint.smAndUp? '200px' : '125px'"/>
-      </v-flex>
-      <v-flex :class="$vuetify.breakpoint.smAndUp? 'xs8' : 'xs12'">
+      <v-flex class="xs8">
         <v-card-text class="white--text pb-0">
-          <div :class="$vuetify.breakpoint.mdAndUp? 'top-title' : 'top-title-m'" :style="{ textShadow: '1px 1px ' + color }">Terminal Anomaly</div>
-          <div :class="$vuetify.breakpoint.mdAndUp? 'top-sub' : 'top-sub-m'" :style="{ color: color }">ターミナル・アノマリー</div>
-          <div class="mt-3" v-if=inner>
-            <a href="javascript:history.go(-1)" :class="$vuetify.breakpoint.mdAndUp? 'back' : 'back-m'" :style="backText">admin@terminal:{{path}}cd ..<p class="cursor">|</p></a>
-          </div>
-          <div class="mt-3" v-else>
-            <a :class="$vuetify.breakpoint.mdAndUp? 'back-home' : 'back-home-m'" :style="backText">admin@terminal:{{path}}<p class="cursor">|</p></a>
-          </div>
+          <div class="top-title" :style="{ textShadow: '1px 1px ' + color }">WELCOME</div>
+          <div class="top-sub" :style="{ color: color }">いらっしゃいませ！</div>
+          <div class="ma-3" />
         </v-card-text>
         <v-divider :style="{ borderColor: color + ' !important' }" />
       </v-flex>
+    </v-layout>
+    <v-layout v-else row fluid justify-space-around wrap> <!-- other pages -->
+      <TopbarOtherPage v-if="gif === 'projects'" :page="gif" :image="image" title="PROJECTS" icon="https://win98icons.alexmeub.com/icons/png/directory_folder_options-2.png" :color="color"/>
+      <TopbarOtherPage v-if="gif === 'gallery'" :page="gif" :image="image" title="GALLERY" icon="https://win98icons.alexmeub.com/icons/png/camera3-2.png" :color="color"/>
+      <TopbarOtherPage v-if="gif === 'about'" :page="gif" :image="image" title="ABOUT" icon="https://win98icons.alexmeub.com/icons/png/help_sheet-0.png" :color="color"/>
     </v-layout>
   </v-container>
 </template>
 
 <script>
+import TopbarOtherPage from '@/components/TopbarOtherPage.vue'
+
 export default {
+  components: { TopbarOtherPage },
   props: {
     image: {
       required: true,
@@ -67,23 +61,23 @@ export default {
 <style scoped>
 .top-title {
   font-size: 45px;
-  font-style: italic;
   font-family: 'OCR-A', 'Courier', monospace;
+  cursor: default;
 }
 
-.home, .home-m {
+.home {
   background: url(../assets/home.gif);
 }
 
-.gallery, .gallery-m {
+.gallery {
   background: url(../assets/gallery.gif);
 }
 
-.projects, .projects-m {
+.projects {
   background: url(../assets/projects.gif);
 }
 
-.about, .about-m {
+.about {
   background: url(../assets/about.gif);
 }
 
@@ -99,6 +93,7 @@ export default {
   font-style: italic;
   letter-spacing: 0.1em;
   padding-bottom: 2px;
+  cursor: default;
 }
 
 .top-sub-b {
@@ -107,62 +102,8 @@ export default {
   letter-spacing: 0.5em;
 }
 
-.back, .back-home {
-  font-size: 15px;
-  letter-spacing: .01em;
-  font-family: 'Lucida Sans Typewriter', 'Courier', monospace;
-
-  text-shadow: 1px 1px var(--color);
-  transition: all 2s ease;
-}
-
-.back:hover {
-  color: var(--color);
-  text-shadow: 0 0 5px var(--color);
-}
-
-.cursor {
-  display: inline-block;
-  animation: blinker 1s step-start infinite;
-}
-
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
-
 a {
   color: white;
   text-decoration: none;
-  cursor: crosshair;
-}
-
-/* Mobile */
-.top-title-m {
-  font-size: 20px;
-  font-style: italic;
-  font-family: 'OCR-A', 'Courier', monospace;
-}
-
-.home-m, .gallery-m, .projects-m, .about-m {
-  height: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.top-sub-m {
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  font-style: italic;
-}
-
-.back-m, .back-home-m {
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  font-family: 'Lucida Sans Typewriter', 'Courier', monospace;
-
-  text-shadow: 1px 1px var(--color);
 }
 </style>

@@ -1,7 +1,3 @@
-<!-- 
-Ideas:
-Add vaporwave page, make album art, music page
--->
 <template>
   <v-container fluid fill-height class="home">
     <v-layout wrap text-xs-center justify-center>
@@ -68,7 +64,7 @@ export default {
 a {
   color: inherit;
   text-decoration: none;
-  cursor: crosshair;
+  
 }
 
 .glow {

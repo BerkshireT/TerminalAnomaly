@@ -1,8 +1,5 @@
 <template>
   <v-flex pa-2 text-xs-center class="footer-border">
-    <span :class="$vuetify.breakpoint.smAndUp? 'text' : 'text-m'">
-      Copyright 20XX &copy; Tyler Berkshire
-    </span>
   </v-flex>
 </template>
 
