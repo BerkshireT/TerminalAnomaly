@@ -1,18 +1,43 @@
 <template>
   <v-container grid-list-xs fluid class="text-xs-center">
     <v-layout v-if="gif === 'home'" row fluid justify-space-around wrap> <!-- home page -->
-      <v-flex xs12 class="home">
+      <v-flex v-if="$vuetify.breakpoint.lgAndUp" xs12 class="home">
         <v-img class="ma-4" :src="require('@/assets/logos/' + image)" contain max-height="200px"/>
       </v-flex>
-      <v-flex class="xs8">
+      <v-flex v-else-if="$vuetify.breakpoint.md" xs12 class="home">
+        <v-img class="ma-4" :src="require('@/assets/logos/' + image)" contain max-height="125px"/>
+      </v-flex>
+      <v-flex v-else xs12 class="home">
+        <v-img class="ma-4" :src="require('@/assets/logos/' + image)" contain max-height="100px"/>
+      </v-flex>
+
+      <v-flex v-if="$vuetify.breakpoint.lgAndUp" class="xs8">
         <v-card-text class="white--text pb-0">
-          <div class="top-title" :style="{ textShadow: '1px 1px ' + color }">WELCOME</div>
+          <div class="top-title" :style="{ textShadow: '1px 1px ' + color }">WELCOME!</div>
           <div class="top-sub" :style="{ color: color }">いらっしゃいませ！</div>
+          <div class="ma-4" />
+        </v-card-text>
+        <v-divider :style="{ borderColor: color + ' !important' }" />
+      </v-flex>
+      <v-flex v-else-if="$vuetify.breakpoint.md" class="xs8">
+        <v-card-text class="white--text pb-0">
+          <div class="top-title-md" :style="{ textShadow: '1px 1px ' + color }">WELCOME!</div>
+          <div class="top-sub-md" :style="{ color: color }">いらっしゃいませ！</div>
+          <div class="mb-4" />
+        </v-card-text>
+        <v-divider :style="{ borderColor: color + ' !important' }" />
+      </v-flex>
+      <v-flex v-else class="xs8">
+        <v-card-text class="white--text pb-0">
+          <div class="top-title-sm" :style="{ textShadow: '1px 1px ' + color }">WELCOME!</div>
+          <div class="top-sub-sm" :style="{ color: color }">いらっしゃいませ！</div>
           <div class="ma-3" />
         </v-card-text>
         <v-divider :style="{ borderColor: color + ' !important' }" />
       </v-flex>
+
     </v-layout>
+    
     <v-layout v-else row fluid justify-space-around wrap> <!-- other pages -->
       <TopbarOtherPage v-if="gif === 'projects'" :page="gif" :image="image" title="PROJECTS" icon="https://win98icons.alexmeub.com/icons/png/directory_folder_options-2.png" :color="color"/>
       <TopbarOtherPage v-if="gif === 'gallery'" :page="gif" :image="image" title="GALLERY" icon="https://win98icons.alexmeub.com/icons/png/camera3-2.png" :color="color"/>
@@ -65,6 +90,18 @@ export default {
   cursor: default;
 }
 
+.top-title-md {
+  font-size: 35px;
+  font-family: 'OCR-A', 'Courier', monospace;
+  cursor: default;
+}
+
+.top-title-sm {
+  font-size: 25px;
+  font-family: 'OCR-A', 'Courier', monospace;
+  cursor: default;
+}
+
 .home {
   background: url(../assets/home.gif);
 }
@@ -96,10 +133,20 @@ export default {
   cursor: default;
 }
 
-.top-sub-b {
-  font-size: 17px;
+.top-sub-md {
+  font-size: 15px;
   font-style: italic;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.1em;
+  padding-bottom: 2px;
+  cursor: default;
+}
+
+.top-sub-sm {
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  padding-bottom: 2px;
+  cursor: default;
 }
 
 a {

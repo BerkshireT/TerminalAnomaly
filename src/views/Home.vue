@@ -4,7 +4,16 @@
       <v-flex xs12>
         <Topbar :inner="false" :image="theme.image" gif="home" :color="theme.color" />
       </v-flex>
-      <v-flex :class="$vuetify.breakpoint.lgAndUp? 'xs2' : 'xs12'">
+
+      <v-flex v-if='$vuetify.breakpoint.mdAndUp' class="xs2">
+        <div class="glow" :class="$vuetify.breakpoint.md ? 'mr-4' : ''">
+          <router-link to="/gallery">
+            <div class='ma-1'>gallery</div>
+            <div class='ma-1'>ギャラリー</div>
+          </router-link>
+        </div>
+      </v-flex>
+      <v-flex v-else class='xs12'>
         <div class="glow">
           <router-link to="/gallery">
             <div class="ma-1">gallery</div>
@@ -12,7 +21,16 @@
           </router-link>
         </div>
       </v-flex>
-      <v-flex :class="$vuetify.breakpoint.lgAndUp? 'xs2' : 'xs12'">
+      
+      <v-flex v-if="$vuetify.breakpoint.mdAndUp" class='xs2'>
+        <div class="glow">
+          <router-link to="/about">
+            <div class='ma-1'>about</div>
+            <div class='ma-1'>約</div>
+          </router-link>
+        </div>
+      </v-flex>
+      <v-flex v-else class='xs12'>
         <div class="glow">
           <router-link to="/about">
             <div class="ma-1">about</div>
@@ -20,14 +38,23 @@
           </router-link>
         </div>
       </v-flex>
-      <v-flex :class="$vuetify.breakpoint.lgAndUp? 'xs2' : 'xs12'">
+
+      <v-flex v-if="$vuetify.breakpoint.mdAndUp" class='xs2'>
+        <div class="glow" :class="$vuetify.breakpoint.md ? 'ml-4' : ''">
+          <router-link to="/projects">
+            <div class='ma-1'>projects</div>
+            <div class='ma-1'>プロジェクト</div>
+          </router-link>
+        </div>
+      </v-flex>
+      <v-flex v-else class='xs12'>
         <div class="glow">
           <router-link to="/projects">
             <div class="ma-1">projects</div>
             <div class="ma-1">プロジェクト</div>
           </router-link>
         </div>
-        </v-flex>
+      </v-flex>
     </v-layout>
     <Footer />
   </v-container>
@@ -72,6 +99,7 @@ a {
   letter-spacing: .5em;
   font-family: 'OCR-A', 'Courier', monospace;
   transition: all 2s ease;
+  white-space: nowrap;
 }
 
 .glow:hover {
