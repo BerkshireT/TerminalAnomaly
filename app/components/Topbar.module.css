@@ -1,0 +1,73 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.logoCol {
+  flex: 1 1 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logoImg {
+  margin: 16px;
+  max-width: calc(100% - 32px);
+  object-fit: contain;
+}
+
+.textCol {
+  flex: 1 1 66%;
+  color: white;
+}
+
+.topTitle {
+  font-size: 45px;
+  font-family: "OCR-A", "Courier", monospace;
+  cursor: default;
+}
+
+.topTitleMd {
+  font-size: 35px;
+  font-family: "OCR-A", "Courier", monospace;
+  cursor: default;
+}
+
+.topTitleSm {
+  font-size: 25px;
+  font-family: "OCR-A", "Courier", monospace;
+  cursor: default;
+}
+
+.topSub {
+  font-size: 17px;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  padding-bottom: 2px;
+  margin-bottom: 16px;
+}
+
+.topSubMd {
+  font-size: 15px;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  padding-bottom: 2px;
+  margin-bottom: 16px;
+}
+
+.topSubSm {
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  padding-bottom: 2px;
+  margin-bottom: 12px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid;
+}

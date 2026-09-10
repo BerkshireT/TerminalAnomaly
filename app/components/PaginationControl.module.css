@@ -1,0 +1,42 @@
+.button {
+  font-size: 4em;
+  color: #fffb96;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  box-shadow: none;
+}
+
+.buttonM {
+  font-size: 3em;
+  color: #fffb96;
+  background: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.buttonDisabled {
+  font-size: 5em;
+  opacity: 0;
+  background: none;
+  border: none;
+}
+
+.buttonDisabledM {
+  font-size: 3em;
+  opacity: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.button:active {
+  color: white;
+  box-shadow: none;
+}
+
+.button:hover {
+  box-shadow: 0 0 20px #fffb96;
+}

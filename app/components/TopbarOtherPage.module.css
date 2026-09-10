@@ -1,0 +1,95 @@
+.blackBackground {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logoCol {
+  flex: 0 0 16.6667%;
+  max-width: 16.6667%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logoColMed {
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.mlSpace {
+  margin-left: 16px;
+}
+
+.logoImg {
+  margin: 16px;
+  max-height: 125px;
+  max-width: calc(100% - 32px);
+  object-fit: contain;
+}
+
+.textCol {
+  flex: 1;
+  text-align: center;
+  color: white;
+  padding-bottom: 0;
+}
+
+.icon {
+  margin: 8px;
+  vertical-align: middle;
+}
+
+.topTitle {
+  font-size: 45px;
+  font-family: "OCR-A", "Courier", monospace;
+  cursor: default;
+}
+
+.topTitleMed {
+  font-size: 33px;
+  font-family: "OCR-A", "Courier", monospace;
+  cursor: default;
+}
+
+.topTitleSmall {
+  font-size: 19px;
+  font-family: "OCR-A", "Courier", monospace;
+  cursor: default;
+}
+
+.topSub {
+  font-size: 17px;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  padding-bottom: 2px;
+}
+
+.topSubMed {
+  font-size: 12px;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  padding-bottom: 2px;
+}
+
+.topSubSmall {
+  font-size: 9px;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  padding-bottom: 2px;
+  margin-bottom: 8px;
+}
+
+.blackBackground a {
+  color: white;
+  text-decoration: none;
+}

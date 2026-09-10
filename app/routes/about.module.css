@@ -1,0 +1,73 @@
+.about {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.text,
+.textMobile {
+  font-family: "Cutive Mono", "Courier", monospace;
+}
+
+.text {
+  font-size: 4em;
+  letter-spacing: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.textMobile {
+  font-size: 2em;
+  letter-spacing: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.iconsRow {
+  font-size: 3em;
+  margin-top: 1.5em;
+}
+
+.imgSpaced {
+  margin: 0.5em;
+}
+
+.personalsBox,
+.personalsBoxMobile {
+  background-color: #b967ff;
+  background-repeat: repeat;
+  border-style: solid;
+  border-color: white;
+  border-right: 0;
+  border-bottom: 0;
+  box-shadow: 10px 10px;
+  text-shadow: 2px 2px black;
+  margin: 3em auto 0;
+}
+
+.personalsBox {
+  max-width: 66%;
+}
+
+.personalsBoxMobile {
+  max-width: 92%;
+  padding-bottom: 1em;
+}
+
+.personalsBox a:hover,
+.personalsBoxMobile a:hover {
+  color: #b967ff;
+  transition: all 1s ease;
+}
+
+.about a {
+  color: inherit;
+  text-decoration: underline;
+}

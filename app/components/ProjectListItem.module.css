@@ -1,0 +1,55 @@
+.glow {
+  display: block;
+  font-size: 17px;
+  letter-spacing: 0.5em;
+  font-family: "OCR-A", "Courier", monospace;
+  transition: all 2s ease;
+  text-decoration: none;
+  color: inherit;
+  margin: 16px 0;
+  width: 100%;
+}
+
+.glow:hover {
+  color: #b967ff;
+  text-shadow: 0 0 5px #b967ff;
+}
+
+.disabled {
+  opacity: 0.4;
+  cursor: default;
+  transition: none;
+}
+
+.disabled:hover {
+  color: inherit;
+  text-shadow: none;
+}
+
+.rowDesktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.rowMobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 8px 0;
+}
+
+.thumbBlock {
+  flex: 0 0 auto;
+}
+
+.thumb {
+  max-height: 150px;
+  object-fit: contain;
+}
+
+.textBlock {
+  flex: 0 0 auto;
+}

@@ -1,0 +1,48 @@
+.home {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+.navRowDesktop {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.navRowMobile {
+  display: flex;
+  flex-direction: column;
+}
+
+.navItemDesktop {
+  flex: 0 1 16.6667%;
+}
+
+.navItemMobile {
+  flex: 1 1 100%;
+  margin: 8px 0;
+}
+
+.glow {
+  display: inline-block;
+  font-size: 17px;
+  letter-spacing: 0.5em;
+  font-family: "OCR-A", "Courier", monospace;
+  transition: all 2s ease;
+  white-space: nowrap;
+  text-decoration: none;
+  color: inherit;
+}
+
+.glow:hover {
+  color: #05ffa1;
+  text-shadow: 0 0 5px #05ffa1;
+}

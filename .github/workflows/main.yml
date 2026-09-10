@@ -14,17 +14,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+        with:
+          lfs: true
       - run: npm install
       - run: npm run build
-  
+
   build-and-update-remote:
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+        with:
+          lfs: true
       - run: npm install
       - run: npm run build
-    
+
       - name: Copy Files
         uses: appleboy/scp-action@master
         with:
@@ -32,6 +36,6 @@ jobs:
           username: ${{ secrets.TERM_USERNAME }}
           port: ${{ secrets.TERM_PORT }}
           key: ${{ secrets.TERM_PRIVATE }}
-          source: "dist"
+          source: "build/client"
           target: "/var/www/html"
-          strip_components: 1
+          strip_components: 2
