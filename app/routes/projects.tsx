@@ -27,7 +27,6 @@ export default function Projects() {
             title={project.title}
             titleJap={project.titleJap}
             isLeft={i % 2 === 0}
-            disabled={project.disabled}
           />
         ))}
       </div>

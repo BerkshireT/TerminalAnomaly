@@ -1,0 +1,47 @@
+.projectNote {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+.titleBlock {
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 0.3em;
+  font-family: "OCR-A", "Courier", monospace;
+  margin: 24px 0;
+}
+
+.box {
+  border: 2px solid #b967ff;
+  background-color: black;
+  max-width: 600px;
+  margin: 0 auto 24px;
+}
+
+.notes {
+  font-size: 1.3em;
+  margin: 1em;
+  text-align: left;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 17px;
+  letter-spacing: 0.2em;
+  font-family: "OCR-A", "Courier", monospace;
+  color: #b967ff;
+  text-decoration: none;
+}
+
+.back:hover {
+  text-shadow: 0 0 5px #b967ff;
+}
